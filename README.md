@@ -128,8 +128,6 @@ Regardless of the method, the essence is to expand the model's solution space. A
 
 It is believed that a Process Reward Model (PRM) is used. Some suggest using both Outcome Reward Model (ORM) and PRM, but this is debatable. Studies have shown that ORM is generally less effective than PRM, and ORM's training data can be considered a subset of PRM's data (PRM provides denser signals and higher data utilization). Therefore, it's unlikely that a subset would outperform the entire set.
 
-If patch-level MCTS is indeed used, PRM (or its variants) is necessary to prune the tree and reduce the search space.
-
 ### Safety Alignment
 
 A noteworthy aspect is o1's safety alignment strategy.
