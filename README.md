@@ -44,13 +44,17 @@ This section aims to speculate on the implementation of o1, drawing information 
 
 Small models combined with infinitely long Chains-of-Thought (CoT) can solve any problem in the world. Therefore, o1 must be a model that enhances the ability to output correct answers by utilizing extremely long CoTs.
 
-\fig
+<div align="center">
+  <img src="assets/fig1.png" alt="Figure Description or Alt Text" width="80%">
+</div>
 
 The discussion will be structured into the following parts:
 
 Firstly, o1 is a model rather than a system. Thus, models like o1 require strong reasoning capabilities and robust conversational abilities to perform actions such as self-critique.
 
-\fig
+<div align="center">
+  <img src="assets/fig2.png" alt="Figure Description or Alt Text" width="80%">
+</div>
 
 Considering that the o1 System Card repeatedly mentions that o1-mini has poor world knowledge, it is speculated that o1 is a small model trained from scratch. Therefore, the overall technical stack can be broken down into:
 
@@ -88,7 +92,9 @@ Insights from interviews about o1 can be summarized into the following key point
 - **Challenges exist but RL is promising:** Despite challenges like reward design, RL remains a viable and ongoing pathway.
 - **CoT combined with self-critique can solve any problem:** This approach enhances the model's problem-solving capabilities.
 
-\fig
+<div align="center">
+  <img src="assets/fig3.png" alt="Figure Description or Alt Text" width="80%">
+</div>
 
 Specific Challenges for o1 Compared to Other Models:
 
@@ -130,13 +136,17 @@ A noteworthy aspect is o1's safety alignment strategy.
 
 Compared to traditional RLHF (Reinforcement Learning from Human Feedback) for content safety, o1 likely adopts Anthropic's AI Constitution model for content safety. Combined with its strong reasoning abilities, o1 achieves enhanced safety.
 
-\fig
+<div align="center">
+  <img src="assets/fig4.png" alt="Figure Description or Alt Text" width="80%">
+</div>
 
 ### Inference Phase
 
 How does o1 perform inference? It is speculated that o1 generates outputs token by token without using MCTS during inference. One reason is that o1 sometimes outputs incorrect guesses; if MCTS were used, incorrect nodes would be less likely. Additionally, experiments on the relationship between output token length and output latency show a linear trend, indicating that tokens are not being hidden, thus supporting a token-by-token output mechanism.
 
-\fig
+<div align="center">
+  <img src="assets/fig5.png" alt="Figure Description or Alt Text" width="80%">
+</div>
 
 Given that o1, especially o1-mini, is priced at 20 times that of 4o-mini, it's possible that multiple models run in parallel online (though this doesn't contradict the conclusion that o1 is a single model). PRM might be used to select the best outputs from multiple samples (Best of N), with dynamic difficulty adjustment determining the value of N.
 
@@ -144,7 +154,9 @@ Given that o1, especially o1-mini, is priced at 20 times that of 4o-mini, it's p
 
 **Dynamic Compute Resource Selection:**
 
-\fig
+<div align="center">
+  <img src="assets/fig6.png" alt="Figure Description or Alt Text" width="80%">
+</div>
 
 Since o1 outputs tokens sequentially, why is the model so expensive? The o1 series has higher costs not only for output but also for input. The input and output costs of o1-preview are 4 and 3 times that of 4o, respectively. For o1-mini, both input and output are 20 times that of 4o-mini.
 
@@ -163,7 +175,9 @@ Therefore, the following conjectures are made:
 
 We employed Monte Carlo Tree Search (MCTS) to construct a reasoning-based Chain-of-Thought (CoT) dataset. A classic example from this dataset is the question, "How many 'r's are in the word 'strawberry'?" Through multiple search steps, the correct answer was obtained.
 
-\fig
+<div align="center">
+  <img src="assets/fig7.png" alt="Figure Description or Alt Text" width="80%">
+</div>
 
 ## ⚡️ Install
 
