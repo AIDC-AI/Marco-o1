@@ -27,7 +27,7 @@ Yu Zhao, [Huifeng Yin](https://github.com/HuifengYin), [Longyue Wang](http://www
 
 ## 🔥 News
 
-- [2024/10/27] 🔥 We released **Marco-o1**. This initial release includes our reasoning model, optimized for complex problem-solving and versatile applications across various domains.
+- [2024/11/13] 🔥 We released **Marco-o1**. This initial release includes our reasoning model, optimized for complex problem-solving and versatile applications across various domains.
 
 
 
