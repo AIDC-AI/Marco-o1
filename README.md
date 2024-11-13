@@ -76,9 +76,7 @@ We integrated Large Language Models (LLMs) with Monte Carlo Tree Search (MCTS) t
 
    For each token $t_i$ generated during the rollout, we calculate its confidence score by applying the softmax function to its log probability and the log probabilities of the top 5 alternative tokens. This is given by:
 
-   $$
-   c_i = \frac{\exp(p(t_i))}{\sum_{k=1}^{5} \exp(p(t_k))}
-   $$
+   $$c_i = \frac{\exp(p(t_i))}{\sum_{k=1}^{5} \exp(p(t_k))}$$
 
    **Where:**
 
