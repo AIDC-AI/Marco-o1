@@ -62,10 +62,13 @@ This is a classic example from our Marco-o1 model, "How many 'r's are in the wor
 </div>
 
 
-## Fine-Tuning with CoT Data
+## Datasets
 
-To enhance the reasoning capabilities of the Marco-o1 model, we conducted fine-tuning using a combination of datasets tailored to improve various aspects of the model's performance. We utilized the Marco Reasoning Dataset, specifically developed to challenge and enhance the model's ability to handle complex reasoning tasks. Additionally, we employed the Chain-of-Thought (CoT) Dataset, originally proposed in the Open-O1 project, which we refined through a filtering process to ensure high-quality data for training. This filtered CoT Dataset helps the model leverage structured reasoning patterns, thereby improving its capability to follow logical steps in problem-solving. Furthermore, to maintain the model's general competencies across various tasks, we incorporated the Marco Instruction Dataset along with other diverse datasets. This combination allows the model to retain proficiency in a wide range of domains and tasks, ensuring well-rounded performance. By collectively employing these datasets during fine-tuning, we significantly enhanced the reasoning prowess of the Marco-o1 model while preserving its overall effectiveness in broader applications. This strategic balance of data optimizes the model for its primary goal of reasoning without compromising its utility in other areas.
+To enhance the reasoning capabilities of the Marco-o1 model, we employed a supervised fine-tuning strategy using a variety of datasets.
 
+**CoT Data:** We generated the Marco CoT Dataset using MCTS, which helped to formulate complex reasoning pathways. Additionally, we improved the Open-O1 project's CoT Dataset by applying a heuristic and quality filtering process, allowing the model to adopt structured reasoning patterns effectively.
+
+**Instruction Following Data:** Recognizing the critical role of robust instruction-following capabilities in executing complex tasks, we used a set of instruction-following data. Furthermore, to ensure that the model retains some specific knowledge, we integrated some other SFT datasets. This combination ensures the model remains competent across a wide range of tasks, maintaining its general effectiveness while significantly boosting its reasoning flair.
 
 ## Solution Space Expansion via MCTS
 
@@ -184,9 +187,9 @@ These results demonstrate the effectiveness of our approach in enhancing the rea
 
 ## ⚡️ Available Models and Datasets
 
-[Marco-o1](https://huggingface.co) (Our Reasoning Model)
+[Marco-o1](https://huggingface.co/AIDC-AI/Marco-o1) (Our Lastest Model)
 
-[Marco Reasoning Dataset](https://huggingface.co) (Our Dataset)
+[Marco Reasoning Dataset](https://github.com/AIDC-AI/Marco-o1/blob/main/data/CoT_demo.json) (Our Partial Dataset)
 
 ## Installation
 
