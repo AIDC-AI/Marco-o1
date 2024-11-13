@@ -66,9 +66,9 @@ This is a classic example from our Marco-o1 model, "How many 'r's are in the wor
 
 To enhance the reasoning capabilities of the Marco-o1 model, we employed a supervised fine-tuning strategy using a variety of datasets.
 
-**CoT Data:** We generated the Marco CoT Dataset using MCTS, which helped to formulate complex reasoning pathways. Additionally, we improved the Open-O1 project's CoT Dataset by applying a heuristic and quality filtering process, allowing the model to adopt structured reasoning patterns effectively.
+- **CoT Data:** We generated the Marco CoT Dataset using MCTS, which helped to formulate complex reasoning pathways. Additionally, we improved the Open-O1 project's CoT Dataset by applying a heuristic and quality filtering process, allowing the model to adopt structured reasoning patterns effectively.
 
-**Instruction Following Data:** Recognizing the critical role of robust instruction-following capabilities in executing complex tasks, we used a set of instruction-following data. Furthermore, to ensure that the model retains some specific knowledge, we integrated some other SFT datasets. This combination ensures the model remains competent across a wide range of tasks, maintaining its general effectiveness while significantly boosting its reasoning flair.
+- **Instruction Following Data:** Recognizing the critical role of robust instruction-following capabilities in executing complex tasks, we used a set of instruction-following data. Furthermore, to ensure that the model retains some specific knowledge, we integrated some other SFT datasets. This combination ensures the model remains competent across a wide range of tasks, maintaining its general effectiveness while significantly boosting its reasoning flair.
 
 ## Solution Space Expansion via MCTS
 
