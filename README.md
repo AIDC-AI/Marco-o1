@@ -209,19 +209,26 @@ pip install -r requirements.txt
 
 ## Usage 🚀
 
-1. **Downloading Marco-o1-CoT model:** 
-   
+1. **Load Marco-o1-CoT model:** 
+    ```
+    # Load model directly
+    from transformers import AutoTokenizer, AutoModelForCausalLM
 
+    tokenizer = AutoTokenizer.from_pretrained("AIDC-AI/Marco-o1")
+    model = AutoModelForCausalLM.from_pretrained("AIDC-AI/Marco-o1")
+    ```
 
 2. **Inference:** 
-   - Execute the inference script (you can give any customized inputs inside):
-     ```
-     ./src/talk_with_model.py
 
-     # Use vLLM
-     ./src/talk_with_model_vllm.py
+    Execute the inference script (you can give any customized inputs inside):
+    ```
+    ./src/talk_with_model.py
 
-     ```
+    # Use vLLM
+    ./src/talk_with_model_vllm.py
+
+    ```
+
 
 
 ## Coming Soon
