@@ -91,9 +91,7 @@ We integrated Large Language Models (LLMs) with Monte Carlo Tree Search (MCTS) t
 
    After obtaining the confidence scores for all tokens in the rollout sequence, we compute the average confidence score across all tokens to derive the overall reward score:
 
-   $$
-   R = \frac{1}{n} \sum_{i=1}^{n} c_i
-   $$
+   $$R = \frac{1}{n} \sum_{i=1}^{n} c_i$$
 
    **Where:**
 
