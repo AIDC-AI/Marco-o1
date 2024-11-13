@@ -48,7 +48,7 @@ def generate_response(model,
     return new_output
 
 
-def chat(model: AutoModelForCausalLM, tokenizer: AutoTokenizer) -> None:
+def chat(model, tokenizer):
     history = []
     print("Enter 'q' to quit, 'c' to clear chat history.")
     while True:
@@ -72,7 +72,7 @@ def chat(model: AutoModelForCausalLM, tokenizer: AutoTokenizer) -> None:
         history.append({"role": "assistant", "content": response})
 
 
-def main() -> None:
+def main():
     # path = "AIDC-AI/Marco-o1"
     path = 'Your local path here'
 
