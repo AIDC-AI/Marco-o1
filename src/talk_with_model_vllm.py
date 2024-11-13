@@ -20,6 +20,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
 def load_model_and_tokenizer(path):
+    tokenizer = AutoTokenizer.from_pretrained(path, trust_remote_code=True)
     model = LLM(model=path, tensor_parallel_size=4)
     return tokenizer, model
 
