@@ -1,9 +1,9 @@
 <p align="center">
-    <img src="https://avatars.githubusercontent.com/u/172576026?s=200&v=4" width="150" style="margin-bottom: 0.2;"/>
+    <img src="assets/logo.png" width="150" style="margin-bottom: 0.2;"/>
 <p>
 <h2 align="center"> <a href="https://github.com/AIDC-AI/Marco-o1/">Marco-o1</a></h2>
 <h5 align="center"> If you appreciate our project, please consider giving us a star ⭐ on GitHub to stay updated with the latest developments.  </h2>
-
+ 
 <h4 align="center">
 
 🚀 Welcome to the repo of **Marco-o1**!
@@ -12,7 +12,7 @@
 
 <div align="center">
 <img src="https://img.shields.io/badge/Version-1.0.0-blue.svg" alt="Version"> 
-<img src="https://img.shields.io/badge/License-CC%20BY%204.0-green.svg" alt="License">
+<img src="https://img.shields.io/badge/License-Apache%202.0-green.svg" alt="License">
 <img src="https://img.shields.io/github/stars/AIDC-AI/Marco-o1?color=yellow" alt="Stars">
 <img src="https://img.shields.io/github/issues/AIDC-AI/Marco-o1?color=red" alt="Issues">
 <img src="https://img.shields.io/badge/python-3.8-purple.svg" alt="Python">
@@ -27,176 +27,162 @@ Yu Zhao, Huifeng Yin, Longyue Wang
 
 - [2024/10/27] 🔥 We released **Marco-o1**. This initial release includes our reasoning model, optimized for complex problem-solving and versatile applications across various domains.
 
+
+
 ## Introduction
 
-Recently, OpenAI announced the launch of its groundbreaking product, OpenAI o1, formerly known by the codename "Strawberry." This next-generation generative AI model distinguishes itself from traditional counterparts through its enhanced reasoning capabilities, enabling it to tackle complex problems. OpenAI o1 has demonstrated remarkable performance across a variety of challenging benchmarks. Notably, it has excelled in the American Invitational Mathematics Examination (AIME), showcasing superior problem-solving skills that surpass those of the current leading model, GPT-4o. Additionally, o1 has achieved outstanding results on competitive programming platforms such as CodeForces and LeetCode Pro Max, further underscoring its advanced computational abilities. In several academic disciplines, OpenAI o1 has even outperformed individuals holding PhDs, highlighting its potential to revolutionize fields.
-
-Acknowledging the significance of these advancements, we have replicated the technical roadmap of the OpenAI o1 model. Our replication effort aims to further explore and validate the state-of-the-art capabilities of this groundbreaking model, as well as to contribute to the broader understanding and development of AI technologies. Through this endeavor, we seek to push the boundaries of what AI can achieve in complex problem-solving and interdisciplinary applications. This reproduction effort aims to elucidate the architectural innovations and training strategies that contribute to o1's superior performance. We presents our replication process, the challenges encountered, and the insights gained, thereby contributing to the broader discourse on building more capable and reliable AI models.
-
-**Our primary contributions are twofold:**
-
-1. **Discussion and Analysis of o1's Technical Roadmap:** We provide an in-depth discussion and propose hypotheses regarding the technical strategies and innovations that underpin the OpenAI o1 model.
-2. **Replication of the o1 Model:** We have made significant efforts to replicate the o1 model, achieving preliminary and stage-wise results that offer valuable insights into its methodologies and performance.
-
-## Conjectures on the Implementation of o1
-
-This section aims to speculate on the implementation of o1, drawing information primarily from insights shared by OpenAI researchers and various analyses.
-
-Small models combined with infinitely long Chains-of-Thought (CoT) can solve any problem in the world. Therefore, o1 must be a model that enhances the ability to output correct answers by utilizing extremely long CoTs.
+OpenAI recently unveiled the revolutionary o1 model, which, with its exceptional reasoning capabilities, has excelled on platforms like AIME, CodeForces, and LeetCode Pro Max, surpassing other leading models. Inspired by this achievement and given our Marco team's specialization in multilingual and translation, we recognized the inherent challenges in translation—such as the need to accurately handle difficult terms, including internet slang, colloquial expressions, specialized terminology, and emerging new words. To address these complexities, we have replicated and extended the o1 model's technical roadmap with a stronger focus on multilingual and translation tasks, while also considering general reasoning capabilities. We are proud to introduce Marco-o1, which further enhances the model's reasoning performance through innovative methodologies designed to meet the unique demands of translation tasks.
 
 <div align="center">
-  <img src="assets/fig1.png" alt="Figure Description or Alt Text" width="80%">
+  <img src="assets/intro.jpg" alt="Figure Description or Alt Text" width="80%">
+  <p><strong>Figure 1: </strong>Overview of the Marco-o1</p>
 </div>
 
-The discussion will be structured into the following parts:
+Our main contributions are threefold: 
+- **Fine-Tuning with CoT Data:** We developed Marco-o1-CoT by performing full-parameter fine-tuning on the base model using open-source Chain-of-Thought (CoT) data combined with our self-developed synthetic data. 
+- **Solution Space Expansion via MCTS:** We integrated Large Language Models (LLMs) with Monte Carlo Tree Search (MCTS), using the model's output confidence to guide the search and expand the solution space. 
+- **Reasoning Action Strategy:** We implemented novel reasoning action strategies and a reflection mechanism, including exploring different action granularities within the MCTS framework and prompting the model to self-reflect, thereby significantly enhancing the model's ability to solve complex problems.
+- **Application in Translation Tasks:** We are the first to apply Large Reasoning Models(LRM) to translation tasks, exploring inference time scaling laws in the multilingual and translation domain.
 
-Firstly, o1 is a model rather than a system. Thus, models like o1 require strong reasoning capabilities and robust conversational abilities to perform actions such as self-critique.
-
-<div align="center">
-  <img src="assets/fig2.png" alt="Figure Description or Alt Text" width="80%">
-</div>
-
-Considering that the o1 System Card repeatedly mentions that o1-mini has poor world knowledge, it is speculated that o1 is a small model trained from scratch. Therefore, the overall technical stack can be broken down into:
-
-- **Pre-training Phase:**
-  
-  - Strengthen reasoning abilities.
-- **Post-training Phase:**
-  
-  - **Supervised Fine-Tuning (SFT):**
-    - Continue to enhance reasoning abilities.
-  - **Reinforcement Learning (RL):**
-    - Explore ways to expand the model's solution space.
-    - Train a more effective reward model.
-- **Inference Phase:**
-  
-  - Best of N sampling.
-
-### Pre-Training Phase
-
-In this phase, since the subsequent RL stage allows for significant flexibility, the relative importance of the base model might be lower. Due to the use of tree search later on, the model doesn't necessarily need to be extremely strong—since the solution space is vast, there's always a path that leads to the correct answer. However, a well-pretrained model can effectively reduce the computational cost in the subsequent RL phase.
-
-Enhancing the model's reasoning abilities is crucial during pre-training. Known strategies include increasing the proportion of data related to code, mathematics, and academic papers while reducing data from sources like Common Crawl (cc) to improve the model's training Return on Investment (ROI).
-
-### Supervised Fine-Tuning (SFT) Phase
-
-This phase shares the same goal as the pre-training phase: to increase the proportion of CoT and conversational data, thereby enhancing the model's ability to produce lengthy CoTs and engage in dialogues.
-
-### Reinforcement Learning Phase
-
-OpenAI has invested heavily in reinforcement learning, and it has always been one of their strengths. OpenAI claims that RL can save up to 30 times the computational resources compared to improvements made during the pre-training phase.
-
-Insights from interviews about o1 can be summarized into the following key points:
-
-- **RL-generated CoTs are superior to human-generated ones:** Humans often prefer content that is easy to understand rather than content that is logically rigorous.
-- **Challenges exist but RL is promising:** Despite challenges like reward design, RL remains a viable and ongoing pathway.
-- **CoT combined with self-critique can solve any problem:** This approach enhances the model's problem-solving capabilities.
-
-<div align="center">
-  <img src="assets/fig3.png" alt="Figure Description or Alt Text" width="80%">
-</div>
-
-Specific Challenges for o1 Compared to Other Models:
-
-- **How to Expand the Model's Solution Space?** In other words, how can the model be made to output longer and more sophisticated CoTs?
-- **How to Determine the Quality of CoTs?**
-
-##### Expanding the Solution Space
-
-The model needs to broaden the conventional decoding space to obtain better long CoTs and results.
-
-**Monte Carlo Tree Search (MCTS):**
-
-MCTS is a strategy used in several recent works to expand the solution space and is the approach used by AlphaGo Zero.
-
-**Searching CoT Paths in the Solution Space:**
-
-By emulating AlphaZero, an MCTS tree is constructed, and each action is explored. Paths that have been explored are more likely to lead to correct results and are thus reinforced during training. During inference, these paths are more likely to be followed, yielding better results.
-
-##### Is MCTS the Only Way?
-
-While MCTS is used to expand the model's solution space, it's not the only method. Some argue against MCTS being the approach used in o1.
-
-- **Proponents of MCTS** point out that many current papers involve LLMs combined with MCTS, and earlier work like FSBS shows elements of tree search.
-- **Opponents** argue that since Noam (a key contributor to o1) doesn't specialize in MCTS but in Counterfactual Regret Minimization (CFR) and its variants, it's plausible that CFR methods are used instead. Moreover, MCTS excels in games like Go, while CFR is strong in poker; their effectiveness in LLMs remains uncertain.
-
-Regardless of the method, the essence is to expand the model's solution space. As long as there's a path that leads to the correct answer, finding and reinforcing it is sufficient. This implies that the base model doesn't necessarily need to be extremely powerful.
-
-> "Through training, the models learn to refine their thinking process, try different strategies, and recognize their mistakes." — OpenAI
-
-##### Determining CoT Quality
-
-It is believed that a Process Reward Model (PRM) is used. Some suggest using both Outcome Reward Model (ORM) and PRM, but this is debatable. Studies have shown that ORM is generally less effective than PRM, and ORM's training data can be considered a subset of PRM's data (PRM provides denser signals and higher data utilization). Therefore, it's unlikely that a subset would outperform the entire set.
-
-### Safety Alignment
-
-A noteworthy aspect is o1's safety alignment strategy.
-
-Compared to traditional RLHF (Reinforcement Learning from Human Feedback) for content safety, o1 likely adopts Anthropic's AI Constitution model for content safety. Combined with its strong reasoning abilities, o1 achieves enhanced safety.
-
-<div align="center">
-  <img src="assets/fig4.png" alt="Figure Description or Alt Text" width="80%">
-</div>
-
-### Inference Phase
-
-How does o1 perform inference? It is speculated that o1 generates outputs token by token without using MCTS during inference. One reason is that o1 sometimes outputs incorrect guesses; if MCTS were used, incorrect nodes would be less likely. Additionally, experiments on the relationship between output token length and output latency show a linear trend, indicating that tokens are not being hidden, thus supporting a token-by-token output mechanism.
-
-<div align="center">
-  <img src="assets/fig5.png" alt="Figure Description or Alt Text" width="80%">
-</div>
-
-Given that o1, especially o1-mini, is priced at 20 times that of 4o-mini, it's possible that multiple models run in parallel online (though this doesn't contradict the conclusion that o1 is a single model). PRM might be used to select the best outputs from multiple samples (Best of N), with dynamic difficulty adjustment determining the value of N.
-
-> "On the 2024 AIME exams, GPT-4o only solved on average 12% (1.8/15) of problems. o1 averaged 74% (11.1/15) with a single sample per problem, 83% (12.5/15) with consensus among 64 samples, and 93% (13.9/15) when re-ranking 1000 samples with a learned scoring function." — OpenAI
-
-**Dynamic Compute Resource Selection:**
-
-<div align="center">
-  <img src="assets/fig6.png" alt="Figure Description or Alt Text" width="80%">
-</div>
-
-Since o1 outputs tokens sequentially, why is the model so expensive? The o1 series has higher costs not only for output but also for input. The input and output costs of o1-preview are 4 and 3 times that of 4o, respectively. For o1-mini, both input and output are 20 times that of 4o-mini.
-
-The diversity of outputs is crucial for the feasibility of the inference-time scaling law. Without sufficient diversity, even the best PRM cannot select optimal outputs from multiple samples, failing to achieve the desired effect.
-
-> "Ideally, test-time compute should modify the distribution so as to generate better outputs than naïvely sampling from the LLM itself would. In general, there are two knobs to induce modifications to an LLM’s distribution."
-
-Even increasing the temperature in a single model doesn't guarantee diversity (e.g., in self-critique tasks, all critics often point out the same issue).
-
-Therefore, the following conjectures are made:
-
-- **Input Side:** Due to the use of an AI Constitution, the system prompt becomes longer. To increase the diversity of samples in Best of N, multiple prompts or even multiple models might be used to force diversity, resulting in non-shared KV caches and increased costs.
-- **Output Side:** The increased cost is primarily due to multiple models (including summarization models). The motivation remains to enhance output diversity, as previously mentioned.
 
 ## 🎨 Case Show
 
-We employed Monte Carlo Tree Search (MCTS) to construct a reasoning-based Chain-of-Thought (CoT) dataset. A classic example from this dataset is the question, "How many 'r's are in the word 'strawberry'?" Through multiple search steps, the correct answer was obtained.
+This is a classic example from our Marco-o1 model, "How many 'r's are in the word 'strawberry'?" Through multiple search steps, the correct answer was obtained, as shown in Figure 2. Although we tested general reasoning capabilities, our primary focus is on tackling challenging translation problems. An example of this focus is shown in Figure 3, illustrating the translation of the sentence "This shoe has a comfortable sole and is highly recommended for purchase."
 
 <div align="center">
-  <img src="assets/fig7.png" alt="Figure Description or Alt Text" width="80%">
+  <img src="assets/strawberry.jpg" alt="Figure Description or Alt Text" width="80%">
+  <p><strong>Figure 2: </strong>Reasoning example of "How many 'r' are in strawberry"</p>
 </div>
 
-## ⚡️ Install
+<div align="center">
+  <img src="assets/translation.jpg" alt="Figure Description or Alt Text" width="80%">
+  <p><strong>Figure 3: </strong>Translation example of "This shoe has a comfortable sole and is highly recommended for purchase."</p>
+</div>
 
-The following instructions are for Linux installation.
-We would like to recommend the requirements as follows.
 
-* Python == 3.9.16
-* CUDA Version >= 11.7
+## Fine-Tuning with CoT Data
 
-1. Clone this repository and navigate to the Uni-MoE folder
+To enhance the reasoning capabilities of the Marco-o1 model, we conducted fine-tuning using a combination of datasets tailored to improve various aspects of the model's performance. We utilized the Marco Reasoning Dataset, specifically developed to challenge and enhance the model's ability to handle complex reasoning tasks. Additionally, we employed the Chain-of-Thought (CoT) Dataset, originally proposed in the Open-O1 project, which we refined through a filtering process to ensure high-quality data for training. This filtered CoT Dataset helps the model leverage structured reasoning patterns, thereby improving its capability to follow logical steps in problem-solving. Furthermore, to maintain the model's general competencies across various tasks, we incorporated the Marco Instruction Dataset along with other diverse datasets. This combination allows the model to retain proficiency in a wide range of domains and tasks, ensuring well-rounded performance. By collectively employing these datasets during fine-tuning, we significantly enhanced the reasoning prowess of the Marco-o1 model while preserving its overall effectiveness in broader applications. This strategic balance of data optimizes the model for its primary goal of reasoning without compromising its utility in other areas.
 
-```bash
-git clone https://github.com/AIDC-AI/Marco-o1.git
-cd Marco-o1
-```
 
-2. Install Package
+## Solution Space Expansion via MCTS
 
-```Shell
+We integrated Large Language Models (LLMs) with Monte Carlo Tree Search (MCTS) to enhance the reasoning capabilities of our model. Here's how the combination works:
 
-```
+- **Nodes as Reasoning States:** In the MCTS framework, each node represents a reasoning state of the problem-solving process.
+- **Actions as LLM Outputs:** The possible actions from a node are the outputs generated by the LLM. These outputs represent potential steps or thoughts in the reasoning chain.
+- **Rollout and Reward Calculation:** During the rollout phase, the LLM continues the reasoning process to a terminal state. We obtain the value of this state by computing a confidence score using the following formulas:
+1. **Confidence Score ($c_i$):**
+
+   For each token $t_i$ generated during the rollout, we calculate its confidence score by applying the softmax function to its log probability and the log probabilities of the top 5 alternative tokens. This is given by:
+
+   $$
+   c_i = \frac{\exp(p(t_i))}{\sum_{k=1}^{5} \exp(p(t_k))}
+   $$
+
+   **Where:**
+
+    - $c_i$ is the confidence score for the $i^{th}$ token in the rollout.
+    - $p(t_i)$ is the log probability of the $i^{th}$ token generated by the LLM.
+    - $p(t_k)$ for $k = 1$ to $5$ are the log probabilities of the top 5 predicted tokens at the $i^{th}$ step.
+    - $n$ is the total number of tokens in the rollout sequence.
+
+   This equation ensures that the confidence score reflects the relative probability of the chosen token compared to the top alternatives, effectively normalizing the scores between 0 and 1.
+  
+2. **Reward Score ($R$):**
+
+   After obtaining the confidence scores for all tokens in the rollout sequence, we compute the average confidence score across all tokens to derive the overall reward score:
+
+   $$
+   R = \frac{1}{n} \sum_{i=1}^{n} c_i
+   $$
+
+   **Where:**
+
+   - $R$ is the overall reward score for the rollout path.
+
+   This average serves as the reward signal that evaluates the quality of the reasoning path taken during the rollout. A higher $R$ indicates a more confident and likely accurate reasoning path.
+
+- **Guiding MCTS:** This reward score $R$ is used to evaluate and select promising paths within the MCTS, effectively guiding the search towards more confident and reliable reasoning chains.
+
+By employing this method, we effectively expand the solution space, as shown in Figure 2, allowing the model to explore a vast array of reasoning paths and select the most probable ones based on calculated confidence scores.
+
+
+## Reasoning Action Strategy
+
+### Action Selection
+
+To enhance our model's reasoning capabilities and effectively expand its solution space, we explored different granularity levels for actions within the Monte Carlo Tree Search (MCTS) framework. Specifically, we considered three approaches:
+
+1. **Thought as Action:** Each action corresponds to an entire thought or reasoning step.
+
+2. **Token as Action:** At the other end of the spectrum, each action is a single token generated by the model.
+
+3. **Patch as Action:** Serving as a middle ground between the two, we introduced "patches"—fixed-length sequences of tokens (e.g., 32 or 64 tokens)—as actions.
+
+In our experiments, we employed both the **Thought as Action** and **Patch as Action** strategies within the MCTS framework:
+
+- **Thought as Action:** We allowed the model to generate complete thoughts as actions, enabling it to take significant reasoning steps during the search process.
+- **Patch as Action:** We used patches of 32 or 64 tokens as actions, allowing the model to explore reasoning paths at a finer granularity than whole thoughts but coarser than individual tokens.
+
+By integrating these strategies, we expanded the solution space and improved the model's ability to navigate complex reasoning tasks. This combination allowed us to leverage the strengths of both approaches—efficient search and detailed exploration—leading to better performance in problem-solving scenarios.
+
+### Reflection after Thinking
+
+We introduced a reflection mechanism by adding the phrase **"Wait! Maybe I made some mistakes! I need to rethink from scratch."** at the end of each thought process. This prompts the model to self-reflect and reevaluate its reasoning steps. Implementing this reflection has yielded significant improvements, especially on difficult problems that the original model initially solved incorrectly. With the addition of reflection, approximately half of these challenging problems were answered correctly.
+
+From the self-critic perspective, this approach allows the model to act as its own critic, identifying potential errors in its reasoning. By explicitly prompting the model to question its initial conclusions, we encourage it to re-express and refine its thought process. This self-critical mechanism leverages the model's capacity to detect inconsistencies or mistakes in its own output, leading to more accurate and reliable problem-solving. The reflection step serves as an internal feedback loop, enhancing the model's ability to self-correct without external intervention.
+
+## Experimental Results
+
+Based on Qwen2-7B-Instruct, we performed supervised fine-tuning using CoT data to create Marco-o1-CoT. Subsequently, we employed Marco-o1-CoT within the framework of MCTS tree search, differentiating by actions:
+
+- **Using each inference step as an action (Step).**
+- **Using a 64-token patch as an action (64 Patch).**
+- **Using a 32-token patch as an action (32 Patch).**
+
+During testing, each model utilized a CoT prompt to ensure consistency in reasoning processes.
+
+We then tested these configurations on the English and Chinese subsets of the mgsm dataset, obtaining the following results:
+
+| **Model**                | **mgsm-en (Acc.)** | **mgsm-zh (Acc.)** |
+|--------------------------|--------------------|--------------------|
+| Qwen2-7B-Instruct        | 84.23%             | 76.80%             |
+| Marco-o1-CoT             | 85.60%             | 71.20%             |
+| Marco-o1-MCTS (Step)     | 90.40%             | 80.00%             |
+| Marco-o1-MCTS (64 Patch) | 88.40%             | 80.40%             |
+| Marco-o1-MCTS (32 Patch) | 87.60%             | 82.40%             |
+
+These results demonstrate:
+
+1. Performance of Marco-o1-CoT vs. Qwen2-7B-Instruct:
+
+   - In the mgsm-en dataset, Marco-o1-CoT shows an advantage over Qwen2-7B-Instruct, as shown in Figure 4, which is expected due to the fine-tuning with English CoT data.
+   - In the mgsm-zh dataset, however, Marco-o1-CoT exhibits a decrease in performance compared to Qwen2-7B-Instruct. This decline is attributed to the fact that the CoT data used for fine-tuning was in English, which may not transfer effectively to the Chinese dataset.
+
+2. Impact of MCTS Integration:
+
+   - The three MCTS-enhanced models demonstrate improvements over Marco-o1-CoT, indicating that incorporating MCTS helps to expand the model's solution space and increase the probability of obtaining correct answers.
+   - However, since we use the Confidence Score as the reward, the tree search results exhibit significant randomness. In mgsm-en, the "Thought as Action" strategy performs the best, while in mgsm-zh, the "Patch as Action (32)" strategy yields the highest accuracy.
+   - Currently, as shown in Figure 5-6, we cannot draw definitive conclusions about which action strategy is superior. We believe that as the reward becomes more accurate, the larger solution space provided by MCTS will demonstrate greater potential.
+
+<div align="center">
+  <img src="assets/cot_step.jpg" alt="Figure Description or Alt Text" width="100%">
+  <p><strong>Figure 4: </strong>Marco-o1-CoT got it wrong (left), Marco-o1-MCTS (Step) got it right (right) in the MGSM dataset</p>
+</div>
+
+<div align="center">
+  <img src="assets/step_patch.jpg" alt="Figure Description or Alt Text" width="100%">
+  <p><strong>Figure 5: </strong>Marco-o1-MCTS (Step) got it wrong (left), Marco-o1-MCTS (32 Patch) got it right (right) in the MGSM dataset</p>
+</div>
+
+<div align="center">
+  <img src="assets/patch_step.jpg" alt="Figure Description or Alt Text" width="100%">
+  <p><strong>Figure 6: </strong>Marco-o1-MCTS (64 Patch) got it wrong (left), Marco-o1-MCTS (Step) got it right (right) in the MGSM dataset</p>
+</div>
+
+These results demonstrate the effectiveness of our approach in enhancing the reasoning capabilities of the model across different languages and configurations.
+
 
 ## ⚡️ Available Models and Datasets
 
@@ -204,21 +190,48 @@ cd Marco-o1
 
 [Marco Reasoning Dataset](https://huggingface.co) (Our Dataset)
 
-## Experimental Results
+## Installation
 
-| **Header 1** | **Header 2** | **Header 3** |
-|--------------|--------------|--------------|
-| | |  |
-| | | |
-| | | |
-
-## 🌈 How to infer and deploy your demo
+To install Marco-o1, follow these steps:
 
 ```bash
-cd /path/to/Marco-o1
-conda activate Marco
-python demo/demo.py
+# Clone the repository
+git clone https://github.com/AIDC-AI/Marco-o1
+
+# Change to the Macaw-LLM directory
+cd Marco-o1
+
+# Install required packages
+pip install -r requirements.txt
+
 ```
+
+## Usage 🚀
+
+1. **Downloading Marco-o1-CoT model:** 
+   
+
+
+2. **Inference:** 
+   - Execute the inference script (you can give any customized inputs inside):
+     ```
+     ./src/talk_with_model.py
+
+     # Use vLLM
+     ./src/talk_with_model_vllm.py
+
+     ```
+
+
+## Coming Soon
+
+This is our initial version, and we will continue to update and enhance the model's reasoning capabilities.
+
+1. **Training Reward Models:** We are working on training reward models, including Outcome Reward Modeling (ORM) and Policy Reward Modeling (PRM), to provide a more accurate reward signal for MCTS. A more precise reward function will help reduce randomness in tree search results and improve overall performance.
+
+2. **Reinforcement Learning Training:** We are conducting reinforcement learning training to develop better reasoning models. By utilizing RL techniques, we aim to refine the model's decision-making processes and further enhance its problem-solving abilities.
+
+
 
 ## Citation
 
@@ -234,3 +247,12 @@ journal = {GitHub repository},
 howpublished = {\url{https://github.com/AIDC-AI/Marco-o1}}
 }
 ```
+
+
+## LICENSE
+
+This project is licensed under [Apache License Version 2](https://huggingface.co/datasets/choosealicense/licenses/blob/main/markdown/apache-2.0.md) (SPDX-License-identifier: Apache-2.0).
+
+## DISCLAIMER
+
+We used compliance checking algorithms during the training process, to ensure the compliance of the trained model and dataset to the best of our ability. Due to complex data and the diversity of language model usage scenarios, we cannot guarantee that the model is completely free of copyright issues or improper content. If you believe anything infringes on your rights or generates improper content, please contact us, and we will promptly address the matter.
