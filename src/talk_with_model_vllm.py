@@ -73,8 +73,8 @@ def chat(model, tokenizer):
 
 
 def main():
-    # path = "AIDC-AI/Marco-o1"
-    path = 'Your local path here'
+    path = "AIDC-AI/Marco-o1"
+    #path = 'Your local path here'
 
     tokenizer, model = load_model_and_tokenizer(path)
     print('Starting chat.')
