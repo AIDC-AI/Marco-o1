@@ -144,9 +144,9 @@ Based on Qwen2-7B-Instruct, we performed supervised fine-tuning using CoT data t
 
 During testing, each model utilized a CoT prompt to ensure consistency in reasoning processes.
 
-We then tested these configurations on the English and Chinese subsets of the mgsm dataset, obtaining the following results:
+We then tested these configurations on the English and Chinese subsets of the MGSM dataset, obtaining the following results:
 
-| **Model**                | **mgsm-en (Acc.)** | **mgsm-zh (Acc.)** |
+| **Model**                | **MGSM-en (Acc.)** | **MGSM-zh (Acc.)** |
 |--------------------------|--------------------|--------------------|
 | Qwen2-7B-Instruct        | 84.23%             | 76.80%             |
 | Marco-o1-CoT             | 85.60%             | 71.20%             |
@@ -158,13 +158,13 @@ These results demonstrate:
 
 1. Performance of Marco-o1-CoT vs. Qwen2-7B-Instruct:
 
-   - In the mgsm-en dataset, Marco-o1-CoT shows an advantage over Qwen2-7B-Instruct, as shown in Figure 4, which is expected due to the fine-tuning with English CoT data.
-   - In the mgsm-zh dataset, however, Marco-o1-CoT exhibits a decrease in performance compared to Qwen2-7B-Instruct. This decline is attributed to the fact that the CoT data used for fine-tuning was in English, which may not transfer effectively to the Chinese dataset.
+   - In the MGSM-en dataset, Marco-o1-CoT shows an advantage over Qwen2-7B-Instruct, as shown in Figure 4, which is expected due to the fine-tuning with English CoT data.
+   - In the MGSM-zh dataset, however, Marco-o1-CoT exhibits a decrease in performance compared to Qwen2-7B-Instruct. This decline is attributed to the fact that the CoT data used for fine-tuning was in English, which may not transfer effectively to the Chinese dataset.
 
 2. Impact of MCTS Integration:
 
    - The three MCTS-enhanced models demonstrate improvements over Marco-o1-CoT, indicating that incorporating MCTS helps to expand the model's solution space and increase the probability of obtaining correct answers.
-   - However, since we use the Confidence Score as the reward, the tree search results exhibit significant randomness. In mgsm-en, the "Step as Action" strategy performs the best, while in mgsm-zh, the "Mini-Step as Action (32)" strategy yields the highest accuracy.
+   - However, since we use the Confidence Score as the reward, the tree search results exhibit significant randomness. In MGSM-en, the "Step as Action" strategy performs the best, while in MGSM-zh, the "Mini-Step as Action (32)" strategy yields the highest accuracy.
    - Currently, as shown in Figure 5-6, we cannot draw definitive conclusions about which action strategy is superior. We believe that as the reward becomes more accurate, the larger solution space provided by MCTS will demonstrate greater potential.
 
 <div align="center">
@@ -228,7 +228,6 @@ pip install -r requirements.txt
     ./src/talk_with_model_vllm.py
 
     ```
-
 
 
 ## Coming Soon
