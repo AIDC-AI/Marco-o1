@@ -33,12 +33,13 @@
 
 :octocat: [**Github**]()  🤗  [**Hugging Face**]() 📝  [**Paper**]() :technologist:  [**Model**]() 🗂️  [**Data**]() 📽️  [**Demo**]()
 
+🚀 **Marco-o1** powered by _Chain-of-Thought (CoT) fine-tuning_, _Monte Carlo Tree Search (MCTS)_, _reflection mechanisms_, and _innovative reasoning strategies_—optimized for complex real-world problem-solving tasks. 
+
 </div>
 
 
 
 <div align="center">
-🚀 **Marco-o1** powered by _Chain-of-Thought (CoT) fine-tuning_, _Monte Carlo Tree Search (MCTS)_, _reflection mechanisms_, and _innovative reasoning strategies_—optimized for complex real-world problem-solving tasks. 
   <img src="assets/strawberry_2.jpg" alt="Figure Description or Alt Text" width="80%">
   <p><strong>Figure 1: </strong> A classic 'strawberry' question reasoned by our Marco-o1 model: "How many 'r' are in strawberry"</p>
 </div>
