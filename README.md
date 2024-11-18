@@ -9,8 +9,6 @@
  
 <h4 align="center">
 
-🚀 **Marco-o1** powered by Chain-of-Thought (CoT) fine-tuning, Monte Carlo Tree Search (MCTS), reflection mechanisms, and innovative reasoning strategies—optimized for complex real-world problem-solving tasks.
-
 [![🤗Hugging Face](https://img.shields.io/badge/🤗Hugging_Face-Marco_o1-yellow)](https://huggingface.co/) [![Project Page](https://img.shields.io/badge/Project_Page-Marco_o1-blue)](https://github.com/AIDC-AI/Marco-o1/)
 
 
@@ -25,9 +23,13 @@
 
 <div align="center">
 
-Yu Zhao, [Huifeng Yin](https://github.com/HuifengYin), [Longyue Wang](http://www.longyuewang.com/)
+AI Business, Alibaba International Digital Commerce
+
+<!-- Yu Zhao, [Huifeng Yin](https://github.com/HuifengYin), [Longyue Wang](http://www.longyuewang.com/) -->
 
 </div>
+
+🚀 **Marco-o1** powered by Chain-of-Thought (CoT) fine-tuning, Monte Carlo Tree Search (MCTS), reflection mechanisms, and innovative reasoning strategies—optimized for complex real-world problem-solving tasks.
 
 ## 🔥 News
 
