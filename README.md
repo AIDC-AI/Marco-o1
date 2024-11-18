@@ -23,13 +23,13 @@
 
 <div align="center">
 
-AI Business, Alibaba International Digital Commerce
+**AI Business, Alibaba International Digital Commerce**
 
 <!-- Yu Zhao, [Huifeng Yin](https://github.com/HuifengYin), [Longyue Wang](http://www.longyuewang.com/) -->
 
 </div>
 
-🚀 **Marco-o1** powered by Chain-of-Thought (CoT) fine-tuning, Monte Carlo Tree Search (MCTS), reflection mechanisms, and innovative reasoning strategies—optimized for complex real-world problem-solving tasks.
+🚀 Marco-o1 powered by Chain-of-Thought (CoT) fine-tuning, Monte Carlo Tree Search (MCTS), reflection mechanisms, and innovative reasoning strategies—optimized for complex real-world problem-solving tasks.
 
 ## 🔥 News
 
