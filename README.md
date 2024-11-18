@@ -52,7 +52,7 @@ Our main contributions are threefold:
 This is a classic example from our Marco-o1 model, "How many 'r's are in the word 'strawberry'?" Through multiple search steps, the correct answer was obtained, as shown in Figure 2. Although we tested general reasoning capabilities, our primary focus is on tackling challenging translation problems. An example of this focus is shown in Figure 3, illustrating the translation of the sentence "This shoe has a comfortable sole and is highly recommended for purchase."
 
 <div align="center">
-  <img src="assets/strawberry.jpg" alt="Figure Description or Alt Text" width="80%">
+  <img src="assets/strawberry_2.jpg" alt="Figure Description or Alt Text" width="80%">
   <p><strong>Figure 2: </strong>Reasoning example of "How many 'r' are in strawberry"</p>
 </div>
 
