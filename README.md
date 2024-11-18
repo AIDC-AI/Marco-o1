@@ -1,6 +1,9 @@
 <p align="center">
     <img src="assets/logo.png" width="150" style="margin-bottom: 0.2;"/>
 <p>
+
+# Marco-o1: An Open Large Reasoning Model for Real-World Solutions
+
 <h2 align="center"> <a href="https://github.com/AIDC-AI/Marco-o1/">Marco-o1</a></h2>
 <h5 align="center"> If you appreciate our project, please consider giving us a star ⭐ on GitHub to stay updated with the latest developments.  </h2>
  
@@ -9,6 +12,7 @@
 🚀 Welcome to the repo of **Marco-o1**!
 
 [![🤗Hugging Face](https://img.shields.io/badge/🤗Hugging_Face-Marco_o1-yellow)](https://huggingface.co/) [![Project Page](https://img.shields.io/badge/Project_Page-Marco_o1-blue)](https://github.com/AIDC-AI/Marco-o1/)
+
 
 <div align="center">
 <img src="https://img.shields.io/badge/Version-1.0.0-blue.svg" alt="Version"> 
@@ -26,6 +30,14 @@ Yu Zhao, [Huifeng Yin](https://github.com/HuifengYin), [Longyue Wang](http://www
 </div>
 
 ## 🔥 News
+
+<!-- ## Coming Soon -->
+
+<!-- This is our initial version, and we will continue to update and enhance the model's reasoning capabilities. -->
+
+1. [Coming Soon] **Training Reward Models:** We are working on training reward models, including Outcome Reward Modeling (ORM) and Policy Reward Modeling (PRM), to provide a more accurate reward signal for MCTS. A more precise reward function will help reduce randomness in tree search results and improve overall performance.
+
+2. [Coming Soon] **Reinforcement Learning Training:** We are conducting reinforcement learning training to develop better reasoning models. By utilizing RL techniques, we aim to refine the model's decision-making processes and further enhance its problem-solving abilities.
 
 - [2024/11/13] 🔥 We released **Marco-o1**. This initial release includes our reasoning model, optimized for complex problem-solving and versatile applications across various domains.
 
@@ -230,13 +242,7 @@ pip install -r requirements.txt
     ```
 
 
-## Coming Soon
 
-This is our initial version, and we will continue to update and enhance the model's reasoning capabilities.
-
-1. **Training Reward Models:** We are working on training reward models, including Outcome Reward Modeling (ORM) and Policy Reward Modeling (PRM), to provide a more accurate reward signal for MCTS. A more precise reward function will help reduce randomness in tree search results and improve overall performance.
-
-2. **Reinforcement Learning Training:** We are conducting reinforcement learning training to develop better reasoning models. By utilizing RL techniques, we aim to refine the model's decision-making processes and further enhance its problem-solving abilities.
 
 
 
