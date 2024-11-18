@@ -2,7 +2,7 @@
     <img src="assets/logo.png" width="150" style="margin-bottom: 0.2;"/>
 <p>
 
-# Marco-o1: An Open Large Reasoning Model for Real-World Solutions
+# 🍓 Marco-o1: An Open Large Reasoning Model for Real-World Solutions
 
 <!-- <h2 align="center"> <a href="https://github.com/AIDC-AI/Marco-o1/">Marco-o1</a></h2> -->
 <!-- <h5 align="center"> If you appreciate our project, please consider giving us a star ⭐ on GitHub to stay updated with the latest developments.  </h2> -->
@@ -39,7 +39,7 @@
 
 <div align="center">
 
-🚀 **Marco-o1** powered by _Chain-of-Thought (CoT) fine-tuning_, _Monte Carlo Tree Search (MCTS)_, _reflection mechanisms_, and _innovative reasoning strategies_—optimized for complex real-world problem-solving tasks. 
+**Marco-o1** powered by _Chain-of-Thought (CoT) fine-tuning_, _Monte Carlo Tree Search (MCTS)_, _reflection mechanisms_, and _innovative reasoning strategies_—optimized for complex real-world problem-solving tasks. 
 
 </div>
 
@@ -48,7 +48,7 @@
   <p><strong>Figure 1: </strong> A classic 'strawberry' question reasoned by our Marco-o1 model: "How many 'r' are in strawberry"</p>
 </div>
 
-## 🍓 Highlights
+## 🚀 Highlights
 
 Our main contributions are threefold: 
 - **Fine-Tuning with CoT Data:** We developed Marco-o1-CoT by performing full-parameter fine-tuning on the base model using open-source Chain-of-Thought (CoT) data combined with our self-developed synthetic data. 
