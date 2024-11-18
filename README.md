@@ -31,7 +31,7 @@ _**AI Business, Alibaba International Digital Commerce**_
 
 <!-- Yu Zhao, [Huifeng Yin](https://github.com/HuifengYin), [Longyue Wang](http://www.longyuewang.com/) -->
 
-🤗[**Hugging Face**]() 📝 [**Paper**]() :technologist: [**Model**]() 🗂️ [**Data**]() 📽️ [**Demo**]()
+🤗[**Hugging Face**]() ~~~ 📝 [**Paper**]() :technologist: [**Model**]() 🗂️ [**Data**]() 📽️ [**Demo**]()
 
 </div>
 
