@@ -38,19 +38,11 @@
 
 <!-- ## 🎨 Case Show -->
 
-🚀 Marco-o1 powered by Chain-of-Thought (CoT) fine-tuning, Monte Carlo Tree Search (MCTS), reflection mechanisms, and innovative reasoning strategies—optimized for complex real-world problem-solving tasks. Specifically, its distinguishing features are:
-- **Fine-Tuning with CoT Data:** We developed Marco-o1-CoT by performing full-parameter fine-tuning on the base model using open-source Chain-of-Thought (CoT) data combined with our self-developed synthetic data. 
-- **Solution Space Expansion via MCTS:** We integrated Large Language Models (LLMs) with Monte Carlo Tree Search (MCTS), using the model's output confidence to guide the search and expand the solution space. 
-- **Reasoning Action Strategy:** We implemented novel reasoning action strategies and a reflection mechanism, including exploring different action granularities within the MCTS framework and prompting the model to self-reflect, thereby significantly enhancing the model's ability to solve complex problems.
-- **Application in Translation Tasks:** We are the first to apply Large Reasoning Models(LRM) to translation tasks, exploring inference time scaling laws in the multilingual and translation domain.
-
-
-
-This is a classic example from our Marco-o1 model, "How many 'r's are in the word 'strawberry'?" Through multiple search steps, the correct answer was obtained, as shown in Figure 2. Although we tested general reasoning capabilities, our primary focus is on tackling challenging translation problems. An example of this focus is shown in Figure 3, illustrating the translation of the sentence "This shoe has a comfortable sole and is highly recommended for purchase."
+🚀 Marco-o1 powered by Chain-of-Thought (CoT) fine-tuning, Monte Carlo Tree Search (MCTS), reflection mechanisms, and innovative reasoning strategies—optimized for complex real-world problem-solving tasks. 
 
 <div align="center">
   <img src="assets/strawberry_2.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 2: </strong>Reasoning example of "How many 'r' are in strawberry"</p>
+  <p><strong>Figure 1: </strong> A classic 'strawberry' question reasoned by our **Marco-o1 model**: "How many 'r' are in strawberry"</p>
 </div>
 
 ## 🔥 News
