@@ -35,7 +35,7 @@ _**AI Business, Alibaba International Digital Commerce**_
 
 </div>
 
-🚀 Marco-o1 powered by Chain-of-Thought (CoT) fine-tuning, Monte Carlo Tree Search (MCTS), reflection mechanisms, and innovative reasoning strategies—optimized for complex real-world problem-solving tasks.
+_🚀 Marco-o1 powered by Chain-of-Thought (CoT) fine-tuning, Monte Carlo Tree Search (MCTS), reflection mechanisms, and innovative reasoning strategies—optimized for complex real-world problem-solving tasks._
 
 ## 🔥 News
 
