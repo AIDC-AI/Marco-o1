@@ -25,7 +25,7 @@
 
 <!-- **Affiliations:** -->
 
-⭐_**MarcoPolo Team**_⭐
+⭐ _**MarcoPolo Team**_ ⭐
 
 [_**AI Business, Alibaba International Digital Commerce**_](https://aidc-ai.com)
 
