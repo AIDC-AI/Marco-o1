@@ -9,7 +9,7 @@
  
 <h4 align="center">
 
-[![🤗Hugging Face](https://img.shields.io/badge/🤗Hugging_Face-Marco_o1-yellow)](https://huggingface.co/) [![Project Page](https://img.shields.io/badge/Project_Page-Marco_o1-blue)](https://github.com/AIDC-AI/Marco-o1/)
+<!-- [![🤗Hugging Face](https://img.shields.io/badge/🤗Hugging_Face-Marco_o1-yellow)](https://huggingface.co/) [![Project Page](https://img.shields.io/badge/Project_Page-Marco_o1-blue)](https://github.com/AIDC-AI/Marco-o1/) -->
 
 
 <div align="center">
@@ -26,6 +26,8 @@
 **AI Business, Alibaba International Digital Commerce**
 
 <!-- Yu Zhao, [Huifeng Yin](https://github.com/HuifengYin), [Longyue Wang](http://www.longyuewang.com/) -->
+
+📝 [**Paper**](https://arxiv.org/abs/2405.11804) :technologist: [**Demo**](http://www.transagents.ai) 🗂️ [**Data**](/outputs) 📽️ [**Video**](https://www.youtube.com/watch?v=lB-gPHax4ow)
 
 </div>
 
