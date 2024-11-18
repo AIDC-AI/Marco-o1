@@ -23,11 +23,15 @@
 
 <div align="center">
 
-**AI Business, Alibaba International Digital Commerce**
+<!-- **Affiliations:** -->
+
+_**MarcoPolo Team**_
+
+_**AI Business, Alibaba International Digital Commerce**_
 
 <!-- Yu Zhao, [Huifeng Yin](https://github.com/HuifengYin), [Longyue Wang](http://www.longyuewang.com/) -->
 
-📝 [**Paper**](https://arxiv.org/abs/2405.11804) :technologist: [**Demo**](http://www.transagents.ai) 🗂️ [**Data**](/outputs) 📽️ [**Video**](https://www.youtube.com/watch?v=lB-gPHax4ow)
+🤗[**Hugging Face**]() 📝 [**Paper**]() :technologist: [**Model**]() 🗂️ [**Data**]() 📽️ [**Demo**]()
 
 </div>
 
