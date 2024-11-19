@@ -50,7 +50,7 @@
 
 ## 🚀 Highlights
 
-Our work is distinguished by the following highlights: 
+Currently, our work is distinguished by the following highlights:
 - 🍀 **Fine-Tuning with CoT Data:** We develop <ins>Marco-o1-CoT</ins> by performing full-parameter fine-tuning on the base model using open-source CoT dataset combined with our self-developed synthetic data. 
 - 🍀 **Solution Space Expansion via MCTS:** We integrate LLMs with MCTS (<ins>Marco-o1-MCTS</ins>), using the model's output confidence to guide the search and expand the solution space. 
 - 🍀 **Reasoning Action Strategy:** We implement novel reasoning action strategies and a reflection mechanism (<ins>Marco-o1-MCTS Mini-Step</ins>), including exploring different action granularities within the MCTS framework and prompting the model to self-reflect, thereby significantly enhancing the model's ability to solve complex problems.
@@ -62,9 +62,9 @@ Our work is distinguished by the following highlights:
 
 <!-- This is our initial version, and we will continue to update and enhance the model's reasoning capabilities. -->
 
-1. [Coming Soon] **Training Reward Models:** We are working on training reward models, including Outcome Reward Modeling (ORM) and Policy Reward Modeling (PRM), to provide a more accurate reward signal for MCTS. A more precise reward function will help reduce randomness in tree search results and improve overall performance.
+1. [Coming Soon] **Reward Models:** We are working on training reward models, including Outcome Reward Modeling (ORM) and Policy Reward Modeling (PRM), to provide a more accurate reward signal for MCTS. A more precise reward function will help reduce randomness in tree search results and improve overall performance.
 
-2. [Coming Soon] **Reinforcement Learning Training:** We are conducting reinforcement learning training to develop better reasoning models. By utilizing RL techniques, we aim to refine the model's decision-making processes and further enhance its problem-solving abilities.
+2. [Coming Soon] **Reinforcement Learning:** We are conducting reinforcement learning training to develop better reasoning models. By utilizing RL techniques, we aim to refine the model's decision-making processes and further enhance its problem-solving abilities.
 
 - [2024/11/13] 🔥 We released **Marco-o1**. This initial release includes our reasoning model, optimized for complex problem-solving and versatile applications across various domains.
 
