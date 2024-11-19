@@ -50,7 +50,7 @@
 
 ## 🚀 Highlights
 
-Our main contributions are threefold: 
+Our work is distinguished by the following highlights: 
 - 🍀 **Fine-Tuning with CoT Data:** We develop <ins>Marco-o1-CoT</ins> by performing full-parameter fine-tuning on the base model using open-source CoT dataset combined with our self-developed synthetic data. 
 - 🍀 **Solution Space Expansion via MCTS:** We integrate LLMs with MCTS (<ins>Marco-o1-MCTS</ins>), using the model's output confidence to guide the search and expand the solution space. 
 - 🍀 **Reasoning Action Strategy:** We implement novel reasoning action strategies and a reflection mechanism (<ins>Marco-o1-MCTS Mini-Step</ins>), including exploring different action granularities within the MCTS framework and prompting the model to self-reflect, thereby significantly enhancing the model's ability to solve complex problems.
