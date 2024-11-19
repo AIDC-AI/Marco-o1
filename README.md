@@ -62,29 +62,28 @@ Currently, our work is distinguished by the following highlights:
 
 <!-- This is our initial version, and we will continue to update and enhance the model's reasoning capabilities. -->
 
-1. [Coming Soon] **Reward Models:** We are working on training reward models, including Outcome Reward Modeling (ORM) and Policy Reward Modeling (PRM), to provide a more accurate reward signal for MCTS. A more precise reward function will help reduce randomness in tree search results and improve overall performance.
+1. [Coming Soon] 🏃 **Reward Models:** We are working on training reward models, including Outcome Reward Modeling (ORM) and Policy Reward Modeling (PRM), to provide a more accurate reward signal for MCTS. A more precise reward function will help reduce randomness in tree search results and improve overall performance.
 
-2. [Coming Soon] **Reinforcement Learning:** We are conducting reinforcement learning training to develop better reasoning models. By utilizing RL techniques, we aim to refine the model's decision-making processes and further enhance its problem-solving abilities.
+2. [Coming Soon] 🏃 **Reinforcement Learning:** We are conducting reinforcement learning training to develop better reasoning models. By utilizing RL techniques, we aim to refine the model's decision-making processes and further enhance its problem-solving abilities.
 
 - [2024/11/13] 🔥 We released **Marco-o1**. This initial release includes our reasoning model, optimized for complex problem-solving and versatile applications across various domains.
 
 
 
-## Introduction
+## 🔔 Introduction
 
-OpenAI recently unveiled the revolutionary o1 model, which, with its exceptional reasoning capabilities, has excelled on platforms like AIME, CodeForces, and LeetCode Pro Max, surpassing other leading models. Inspired by this achievement and given our Marco team's specialization in multilingual and translation, we recognized the inherent challenges in translation—such as the need to accurately handle difficult terms, including internet slang, colloquial expressions, specialized terminology, and emerging new words. To address these complexities, we have replicated and extended the o1 model's technical roadmap with a stronger focus on multilingual and translation tasks, while also considering general reasoning capabilities. We are proud to introduce Marco-o1, which further enhances the model's reasoning performance through innovative methodologies designed to meet the unique demands of translation tasks.
+<!-- OpenAI recently unveiled the revolutionary o1 model, which, with its exceptional reasoning capabilities, has excelled on platforms like AIME, CodeForces, and LeetCode Pro Max, surpassing other leading models. Inspired by this achievement and given our MarcoPolo Team's specialization in multilingual and translation, we recognized the inherent challenges in translation—such as the need to accurately handle difficult terms, including internet slang, colloquial expressions, specialized terminology, and emerging new words. To address these complexities, we have replicated and extended the o1 model's technical roadmap with a stronger focus on multilingual and translation tasks, while also considering general reasoning capabilities. We are proud to introduce Marco-o1, which further enhances the model's reasoning performance through innovative methodologies designed to meet the unique demands of translation tasks. -->
+
+OpenAI recently introduced the groundbreaking o1 model, renowned for its exceptional reasoning capabilities. This model has demonstrated outstanding performance on platforms such as AIME, CodeForces, and LeetCode Pro Max, surpassing other leading models. Inspired by this success, we aimed to push the boundaries of LLMs even further, enhancing their reasoning abilities to tackle complex, real-world challenges.
+
+Marco-o1 leverages advanced techniques like CoT fine-tuning, MCTS, and Reasoning Action Strategies to enhance its reasoning power. As shown in Figure 2, xxx xxx. 
+
+By leveraging these techniques, Marco-o1 xxxxx. Additionally, in translation tasks, we demostrate that xxxx.
 
 <div align="center">
-  <img src="assets/intro.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 1: </strong>Overview of the Marco-o1</p>
+  <img src="assets/intro_2.jpg" alt="Figure Description or Alt Text" width="80%">
+  <p><strong>Figure 2: </strong>The overview of Marco-o1</p>
 </div>
-
-Our main contributions are threefold: 
-- **Fine-Tuning with CoT Data:** We developed Marco-o1-CoT by performing full-parameter fine-tuning on the base model using open-source Chain-of-Thought (CoT) data combined with our self-developed synthetic data. 
-- **Solution Space Expansion via MCTS:** We integrated Large Language Models (LLMs) with Monte Carlo Tree Search (MCTS), using the model's output confidence to guide the search and expand the solution space. 
-- **Reasoning Action Strategy:** We implemented novel reasoning action strategies and a reflection mechanism, including exploring different action granularities within the MCTS framework and prompting the model to self-reflect, thereby significantly enhancing the model's ability to solve complex problems.
-- **Application in Translation Tasks:** We are the first to apply Large Reasoning Models(LRM) to translation tasks, exploring inference time scaling laws in the multilingual and translation domain.
-
 
 ## 🎨 Case Show
 
