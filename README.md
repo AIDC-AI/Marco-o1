@@ -51,10 +51,10 @@
 ## 🚀 Highlights
 
 Our main contributions are threefold: 
-- 🍀 **Fine-Tuning with CoT Data:** We develop <span style="color:blue">Marco-o1-CoT</span> by performing full-parameter fine-tuning on the base model using open-source CoT dataset combined with our self-developed synthetic data. 
+- 🍀 **Fine-Tuning with CoT Data:** We develop <ins>Marco-o1-CoT</ins> by performing full-parameter fine-tuning on the base model using open-source CoT dataset combined with our self-developed synthetic data. 
 - 🍀 **Solution Space Expansion via MCTS:** We integrate LLMs with MCTS (<ins>Marco-o1-MCTS</ins>), using the model's output confidence to guide the search and expand the solution space. 
-- 🍀 **Reasoning Action Strategy:** We implement novel reasoning action strategies and a reflection mechanism (_Marco-o1-MCTS Mini-Step_), including exploring different action granularities within the MCTS framework and prompting the model to self-reflect, thereby significantly enhancing the model's ability to solve complex problems.
-- 🍀 **Application in Translation Tasks:** We are the first to apply Large Reasoning Models (LRM) to _Machine Translation task_, exploring inference time scaling laws in the multilingual and translation domain.
+- 🍀 **Reasoning Action Strategy:** We implement novel reasoning action strategies and a reflection mechanism (<ins>Marco-o1-MCTS Mini-Step</ins>), including exploring different action granularities within the MCTS framework and prompting the model to self-reflect, thereby significantly enhancing the model's ability to solve complex problems.
+- 🍀 **Application in Translation Tasks:** We are the first to apply Large Reasoning Models (LRM) to <ins>Machine Translation task</ins>, exploring inference time scaling laws in the multilingual and translation domain.
 
 ## 🔥 News
 
