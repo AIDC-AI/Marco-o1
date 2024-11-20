@@ -172,15 +172,11 @@ By employing this method, we effectively expand the solution space, allowing the
 
 We observed that using actions as the granularity for MCTS search is relatively coarse, often causing the model to overlook nuanced reasoning paths crucial for solving complex problems. To address this, we explored different levels of granularity in the MCTS search. Initially, we used steps as the unit of search. To further expand the model's search space and enhance its problem-solving capabilities, we experimented with dividing these steps into smaller units of 64 or 32 tokens, referred to as "Mini-Step." This finer granularity allowed the model to explore reasoning paths in greater detail. While token-level search offers theoretical maximum flexibility and granularity, it is currently impractical due to the significant computational resources required and the challenges associated with designing an effective reward model at this level.
 
-**Our Approach**
-
 In our experiments, we implemented the following strategies within the MCTS framework:
 
 **Step as Action:** We allowed the model to generate complete reasoning steps as actions. Each MCTS node represents an entire thought or action label. This method enables efficient exploration but may miss finer-grained reasoning paths essential for complex problem-solving.
 
 **Mini-Step as Action:** We used Mini-Steps of 32 or 64 tokens as actions. This finer granularity expands the solution space and improves the model's ability to navigate complex reasoning tasks by considering more nuanced steps in the search process. By exploring the solution space at this level, the model is better equipped to find correct answers that might be overlooked with larger action units.
-
-By integrating these strategies, we enhanced the model's capacity to explore a broader solution space. This combination allowed us to leverage the strengths of both approaches—efficient search with full steps and detailed exploration with Mini-Steps—leading to better performance in problem-solving scenarios.
 
 ### Reflection after Thinking
 
