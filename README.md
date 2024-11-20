@@ -45,7 +45,7 @@
 
 <div align="center">
   <img src="assets/strawberry_2.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 1: </strong> A classic 'strawberry' question reasoned by our Marco-o1 model: "How many 'r' are in strawberry"</p>
+  <p><strong>Figure 1: </strong> A classic 'strawberry' question reasoned by our Marco-o1 model: "How many 'r' are in strawberry".</p>
 </div>
 
 ## 🚀 Highlights
@@ -80,29 +80,33 @@ Marco-o1 leverages advanced techniques like CoT fine-tuning, MCTS, and Reasoning
 
 <div align="center">
   <img src="assets/intro_2.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 2: </strong>The overview of Marco-o1</p>
+  <p><strong>Figure 2: </strong>The overview of Marco-o1.</p>
 </div>
 
-By leveraging these techniques, Marco-o1 achieved accuracy improvements of +6.17% on the MGSM (English) dataset and +5.60% on the MGSM (Chinese) dataset, showcasing enhanced reasoning capabilities. Additionally, in translation tasks, we demonstrate that Marco-o1 excels in translating slang expressions, such as translating "这个鞋拥有踩屎感" to "This shoe has a comfortable sole," demonstrating its superior grasp of colloquial nuances.
+As shown in Figure 3, Marco-o1 achieved accuracy improvements of +6.17% on the MGSM (English) dataset and +5.60% on the MGSM (Chinese) dataset, showcasing enhanced reasoning capabilities. 
 
 <div align="center">
   <img src="assets/results.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 3: </strong>The main results of Marco-o1</p>
+  <p><strong>Figure 3: </strong>The main results of Marco-o1.</p>
 </div>
 
-## 🎨 Case Show
-
-This is a classic example from our Marco-o1 model, "How many 'r's are in the word 'strawberry'?" Through multiple search steps, the correct answer was obtained, as shown in Figure 2. Although we tested general reasoning capabilities, our primary focus is on tackling challenging translation problems. An example of this focus is shown in Figure 3, illustrating the translation of the sentence "This shoe has a comfortable sole and is highly recommended for purchase."
-
-<div align="center">
-  <img src="assets/strawberry_2.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 2: </strong>Reasoning example of "How many 'r' are in strawberry"</p>
-</div>
+Additionally, in translation tasks, we demonstrate that Marco-o1 excels in translating slang expressions, such as translating "这个鞋拥有踩屎感" (literal translation: "This shoe offers a stepping-on-poop sensation.") to "This shoe has a comfortable sole," demonstrating its superior grasp of colloquial nuances.
 
 <div align="center">
   <img src="assets/translation.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 3: </strong>Translation example of "This shoe has a comfortable sole and is highly recommended for purchase."</p>
+  <p><strong>Figure 4: </strong>The demostration of translation task using Marco-o1.</p>
 </div>
+
+<!-- ## 🎨 Case Show
+
+This is a classic example from our Marco-o1 model, "How many 'r's are in the word 'strawberry'?" Through multiple search steps, the correct answer was obtained, as shown in Figure 2. Although we tested general reasoning capabilities, our primary focus is on tackling challenging translation problems. An example of this focus is shown in Figure 3, illustrating the translation of the sentence "This shoe has a comfortable sole and is highly recommended for purchase."
+ -->
+<!-- <div align="center">
+  <img src="assets/strawberry_2.jpg" alt="Figure Description or Alt Text" width="80%">
+  <p><strong>Figure 2: </strong>Reasoning example of "How many 'r' are in strawberry"</p>
+</div> -->
+
+
 
 
 ## Datasets
