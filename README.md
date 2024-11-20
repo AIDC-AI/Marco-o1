@@ -135,14 +135,12 @@ We integrated LLMs with MCTS to enhance the reasoning capabilities of our model:
 - **Rollout and Reward Calculation:** During the rollout phase, the LLM continues the reasoning process to a terminal state. 
 - **Guiding MCTS:** This reward score $R$ is used to evaluate and select promising paths within the MCTS, effectively guiding the search towards more confident and reliable reasoning chains.
 
-Furthermore, we obtain the value of this state by computing a confidence score using the following formulas:
+Furthermore, we obtain the value of each state by computing a confidence score using the following formulas:
 1. **Confidence Score ($c_i$):**
 
    For each token $t_i$ generated during the rollout, we calculate its confidence score by applying the softmax function to its log probability and the log probabilities of the top 5 alternative tokens. This is given by:
 
-   <center>$$c_i = \frac{\exp(p(t_i))}{\sum_{k=1}^{5} \exp(p(t_k))}$$</center>
-
-   
+    $$c_i = \frac{\exp(p(t_i))}{\sum_{k=1}^{5} \exp(p(t_k))}$$
 
    **Where:**
 
@@ -159,9 +157,7 @@ Furthermore, we obtain the value of this state by computing a confidence score u
 
    $$v = \frac{1}{n} \sum_{i=1}^{n} c_i$$
 
-   **Where:**
-
-   - $v$ is the overall reward score for the rollout path.
+   **Where:** $v$ is the overall reward score for the rollout path.
 
    This average serves as the reward signal that evaluates the quality of the reasoning path taken during the rollout. A higher $v$ indicates a more confident and likely accurate reasoning path.
 
