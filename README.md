@@ -244,7 +244,7 @@ These results demonstrate the effectiveness of our approach in enhancing the rea
 
 ## ⚡️ Available Models and Datasets
 
-[Marco-o1](https://huggingface.co/AIDC-AI/Marco-o1) (Our Lastest Model)
+[Marco-o1-CoT](https://huggingface.co/AIDC-AI/Marco-o1) (Our Lastest Model)
 
 [Marco Reasoning Dataset](https://github.com/AIDC-AI/Marco-o1/blob/main/data/CoT_demo.json) (Our Partial Dataset)
 
