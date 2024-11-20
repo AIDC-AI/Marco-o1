@@ -121,9 +121,9 @@ To enhance the reasoning capabilities of the Marco-o1 model, we employed a super
 
 | Dataset            | Count (samples) |
 |--------------------|-----------------|
-| marco instruct data| 5141            |
-| marco CoT          | 10000           |
-| Open O1 CoT        | 45125           |
+| Open-O1 CoT Dataset (Filtered)        | 45125           |
+| Marco-o1 CoT Dataset (Synthetic)         | 10000           |
+| Marco-o1 Instruction Dataset| 5141            |
 | Total              | 60266           |
 
 ## Solution Space Expansion via MCTS
