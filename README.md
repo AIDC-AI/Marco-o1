@@ -123,7 +123,7 @@ To enhance the reasoning capabilities of the Marco-o1 model, we employed a super
 |--------------------|-----------------|
 | Open-O1 CoT Dataset (Filtered)        | 45,125           |
 | Marco-o1 CoT Dataset (Synthetic)         | 10,000           |
-| Marco-o1 Instruction Dataset| 5141            |
+| Marco Instruction Dataset| 5,141            |
 | Total              | 60,266           |
 
 ## Solution Space Expansion via MCTS
@@ -140,7 +140,9 @@ Furthermore, we obtain the value of this state by computing a confidence score u
 
    For each token $t_i$ generated during the rollout, we calculate its confidence score by applying the softmax function to its log probability and the log probabilities of the top 5 alternative tokens. This is given by:
 
-   $$c_i = \frac{\exp(p(t_i))}{\sum_{k=1}^{5} \exp(p(t_k))}$$
+   <center>$$c_i = \frac{\exp(p(t_i))}{\sum_{k=1}^{5} \exp(p(t_k))}$$</center>
+
+   
 
    **Where:**
 
