@@ -191,9 +191,9 @@ From the self-critic perspective, this approach allows the model to act as its o
 
 Based on 💡 [Qwen2-7B-Instruct](https://huggingface.co/Qwen/Qwen2-7B-Instruct), we performed SFT using our training data to create 💡 **Marco-o1-CoT**. Besides, we employed Marco-o1-CoT within the framework of MCTS tree search, differentiating by actions:
 
-- 💡 **Using each inference step as an action (Step).**
-- 💡 **Using a 64-token Mini-Step as an action (64 Tokens).**
-- 💡 **Using a 32-token Mini-Step as an action (32 Tokens).**
+- 💡 **Marco-o1-MCTS (Step)**: using each inference step as an action (Step).
+- 💡 **Marco-o1-MCTS (Mini-Step of 64 Tokens)**: using a 64-token Mini-Step as an action (64 Tokens).
+- 💡 **Marco-o1-MCTS (Mini-Step of 64 Tokens)**: using a 32-token Mini-Step as an action (32 Tokens).
 
 During testing, each model utilized a CoT prompt to ensure consistency in reasoning processes.
 
