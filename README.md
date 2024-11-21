@@ -33,8 +33,6 @@
 
 [_**AI Business, Alibaba International Digital Commerce**_](https://aidc-ai.com)
 
-<!-- Yu Zhao, [Huifeng Yin](https://github.com/HuifengYin), [Longyue Wang](http://www.longyuewang.com/) -->
-
 :octocat: [**Github**]()  🤗  [**Hugging Face**]() 📝  [**Paper**]() :technologist:  [**Model**]() 🗂️  [**Data**]() 📽️  [**Demo**]()
 
 </div>
@@ -284,6 +282,15 @@ pip install -r requirements.txt
     ```
 
 
+# Acknowledgement
+
+## Main Contributors
+From MarcoPolo Team, AI Business, Alibaba International Digital Commerce:
+- Yu Zhao
+- [Huifeng Yin](https://github.com/HuifengYin)
+- Hao Wang
+- [Longyue Wang](http://www.longyuewang.com)
+
 ## Citation
 
 If you find Marco-o1 useful for your research and applications, please cite:
@@ -298,9 +305,6 @@ journal = {GitHub repository},
 howpublished = {\url{https://github.com/AIDC-AI/Marco-o1}}
 }
 ```
-
-
-
 
 ## LICENSE
 
