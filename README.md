@@ -195,9 +195,7 @@ Based on 💡 [Qwen2-7B-Instruct](https://huggingface.co/Qwen/Qwen2-7B-Instruct)
 - 💡 **Marco-o1-MCTS (Mini-Step of 64 Tokens)**: using a 64-token Mini-Step as an action (64 Tokens).
 - 💡 **Marco-o1-MCTS (Mini-Step of 64 Tokens)**: using a 32-token Mini-Step as an action (32 Tokens).
 
-During testing, each model utilized a CoT prompt to ensure consistency in reasoning processes.
-
-We then tested these configurations on the English (En) and Chinese (Zh) subsets of the MGSM dataset, obtaining the following results:
+During testing, each model utilized a CoT prompt to ensure consistency in reasoning processes. We then tested these configurations on the English (En) and Chinese (Zh) subsets of the [MGSM dataset](https://huggingface.co/datasets/juletxara/mgsm), obtaining the following results:
 
 | **Model**                | **MGSM-En (Acc.)** | **MGSM-Zh (Acc.)** |
 |--------------------------|--------------------|--------------------|
