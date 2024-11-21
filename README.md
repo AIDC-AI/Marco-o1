@@ -238,6 +238,14 @@ During testing, each model utilized a CoT prompt to ensure consistency in reason
 
 These results demonstrate the effectiveness of our approach in enhancing the reasoning capabilities of the model across different languages and configurations.
 
+## Case Study of Translation Task
+
+<div align="center">
+  <img src="assets/translation_3.jpg" alt="Figure Description or Alt Text" width="100%">
+  <p><strong>Figure 7: </strong>The translation for our case is shown above, with the translation difficulties highlighted. Google Translate can make mistakes with words like "Madam" and "Korean." Our model can correctly understand these colloquial terms and provide accurate translations.</p>
+</div>
+
+
 # ⚡️ Released Resources
 
 ## Models and Datasets
