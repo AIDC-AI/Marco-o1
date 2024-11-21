@@ -189,7 +189,7 @@ From the self-critic perspective, this approach allows the model to act as its o
 
 ## Experimental Results
 
-Based on Qwen2-7B-Instruct, we performed supervised fine-tuning using CoT data to create Marco-o1-CoT. Subsequently, we employed Marco-o1-CoT within the framework of MCTS tree search, differentiating by actions:
+Based on [Qwen2-7B-Instruct](https://huggingface.co/Qwen/Qwen2-7B-Instruct), we performed SFT using our training data to create **Marco-o1-CoT**. Besides, we employed Marco-o1-CoT within the framework of MCTS tree search, differentiating by actions:
 
 - **Using each inference step as an action (Step).**
 - **Using a 64-token Mini-Step as an action (64 Tokens).**
