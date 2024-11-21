@@ -163,8 +163,6 @@ Furthermore, we obtain the value of each state by computing a confidence score u
 
    This average serves as the reward signal that evaluates the quality of the reasoning path taken during the rollout. A higher $v$ indicates a more confident and likely accurate reasoning path.
 
-
-
 By employing this method, we effectively expand the solution space, allowing the model to explore a vast array of reasoning paths and select the most probable ones based on calculated confidence scores.
 
 
