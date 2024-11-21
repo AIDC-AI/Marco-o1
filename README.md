@@ -205,6 +205,8 @@ During testing, each model utilized a CoT prompt to ensure consistency in reason
 | Marco-o1-MCTS (Mini-Step of 64 Tokens) | 88.40%             | 80.40%             |
 | Marco-o1-MCTS (Mini-Step of 32 Tokens) | 87.60%             | 82.40%             |
 
+📥 [Marco-o1-CoT](https://huggingface.co/AIDC-AI/Marco-o1) (Our Lastest Model)
+
 🔬 These results demonstrate that:
 
 1. **Performance of Marco-o1-CoT vs. Qwen2-7B-Instruct**:
@@ -235,12 +237,13 @@ During testing, each model utilized a CoT prompt to ensure consistency in reason
 
 These results demonstrate the effectiveness of our approach in enhancing the reasoning capabilities of the model across different languages and configurations.
 
+# ⚡️ Released Resources
 
-## ⚡️ Available Models and Datasets
+## Models and Datasets
 
-[Marco-o1-CoT](https://huggingface.co/AIDC-AI/Marco-o1) (Our Lastest Model)
+📥 [Marco-o1-CoT](https://huggingface.co/AIDC-AI/Marco-o1) (Our Lastest Model)
 
-[Marco Reasoning Dataset](https://github.com/AIDC-AI/Marco-o1/blob/main/data/CoT_demo.json) (Our Partial Dataset)
+📥 [Marco Reasoning Dataset](https://github.com/AIDC-AI/Marco-o1/blob/main/data/CoT_demo.json) (Our Partial Dataset)
 
 ## Installation
 
@@ -258,7 +261,7 @@ pip install -r requirements.txt
 
 ```
 
-## Usage 🚀
+## Usage
 
 1. **Load Marco-o1-CoT model:** 
     ```
@@ -281,10 +284,6 @@ pip install -r requirements.txt
     ```
 
 
-
-
-
-
 ## Citation
 
 If you find Marco-o1 useful for your research and applications, please cite:
@@ -299,6 +298,8 @@ journal = {GitHub repository},
 howpublished = {\url{https://github.com/AIDC-AI/Marco-o1}}
 }
 ```
+
+
 
 
 ## LICENSE
