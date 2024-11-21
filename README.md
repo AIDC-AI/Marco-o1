@@ -187,19 +187,19 @@ We introduced a reflection mechanism by adding the phrase **"Wait! Maybe I made 
 
 From the self-critic perspective, this approach allows the model to act as its own critic, identifying potential errors in its reasoning. By explicitly prompting the model to question its initial conclusions, we encourage it to re-express and refine its thought process. This self-critical mechanism leverages the model's capacity to detect inconsistencies or mistakes in its own output, leading to more accurate and reliable problem-solving. The reflection step serves as an internal feedback loop, enhancing the model's ability to self-correct without external intervention.
 
-## Experimental Results
+## 🎯 Experimental Results
 
-Based on [Qwen2-7B-Instruct](https://huggingface.co/Qwen/Qwen2-7B-Instruct), we performed SFT using our training data to create **Marco-o1-CoT**. Besides, we employed Marco-o1-CoT within the framework of MCTS tree search, differentiating by actions:
+Based on 💡 [Qwen2-7B-Instruct](https://huggingface.co/Qwen/Qwen2-7B-Instruct), we performed SFT using our training data to create 💡 **Marco-o1-CoT**. Besides, we employed Marco-o1-CoT within the framework of MCTS tree search, differentiating by actions:
 
-- **Using each inference step as an action (Step).**
-- **Using a 64-token Mini-Step as an action (64 Tokens).**
-- **Using a 32-token Mini-Step as an action (32 Tokens).**
+- 💡 **Using each inference step as an action (Step).**
+- 💡 **Using a 64-token Mini-Step as an action (64 Tokens).**
+- 💡 **Using a 32-token Mini-Step as an action (32 Tokens).**
 
 During testing, each model utilized a CoT prompt to ensure consistency in reasoning processes.
 
-We then tested these configurations on the English and Chinese subsets of the MGSM dataset, obtaining the following results:
+We then tested these configurations on the English (En) and Chinese (Zh) subsets of the MGSM dataset, obtaining the following results:
 
-| **Model**                | **MGSM-en (Acc.)** | **MGSM-zh (Acc.)** |
+| **Model**                | **MGSM-En (Acc.)** | **MGSM-Zh (Acc.)** |
 |--------------------------|--------------------|--------------------|
 | Qwen2-7B-Instruct        | 84.23%             | 76.80%             |
 | Marco-o1-CoT             | 85.60%             | 71.20%             |
