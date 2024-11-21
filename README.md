@@ -222,18 +222,18 @@ During testing, each model utilized a CoT prompt to ensure consistency in reason
    - Currently, as shown in Figure 5-6, we cannot draw definitive conclusions about which action strategy is superior. We believe that as the reward becomes more accurate, the larger solution space provided by MCTS will demonstrate greater potential.
 
 <div align="center">
-  <img src="assets/cot_step.jpg" alt="Figure Description or Alt Text" width="100%">
-  <p><strong>Figure 4: </strong>Marco-o1-CoT got it wrong (left), Marco-o1-MCTS (Step) got it right (right) in the MGSM dataset</p>
+  <img src="assets/cot-step.jpg" alt="Figure Description or Alt Text" width="100%">
+  <p><strong>Figure 4: </strong>MCTS Expands the Solution Space for Correct Answers. Comparison between Marco-o1-CoT (left) and Marco-o1-MCTS (Step) (right) on the MGSM dataset. While Marco-o1-CoT failed to provide the correct answer, integrating MCTS with step-level actions allowed the model to explore a broader solution space, increasing the likelihood of arriving at the correct solution.</p>
 </div>
 
 <div align="center">
-  <img src="assets/step_patch.jpg" alt="Figure Description or Alt Text" width="100%">
-  <p><strong>Figure 5: </strong>Marco-o1-MCTS (Step) got it wrong (left), Marco-o1-MCTS (Mini-Step of 32 Tokens) got it right (right) in the MGSM dataset</p>
+  <img src="assets/step-ministep32.jpg" alt="Figure Description or Alt Text" width="100%">
+  <p><strong>Figure 5: </strong>Finer Granularity with Mini-Steps Enhances Problem-Solving. Comparison between Marco-o1-MCTS (Step) (left) and Marco-o1-MCTS (Mini-Step of 32 Tokens) (right) on the MGSM dataset. The step-level action strategy did not yield the correct answer, but by using a finer-grained mini-step of 32 tokens, the model successfully navigated the solution space to find the correct answer, demonstrating the effectiveness of increased action granularity.</p>
 </div>
 
 <div align="center">
-  <img src="assets/patch_step.jpg" alt="Figure Description or Alt Text" width="100%">
-  <p><strong>Figure 6: </strong>Marco-o1-MCTS (Mini-Step of 64 Tokens) got it wrong (left), Marco-o1-MCTS (Step) got it right (right) in the MGSM dataset</p>
+  <img src="assets/ministep64-step.jpg" alt="Figure Description or Alt Text" width="100%">
+  <p><strong>Figure 6: </strong>Optimal Action Granularity Depends on Problem Complexity. Comparison between Marco-o1-MCTS (Mini-Step of 64 Tokens) (left) and Marco-o1-MCTS (Step) (right) on the MGSM dataset. The model with a mini-step of 64 tokens failed to find the correct answer, whereas using step-level actions enabled the model to correctly solve the problem. This highlights that we cannot draw definitive conclusions about which action strategy is superior. We believe that as the reward becomes more accurate, the larger solution space provided by MCTS will demonstrate greater potential. </p>
 </div>
 
 These results demonstrate the effectiveness of our approach in enhancing the reasoning capabilities of the model across different languages and configurations.
