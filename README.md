@@ -205,14 +205,14 @@ During testing, each model utilized a CoT prompt to ensure consistency in reason
 | Marco-o1-MCTS (Mini-Step of 64 Tokens) | 88.40%             | 80.40%             |
 | Marco-o1-MCTS (Mini-Step of 32 Tokens) | 87.60%             | 82.40%             |
 
-These results demonstrate:
+🔬 These results demonstrate that:
 
-1. Performance of Marco-o1-CoT vs. Qwen2-7B-Instruct:
+1. **Performance of Marco-o1-CoT vs. Qwen2-7B-Instruct**:
 
    - In the MGSM-en dataset, Marco-o1-CoT shows an advantage over Qwen2-7B-Instruct, as shown in Figure 4, which is expected due to the fine-tuning with English CoT data.
    - In the MGSM-zh dataset, however, Marco-o1-CoT exhibits a decrease in performance compared to Qwen2-7B-Instruct. This decline is attributed to the fact that the CoT data used for fine-tuning was in English, which may not transfer effectively to the Chinese dataset.
 
-2. Impact of MCTS Integration:
+2. **Impact of MCTS Integration**:
 
    - The three MCTS-enhanced models demonstrate improvements over Marco-o1-CoT, indicating that incorporating MCTS helps to expand the model's solution space and increase the probability of obtaining correct answers.
    - However, since we use the Confidence Score as the reward, the tree search results exhibit significant randomness. In MGSM-en, the "Step as Action" strategy performs the best, while in MGSM-zh, the "Mini-Step as Action (32)" strategy yields the highest accuracy.
