@@ -113,15 +113,15 @@ This is a classic example from our Marco-o1 model, "How many 'r's are in the wor
 
 
 
-## Datasets
+## 📚 Datasets
 
 To enhance the reasoning capabilities of the Marco-o1 model, we employed a supervised fine-tuning strategy using a variety of datasets.
 
-**Open-O1 CoT Dataset (Filtered):** We refined the Open-O1 project's CoT Dataset by applying heuristic and quality filtering processes. This enhancement allowed the model to adopt structured reasoning patterns effectively.
+- 📊 **Open-O1 CoT Dataset (Filtered):** We refined the Open-O1 project's CoT Dataset by applying heuristic and quality filtering processes. This enhancement allowed the model to adopt structured reasoning patterns effectively.
 
-**Marco-o1 CoT Dataset (Synthetic):** We generated the Marco-o1 CoT Dataset using MCTS, which helped to formulate complex reasoning pathways, further bolstering the model's reasoning capabilities.
+- 📊 **Marco-o1 CoT Dataset (Synthetic):** We generated the Marco-o1 CoT Dataset using MCTS, which helped to formulate complex reasoning pathways, further bolstering the model's reasoning capabilities.
 
-**Marco-o1 Instruction Dataset:** Recognizing the critical role of robust instruction-following capabilities in executing complex tasks, we incorporated a set of instruction-following data. This integration ensures the model remains competent across a wide range of tasks, maintaining its general effectiveness while significantly boosting its reasoning flair.
+- 📊 **Marco-o1 Instruction Dataset:** Recognizing the critical role of robust instruction-following capabilities in executing complex tasks, we incorporated a set of instruction-following data. This integration ensures the model remains competent across a wide range of tasks, maintaining its general effectiveness while significantly boosting its reasoning flair.
 
 | Dataset            | \#Samples |
 |--------------------|-----------------|
