@@ -65,7 +65,7 @@ Currently, our work is distinguished by the following highlights:
 
 <!-- This is our initial version, and we will continue to update and enhance the model's reasoning capabilities. -->
 
-1. [Coming Soon] 🏃 **Reward Models:** We are working on training reward models, including Outcome Reward Modeling (ORM) and Policy Reward Modeling (PRM), to provide a more accurate reward signal for MCTS. A more precise reward function will help reduce randomness in tree search results and improve overall performance.
+1. [Coming Soon] 🏃 **Reward Models:** We are working on training reward models, including Outcome Reward Modeling (ORM) and Process Reward Modeling (PRM), to provide a more accurate reward signal for MCTS. A more precise reward function will help reduce randomness in tree search results and improve overall performance.
 
 2. [Coming Soon] 🏃 **Reinforcement Learning:** We are conducting reinforcement learning training to develop better reasoning models. By utilizing RL techniques, we aim to refine the model's decision-making processes and further enhance its problem-solving abilities.
 
