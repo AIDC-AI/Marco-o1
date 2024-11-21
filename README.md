@@ -240,6 +240,8 @@ These results demonstrate the effectiveness of our approach in enhancing the rea
 
 ## Case Study of Translation Task
 
+We have also conducted some open-ended tests on our models, such as translation issues and achieved some positive results. In the future, we will continue to explore other areas and improve the model's related performance.
+
 <div align="center">
   <img src="assets/translation_3.jpg" alt="Figure Description or Alt Text" width="100%">
   <p><strong>Figure 7: </strong>The translation for our case is shown above, with the translation difficulties highlighted. Google Translate can make mistakes with words like "Madam" and "Korean." Our model can correctly understand these colloquial terms and provide accurate translations.</p>
