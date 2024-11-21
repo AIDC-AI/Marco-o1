@@ -2,7 +2,9 @@
     <img src="assets/logo.png" width="150" style="margin-bottom: 0.2;"/>
 <p>
 
-# 🍓 Marco-o1: Towards Open Reasoning Models for Broader Real-World Applications
+# 🍓 Marco-o1: Towards Open Reasoning Models for Open-Ended Solutions
+
+<!-- Broader Real-World Applications -->
 
 <!-- # 🍓 Marco-o1: An Open Large Reasoning Model for Real-World Solutions -->
 
