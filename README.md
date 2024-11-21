@@ -56,7 +56,7 @@ Currently, Marco-o1 Large Language Model (LLM) is powered by _Chain-of-Thought (
 Currently, our work is distinguished by the following highlights:
 - 🍀 **Fine-Tuning with CoT Data:** We develop <ins>Marco-o1-CoT</ins> by performing full-parameter fine-tuning on the base model using open-source CoT dataset combined with our self-developed synthetic data. 
 - 🍀 **Solution Space Expansion via MCTS:** We integrate LLMs with MCTS (<ins>Marco-o1-MCTS</ins>), using the model's output confidence to guide the search and expand the solution space. 
-- 🍀 **Reasoning Action Strategy:** We implement novel reasoning action strategies and a reflection mechanism (<ins>Marco-o1-MCTS Mini-Step</ins>), including exploring different action granularities within the MCTS framework and prompting the model to self-reflect, thereby significantly enhancing the model's ability to solve complex problems.
+- 🍀 **Reasoning Action Strategy:** We implement novel reasoning action strategies and a reflection mechanism (<ins>Marco-o1-MCTS mini-step</ins>), including exploring different action granularities within the MCTS framework and prompting the model to self-reflect, thereby significantly enhancing the model's ability to solve complex problems.
 - 🍀 **Application in Translation Tasks:** We are the first to apply Large Reasoning Models (LRM) to <ins>Machine Translation task</ins>, exploring inference time scaling laws in the multilingual and translation domain.
 
 ## 🔥 News
@@ -174,13 +174,13 @@ By employing this method, we effectively expand the solution space, allowing the
 
 ### ✨ Action Selection
 
-We observed that using actions as the granularity for MCTS search is relatively coarse, often causing the model to overlook nuanced reasoning paths crucial for solving complex problems. To address this, we explored different levels of granularity in the MCTS search. Initially, we used steps as the unit of search. To further expand the model's search space and enhance its problem-solving capabilities, we experimented with dividing these steps into smaller units of 64 or 32 tokens, referred to as "Mini-Step." This finer granularity allowed the model to explore reasoning paths in greater detail. While token-level search offers theoretical maximum flexibility and granularity, it is currently impractical due to the significant computational resources required and the challenges associated with designing an effective reward model at this level.
+We observed that using actions as the granularity for MCTS search is relatively coarse, often causing the model to overlook nuanced reasoning paths crucial for solving complex problems. To address this, we explored different levels of granularity in the MCTS search. Initially, we used steps as the unit of search. To further expand the model's search space and enhance its problem-solving capabilities, we experimented with dividing these steps into smaller units of 64 or 32 tokens, referred to as "mini-step." This finer granularity allowed the model to explore reasoning paths in greater detail. While token-level search offers theoretical maximum flexibility and granularity, it is currently impractical due to the significant computational resources required and the challenges associated with designing an effective reward model at this level.
 
 In our experiments, we implemented the following strategies within the MCTS framework:
 
-- 💎 **Step as Action:** We allowed the model to generate complete reasoning steps as actions. Each MCTS node represents an entire thought or action label. This method enables efficient exploration but may miss finer-grained reasoning paths essential for complex problem-solving.
+- 💎 **step as Action:** We allowed the model to generate complete reasoning steps as actions. Each MCTS node represents an entire thought or action label. This method enables efficient exploration but may miss finer-grained reasoning paths essential for complex problem-solving.
 
-- 💎 **Mini-Step as Action:** We used Mini-Steps of 32 or 64 tokens as actions. This finer granularity expands the solution space and improves the model's ability to navigate complex reasoning tasks by considering more nuanced steps in the search process. By exploring the solution space at this level, the model is better equipped to find correct answers that might be overlooked with larger action units.
+- 💎 **mini-step as Action:** We used mini-steps of 32 or 64 tokens as actions. This finer granularity expands the solution space and improves the model's ability to navigate complex reasoning tasks by considering more nuanced steps in the search process. By exploring the solution space at this level, the model is better equipped to find correct answers that might be overlooked with larger action units.
 
 ### ✨ Reflection after Thinking
 
@@ -192,9 +192,9 @@ From the self-critic perspective, this approach allows the model to act as its o
 
 Based on 💡 [Qwen2-7B-Instruct](https://huggingface.co/Qwen/Qwen2-7B-Instruct), we performed SFT using our training data to create 💡 **Marco-o1-CoT**. Besides, we employed Marco-o1-CoT within the framework of MCTS tree search, differentiating by actions:
 
-- 💡 **Marco-o1-MCTS (Step)**: using each inference step as an action (Step).
-- 💡 **Marco-o1-MCTS (Mini-Step of 64 Tokens)**: using a 64-token Mini-Step as an action (64 Tokens).
-- 💡 **Marco-o1-MCTS (Mini-Step of 64 Tokens)**: using a 32-token Mini-Step as an action (32 Tokens).
+- 💡 **Marco-o1-MCTS (step)**: using each inference step as an action (step).
+- 💡 **Marco-o1-MCTS (mini-step of 64 tokens)**: using a 64-token mini-step as an action (64 tokens).
+- 💡 **Marco-o1-MCTS (mini-step of 64 tokens)**: using a 32-token mini-step as an action (32 tokens).
 
 During testing, each model utilized a CoT prompt to ensure consistency in reasoning processes. We then tested these configurations on the English (En) and Chinese (Zh) subsets of the [MGSM dataset](https://huggingface.co/datasets/juletxara/mgsm), obtaining the following results:
 
@@ -202,9 +202,9 @@ During testing, each model utilized a CoT prompt to ensure consistency in reason
 |--------------------------|--------------------|--------------------|
 | Qwen2-7B-Instruct        | 84.23%             | 76.80%             |
 | Marco-o1-CoT             | 85.60%             | 71.20%             |
-| Marco-o1-MCTS (Step)     | 90.40%             | 80.00%             |
-| Marco-o1-MCTS (Mini-Step of 64 Tokens) | 88.40%             | 80.40%             |
-| Marco-o1-MCTS (Mini-Step of 32 Tokens) | 87.60%             | 82.40%             |
+| Marco-o1-MCTS (step)     | 90.40%             | 80.00%             |
+| Marco-o1-MCTS (mini-step of 64 tokens) | 88.40%             | 80.40%             |
+| Marco-o1-MCTS (mini-step of 32 tokens) | 87.60%             | 82.40%             |
 
 📥 [Marco-o1-CoT](https://huggingface.co/AIDC-AI/Marco-o1) (Our Lastest Model)
 
@@ -218,22 +218,22 @@ During testing, each model utilized a CoT prompt to ensure consistency in reason
 2. **Impact of MCTS Integration**:
 
    - The three MCTS-enhanced models demonstrate improvements over Marco-o1-CoT, indicating that incorporating MCTS helps to expand the model's solution space and increase the probability of obtaining correct answers.
-   - However, since we use the Confidence Score as the reward, the tree search results exhibit significant randomness. In MGSM-en, the "Step as Action" strategy performs the best, while in MGSM-zh, the "Mini-Step as Action (32)" strategy yields the highest accuracy.
+   - However, since we use the Confidence Score as the reward, the tree search results exhibit significant randomness. In MGSM-en, the "step as Action" strategy performs the best, while in MGSM-zh, the "mini-step as Action (32)" strategy yields the highest accuracy.
    - Currently, as shown in Figure 5-6, we cannot draw definitive conclusions about which action strategy is superior. We believe that as the reward becomes more accurate, the larger solution space provided by MCTS will demonstrate greater potential.
 
 <div align="center">
   <img src="assets/cot-step.jpg" alt="Figure Description or Alt Text" width="100%">
-  <p><strong>Figure 4: </strong>MCTS Expands the Solution Space for Correct Answers. Comparison between Marco-o1-CoT (left) and Marco-o1-MCTS (Step) (right) on the MGSM dataset. While Marco-o1-CoT failed to provide the correct answer, integrating MCTS with step-level actions allowed the model to explore a broader solution space, increasing the likelihood of arriving at the correct solution.</p>
+  <p><strong>Figure 4: </strong>MCTS Expands the Solution Space for Correct Answers. Comparison between Marco-o1-CoT (left) and Marco-o1-MCTS (step) (right) on the MGSM dataset. While Marco-o1-CoT failed to provide the correct answer, integrating MCTS with step-level actions allowed the model to explore a broader solution space, increasing the likelihood of arriving at the correct solution.</p>
 </div>
 
 <div align="center">
   <img src="assets/step-ministep32.jpg" alt="Figure Description or Alt Text" width="100%">
-  <p><strong>Figure 5: </strong>Finer Granularity with Mini-Steps Enhances Problem-Solving. Comparison between Marco-o1-MCTS (Step) (left) and Marco-o1-MCTS (Mini-Step of 32 Tokens) (right) on the MGSM dataset. The step-level action strategy did not yield the correct answer, but by using a finer-grained mini-step of 32 tokens, the model successfully navigated the solution space to find the correct answer, demonstrating the effectiveness of increased action granularity.</p>
+  <p><strong>Figure 5: </strong>Finer Granularity with mini-steps Enhances Problem-Solving. Comparison between Marco-o1-MCTS (step) (left) and Marco-o1-MCTS (mini-step of 32 tokens) (right) on the MGSM dataset. The step-level action strategy did not yield the correct answer, but by using a finer-grained mini-step of 32 tokens, the model successfully navigated the solution space to find the correct answer, demonstrating the effectiveness of increased action granularity.</p>
 </div>
 
 <div align="center">
   <img src="assets/ministep64-step.jpg" alt="Figure Description or Alt Text" width="100%">
-  <p><strong>Figure 6: </strong>Optimal Action Granularity Depends on Problem Complexity. Comparison between Marco-o1-MCTS (Mini-Step of 64 Tokens) (left) and Marco-o1-MCTS (Step) (right) on the MGSM dataset. The model with a mini-step of 64 tokens failed to find the correct answer, whereas using step-level actions enabled the model to correctly solve the problem. This highlights that we cannot draw definitive conclusions about which action strategy is superior. We believe that as the reward becomes more accurate, the larger solution space provided by MCTS will demonstrate greater potential. </p>
+  <p><strong>Figure 6: </strong>Optimal Action Granularity Depends on Problem Complexity. Comparison between Marco-o1-MCTS (mini-step of 64 tokens) (left) and Marco-o1-MCTS (step) (right) on the MGSM dataset. The model with a mini-step of 64 tokens failed to find the correct answer, whereas using step-level actions enabled the model to correctly solve the problem. This highlights that we cannot draw definitive conclusions about which action strategy is superior. We believe that as the reward becomes more accurate, the larger solution space provided by MCTS will demonstrate greater potential. </p>
 </div>
 
 These results demonstrate the effectiveness of our approach in enhancing the reasoning capabilities of the model across different languages and configurations.
