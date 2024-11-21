@@ -33,7 +33,7 @@
 
 [_**AI Business, Alibaba International Digital Commerce**_](https://aidc-ai.com)
 
-:octocat: [**Github**]()  🤗  [**Hugging Face**]() 📝  [**Paper**]() :technologist:  [**Model**]() 🗂️  [**Data**]() 📽️  [**Demo**]()
+:octocat: [**Github**](https://github.com/AIDC-AI/Marco-o1)  🤗  [**Hugging Face**](https://huggingface.co/AIDC-AI/Marco-o1) 📝  [**Paper**]() 🧑‍💻 [**Model**](https://huggingface.co/AIDC-AI/Marco-o1) 🗂️  [**Data**](https://github.com/AIDC-AI/Marco-o1/tree/main/data) 📽️  [**Demo**]()
 
 </div>
 
