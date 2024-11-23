@@ -41,14 +41,14 @@
 
 🎯 **Marco-o1** not only focuses on disciplines with standard answers, such as mathematics, physics, and coding—which are well-suited for reinforcement learning (RL)—but also places greater emphasis on **open-ended resolutions**. We aim to address the question: _"Can the o1 model effectively generalize to broader domains where clear standards are absent and rewards are challenging to quantify?"_
 
-Currently, Marco-o1 Large Language Model (LLM) is powered by _Chain-of-Thought (CoT) fine-tuning_, _Monte Carlo Tree Search (MCTS)_, _reflection mechanisms_, and _innovative reasoning strategies_—optimized for complex real-world problem-solving tasks. 
+Currently, Marco-o1 Large Language Model (LLM) is powered by _Chain-of-Thought (CoT) fine-tuning_, _Monte Carlo Tree Search (MCTS)_, _reflection mechanisms_, and _innovative reasoning strategies_—optimized for complex real-world problem-solving tasks. **This is an ongoing exploratory work, and there remains potential for further improvement.**
 
 <div align="center">
 </div>
 
 <div align="center">
   <img src="assets/strawberry_2.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 1: </strong> A classic 'strawberry' question reasoned by our Marco-o1 model: "How many 'r' are in strawberry".</p>
+  <p><strong>Figure 1: </strong> A classic 'strawberry' question reasoned by our Marco-o1 model: "How many 'r' are in strawberry". Although the answer is correct, the CoT has a flaw, with the final letter 'y' overlooked, highlighting the challenge of ensuring the correctness of both the CoT and the final answer.</p>
 </div>
 
 ## 🚀 Highlights
