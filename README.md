@@ -41,7 +41,7 @@
 
 🎯 **Marco-o1** not only focuses on disciplines with standard answers, such as mathematics, physics, and coding—which are well-suited for reinforcement learning (RL)—but also places greater emphasis on **open-ended resolutions**. We aim to address the question: _"Can the o1 model effectively generalize to broader domains where clear standards are absent and rewards are challenging to quantify?"_
 
-Currently, Marco-o1 Large Language Model (LLM) is powered by _Chain-of-Thought (CoT) fine-tuning_, _Monte Carlo Tree Search (MCTS)_, _reflection mechanisms_, and _innovative reasoning strategies_—optimized for complex real-world problem-solving tasks. **This is an ongoing exploratory work, and there remains potential for further improvement.**
+Currently, Marco-o1 Large Language Model (LLM) is powered by _Chain-of-Thought (CoT) fine-tuning_, _Monte Carlo Tree Search (MCTS)_, _reflection mechanisms_, and _innovative reasoning strategies_—optimized for complex real-world problem-solving tasks. <ins>We would like to emphasize that this work is an exploratory effort from a specific perspective. It remains a preliminary step towards a fully realized "o1" model and will continue to be refined and improved in the future.</ins>
 
 <div align="center">
 </div>
