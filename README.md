@@ -43,7 +43,7 @@
 
 Currently, Marco-o1 Large Language Model (LLM) is powered by _Chain-of-Thought (CoT) fine-tuning_, _Monte Carlo Tree Search (MCTS)_, _reflection mechanisms_, and _innovative reasoning strategies_—optimized for complex real-world problem-solving tasks. 
 
-💌 <ins>We would like to emphasize that this research work is inspired by OpenAI's o1 (from which the name is also derived). Given the unclear technical roadmap for large reasoning models, this work explores multiple experimental approaches. Our focus is on open-ended questions, and we have observed interesting phenomena in multilingual applications. However, we must acknowledge that the current performance and completeness still fall short of a fully realized "o1" model. This is not a one-time effort, and we remain committed to continuous optimization and ongoing improvement.</ins>
+⚠️ **Limitations:** <ins>We would like to emphasize that this research work is inspired by OpenAI's o1 (from which the name is also derived). This work aims to explore potential approaches to shed light on the currently unclear technical roadmap for large reasoning models. Besides, our focus is on open-ended questions, and we have observed interesting phenomena in multilingual applications. However, we must acknowledge that the current model primarily exhibits o1-like reasoning characteristics and its performance still fall short of a fully realized "o1" model. This is not a one-time effort, and we remain committed to continuous optimization and ongoing improvement.</ins>
 
 <div align="center">
 </div>
