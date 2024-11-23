@@ -97,7 +97,7 @@ OpenAI recently introduced the groundbreaking o1 model, renowned for its excepti
 
 <div align="center">
   <img src="assets/translation.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 4: </strong>The demostration of translation task using Marco-o1.</p>
+  <p><strong>Figure 4: </strong>The demonstration of translation task using Marco-o1.</p>
 </div>
 
 <!-- ## 🎨 Case Show
