@@ -238,21 +238,9 @@ During testing, each model utilized a CoT prompt to ensure consistency in reason
 
 Furthermore, we use Test@N to denote the percentage of problems solved correctly at least once when allowing the model to make N separate guesses for each problem. We evaluated solve rates at Test@1, Test@8, and Test@32. The results demonstrate that MCTS shows an advantage with a lower number of separate guesses (Test@1). This reveals the potential of MCTS. In future work, we plan to train the reward model (RM) in conjunction with MCTS to continue optimizing our approach.
 
-| Model                                      | Test@1 Acc. | Test@8 Acc. | Test@32 Acc. |
-|--------------------------------------------|-------------|-------------|--------------|
-| **MGSM-En**                                |             |             |              |
-| Qwen2-7B-Instruct                          | 84.00%      | 89.60%      | 96.00%       |
-| Marco-o1-CoT                               | 85.60%      | 97.60%      | 99.20%       |
-| Marco-o1-MCTS (step)                       | 90.40%      | 99.20%      | 99.20%       |
-| Marco-o1-MCTS (mini-step of 64 tokens)     | 88.40%      | 98.40%      | 99.60%       |
-| Marco-o1-MCTS (mini-step of 32 tokens)     | 87.60%      | 98.80%      | 99.20%       |
-| **MGSM-Zh**                                |             |             |              |
-| Qwen2-7B-Instruct                          | 76.80%      | 80.80%      | 92.40%       |
-| Marco-o1-CoT                               | 71.20%      | 93.60%      | 96.40%       |
-| Marco-o1-MCTS (step)                       | 80.00%      | 93.60%      | 96.00%       |
-| Marco-o1-MCTS (mini-step of 64 tokens)     | 80.40%      | 92.80%      | 95.20%       |
-| Marco-o1-MCTS (mini-step of 32 tokens)     | 82.40%      | 93.20%      | 96.80%       |
-
+<div align="center">
+  <img src="assets/test@k.jpg" alt="Figure Description or Alt Text" width="80%">
+</div>
 
 These results demonstrate the effectiveness of our approach in enhancing the reasoning capabilities of the model across different languages and configurations.
 
