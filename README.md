@@ -306,6 +306,9 @@ pip install -r requirements.txt
     # Use vLLM
     ./src/talk_with_model_vllm.py
     ```
+3. **Deploy using FastAPI:**
+
+    Check the README.md file in examples folder.
 
 
 # 👨🏻‍💻 Acknowledgement
