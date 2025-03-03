@@ -1,0 +1,92 @@
+{
+    "desc":"数字母",
+    "mode":"debug",
+    "max_rollout_time":32,
+    "max_tokens":512,
+    "output_tree":true,
+    "input_path":"./tree_search/init_datasets/latter_count_hard.json",
+    "output_folder":"demo",
+    "generate_func":"local",
+    "search_reward_threshold":[4,8],
+    "evaluate_func":"count_latter",
+    "use_for_wrong_answer":{"double_check":{"reflection":1}},
+    "use_mini_step":false,
+    "use_function_call":false,
+    "use_step":false,
+    "url1":"https://nebula-notebook.alibaba-inc.com/notebook-f0446e102027-code/proxy/40000/generate",
+    "url2":"https://nebula-notebook.alibaba-inc.com/notebook-f0446e102027-code/proxy/40001/generate",
+    "base_prompt":"Now you need to complete a task related to letters.\nFirst, you need to break down the task in <sub-task>, and your breakdown should be as detailed as possible, considering verification and correction.\nIn <thinking>, you need to complete the tasks broken down in subtask, with one sub-task per <thinking>. For example, if you breakdown into 3 sub-tasks, you need to output 3 <thinking> to complete each of these steps. You need to thinking carefully, you need to do split the string and compute *letter by letter*.\nIn <double-check>, ensure that the steps in <thinking> are correct, including but not limited to word spelling and calculations. If you find errors, you need to clearly point them out.\nIn <reflection>, correct your mistakes and provide the correct answer.\nIn <answer>, output your answer, and the answer should be clearly stated in boxed{xx}.\nNote that these tags cannot be nested, but they can be sequential, so try to keep actions within tags atomic.\n\nNow the question is: ",
+    "action_tree":{
+        "base":{
+            "prefill_text":[],
+            "description":"User Question",
+            "show_in_history":true,
+            "special_model":false,
+            "next_step":{
+                "sub_task":2
+            }
+        },
+        "sub_task":{
+            "prefill_text":["Firstly, I need to break down this task.\n- 1.","Ok, I need to think step by step.\n- 1.","Alright, I need to break down this task.\n- 1."],
+            "description":"Split the task into sub-tasks",
+            "show_in_history":true,
+            "special_model":false,
+            "next_step":{
+                "thinking":2
+            }
+        },
+        "hypothesis":{
+            "prefill_text":["Maybe","Alternatively"],
+            "description":"Generate a hypothesis",
+            "show_in_history":true,
+            "special_model":false,
+            "next_step":{
+                "thinking":2
+            }
+        },
+        "thinking":{
+            "prefill_text":[],
+            "description":"Think detailly",
+            "show_in_history":true,
+            "special_model":false,
+            "next_step":{
+                "double_check":2,
+                "thinking":2
+            }
+        },
+        "reflection":{
+            "prefill_text":["Wait! something is wrong, let's think again.\n</reflection>","Halt! I made a fatal mistake that made me rethink\n</reflection>"],
+            "description":"Reflect on the result",
+            "show_in_history":true,
+            "special_model":false,
+            "next_step":{
+                "thinking_from_scratch":2
+            }
+        },
+        "double_check":{
+            "prefill_text":["Let's check the result", "Now I need to double check the result", "Time to double check the result","Let's check for some errors or typos."],
+            "description":"Double check the result",
+            "show_in_history":true,
+            "special_model":true,
+            "next_step":{
+                "answer":1
+            }
+        },
+        "answer":{
+            "prefill_text":["The answer is:"],
+            "description":"Answer the question",
+            "show_in_history":true,
+            "special_model":false,
+            "next_step":{}
+        },
+        "thinking_from_scratch":{
+            "prefill_text":["Now, I need to think carefully.I need ignore the previous output,It's wrong.\nI need","The previous is the wrong answer, I need to rethink this question.\n"],
+            "description":"Think from scratch",
+            "show_in_history":true,
+            "special_model":true,
+            "next_step":{
+                "thinking":2
+            }
+        }
+    }
+}

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Problem Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+            position: relative;
+        }
+        .main-content {
+            flex: 1;
+            max-width: 800px;
+            margin-right: 420px;
+        }
+        .sidebar {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            width: 600px;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 5px;
+            height: calc(100vh - 40px);
+            overflow-y: auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        #solution-editor {
+            width: 100%;
+            min-height: 200px;
+            margin-top: 10px;
+            padding: 10px;
+            font-family: monospace;
+        }
+        #save-button {
+            margin-top: 10px;
+            padding: 5px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        #save-button:hover {
+            background-color: #45a049;
+        }
+        .success-message {
+            display: none;
+            color: #4CAF50;
+            margin-top: 10px;
+        }
+        .data-id {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 5px 10px;
+            background-color: #f0f0f0;
+            border-radius: 3px;
+            font-size: 14px;
+            color: #666;
+            border: 1px solid #ddd;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button-group button {
+            padding: 5px 15px;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .button-group button:hover {
+            opacity: 0.9;
+        }
+
+        #solution-display {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        #solution-display p {
+            margin: 0.5em 0;
+        }
+
+        #problem {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        #problem p {
+            margin: 0.5em 0;
+        }
+
+        #file-index {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div id="data-id" class="data-id">ID: {{ current_index }}</div>
+    <div class="container">
+        <div class="main-content">
+            <div class="section">
+                <div class="section-title">Problem:</div>
+                <div id="problem">{{ data.problem }}</div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Solution:</div>
+                <div id="solution-display"></div>
+                <textarea id="solution-editor">{{ data.solution }}</textarea>
+                <div id="save-message" class="success-message">Solution saved successfully!</div>
+
+                <div class="button-group" style="margin-top: 10px;">
+                    <button onclick="handleCorrect()" style="background-color: #4CAF50;">Correct</button>
+                    <button onclick="handleChoice(1)" style="background-color: #f44336;">Wrong</button>
+                    <button onclick="handleChoice(2)" style="background-color: #808080;">Discard</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="section-title">Ground Truth:</div>
+            <div id="file-index">{{ data.file_idx }}</div>
+        </div>
+    </div>
+
+    <script>
+        function updateSolution() {
+            var solution = document.getElementById('solution-editor').value;
+            if (typeof marked === 'function') {
+                document.getElementById('solution-display').innerHTML = marked(solution);
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "solution-display"]);
+            } else {
+                document.getElementById('solution-display').innerHTML = solution;
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "solution-display"]);
+            }
+        }
+
+        window.onload = function() {
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$','$'], ['\\(','\\)']],
+                    processEscapes: true
+                }
+            });
+
+            updateSolution();
+
+            document.getElementById('solution-editor').addEventListener('input', updateSolution);
+        }
+
+        function loadNextProblem() {
+            fetch('http://localhost:40010/', {
+                method: 'GET'
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('hh');
+                document.getElementById('problem').innerHTML = data.problem;
+                document.getElementById('solution-editor').value = data.solution;
+                document.getElementById('file-index').innerHTML = data.file_idx;
+                document.getElementById('data-id').innerHTML = 'ID: ' + data.id;
+                updateSolution();
+                MathJax.Hub.Queue(
+                    ["Typeset", MathJax.Hub, "problem"],
+                    ["Typeset", MathJax.Hub, "solution-display"]
+                );
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error loading next problem'+error);
+            });
+        }
+
+        function handleChoice(choice) {
+            var solution = document.getElementById('solution-editor').value;
+            var id = document.getElementById('data-id').innerHTML.replace('ID: ', '');
+
+            fetch('http://localhost:40010/chosen', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    choice: choice,
+                    solution: solution,
+                    file_idx: document.getElementById('file-index').innerText,
+                    id: parseInt(id)
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    return fetch('http://localhost:40010/', {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('problem').innerHTML = data.problem;
+                document.getElementById('solution-editor').value = data.source_text || '';
+                document.getElementById('file-index').innerHTML = data.ground_truth || '';
+                document.getElementById('data-id').innerHTML = 'ID: ' + data.id;
+                updateSolution();
+                MathJax.Hub.Queue(
+                    ["Typeset", MathJax.Hub, "problem"],
+                    ["Typeset", MathJax.Hub, "solution-display"],
+                    ["Typeset", MathJax.Hub, "file-index"]
+                );
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error processing request');
+            });
+        }
+
+        function handleCorrect() {
+            handleChoice(0);
+        }
+
+        document.addEventListener('keydown', function(event) {
+            switch(event.key) {
+                case 'ArrowRight':  // 右方向键 - 正确
+                    handleCorrect();
+                    break;
+                case 'ArrowUp':     // 上方向键 - 错误
+                    handleChoice(1);
+                    break;
+                case 'ArrowDown':   // 下方向键 - 忽略
+                    handleChoice(2);
+                    break;
+                case 'ArrowLeft':   // 左方向键 - 返回上一题
+                    handlePrev();
+                    break;
+            }
+        });
+
+        function handlePrev() {
+            fetch('http://localhost:40010/prev', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    return fetch('http://localhost:40010/', {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('problem').innerHTML = data.problem;
+                document.getElementById('solution-editor').value = data.solution;
+                document.getElementById('file-index').innerHTML = data.file_idx;
+                document.getElementById('data-id').innerHTML = 'ID: ' + data.id;
+                updateSolution();
+                MathJax.Hub.Queue(
+                    ["Typeset", MathJax.Hub, "problem"],
+                    ["Typeset", MathJax.Hub, "solution-display"]
+                );
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error processing request');
+            });
+        }
+    </script>
+</body>
+</html>

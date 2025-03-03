@@ -3,13 +3,13 @@ import argparse
 from tqdm import tqdm
 from collections import defaultdict
 
-from src.tree_search.mcts_nodes import *
-from src.tree_search.utils import snake_to_pascal
-from src.tree_search.utils.mcts_engine import MCTS_Engine
-from src.tree_search.utils.model_IO.local_http_API import set_urls
+from tree_search.mcts_nodes import *
+from tree_search.utils import snake_to_pascal
+from tree_search.utils.mcts_engine import MCTS_Engine
+from tree_search.utils.model_IO.local_http_API import set_urls
 
 args = argparse.ArgumentParser()
-args.add_argument('--config', type=str, default='configs/count_latter_config.json')
+args.add_argument('--config', type=str, default='./tree_search/configs/demo_config.json')
 args = args.parse_args()
 
 
@@ -63,7 +63,7 @@ def load_config_to_node_class(config):
 
 def read_data(input_path):
     with open(input_path, 'r') as f:
-        data = json.load(f)  # [::-1]
+        data = json.load(f)
     return data
 
 
@@ -71,13 +71,12 @@ def main():
     config = load_config(args.config)
     load_config_to_node_class(config)
     data = read_data(args.input_path)
+    if config['mode'] == 'debug':
+        data = data[:2]
     mcts = MCTS_Engine(max_rollout_depth=args.max_rollout_time, generate_func=args.generate_func,
                        max_new_tokens=args.max_tokens, args=args)
     for d in tqdm(data):
         best_child = mcts.do_rollout(d)
-        # print('****'*10)
-        # print('****'*10)
-        # print(best_child.all_path_value)
 
 
 if __name__ == "__main__":

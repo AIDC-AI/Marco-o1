@@ -1,0 +1,2 @@
+python /mnt/workspace/fengli/codes/utils/gpu_utils/http_vllm_server.py --path /data/cpfs_0/fengli/base_model/Qwen2.5-72B-Instruct --port 40000 --usage 0.45
+python /mnt/workspace/fengli/codes/utils/gpu_utils/http_vllm_server.py --path /data/cpfs_0/fengli/base_model/Llama-3.1-70B-Instruct --port 40001 --usage 0.9
