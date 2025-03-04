@@ -9,7 +9,7 @@ We are now open-sourcing our tree search framework.Its main features are as foll
 1. It can generate serval chain for a given question.
 2. When find wrong answer, we will rollback to latest node, add a new node to hint model to generate a new answer. We call it reflection time.
 3. Multi-model double check. Inspired by pair programming, we use two models to generate data, and another model to generate some node, such as double check, to prevent thinking dependency.
-4. We define some node as mcts action.
+4. We define some node as MCTS action.
 5. We opensource a data annotation tool to filter the data.
 
 <img src="/assets/cot_in_code.jpg"/>
@@ -18,24 +18,24 @@ We are now open-sourcing our tree search framework.Its main features are as foll
 ### 1. reflection time
 
 When we find a wrong answer, we will rollback to the latest node（if set `use_for_wrong_answer`), add a new node to hint model to generate a new answer.
-
+˚
 As shown in the figure, we rollback to latest node(`thinking` in the figure), and add a new node `Reflection` to hint model to generate a new answer.
 
 
-### 2. Multi-model double check
+### 2. Multi-model double check˚
 
-Inspired by pair programming, we use two models to generate data, and another model to generate some node, such as double check, to prevent thinking dependency.
+Inspired by pair programming, we use two models to generate data, one model for normal node generate and another model used to generate some node, such as double check, to prevent thinking dependency.
 
 Specifically, we use `Qwen-2.5-72B-Instruct` and `Llama-3.1-70B-Instruct`, we add a `double-check` node between `thinking` and `answer` node. When generate `double-check`, 
 we use `Llama-3.1-70B-Instruct` to generate `double-check` node, we change the model generate server to another model to prevent thinking dependency.
 
 Also, for reflection, we also use `Llama-3.1-70B-Instruct` to generate `reflection` node.
 
-You can configure it in `special_model` in config file by set `special_model` to True.
+You can configure it in config file by set `special_model` to True.
 
-### 3. mcts action
+### 3. MCTS action
 
-We define some node as mcts action, each node have different action. You need to implement it in `tree_search/mcts_nodes`, new node needs to extend Class `BaseNode` 
+We define some node as MCTS action, each node have different action. You need to implement it in `tree_search/mcts_nodes`, new node needs to extend Class `BaseNode` 
 and register it in `tree_search/mcts_nodes/__init__.py`.
 
 
