@@ -74,6 +74,12 @@ class BaseNode():
             node = node.parent
         return depth
 
+    def pre_init(self, **kwargs):
+        return
+
+    def post_init(self, **kwargs):
+        return
+
     def __repr__(self):
         return f'node_id: {self.node_id}, node_action_name: {self.node_action_name}, total_reward: {self.total_reward}, num_visits: {self.num_visits}, total_children_num: {self.total_children_num}, depth: {self.getDepth()}, is_terminal: {self.is_terminal}\n'
 

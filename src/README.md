@@ -5,8 +5,8 @@ We use this framework to generate the Long CoT and train our model.
 
 ## description
 
-We are now open-sourcing our tree search framework.It main features are as follows:
-1. When find wrong answer, we rollback to lastest node, add a new node to hint model to generate a new answer. We call it reflection time.
+We are now open-sourcing our tree search framework.Its main features are as follows:
+1. When find wrong answer, we rollback to latest node, add a new node to hint model to generate a new answer. We call it reflection time.
 2. Multi-model double check. Inspired by pair programming, we use two models to generate data, and another model to generate some node, such as double check, to prevent thinking dependency.
 3. We define some node as mcts action.
 
@@ -15,15 +15,15 @@ We are now open-sourcing our tree search framework.It main features are as follo
 
 ### 1. reflection time
 
-When find wrong answer, we can rollback to lastest node, add a new node to hint model to generate a new answer. 
-As shown in the figure, we rollback to lastest node(`thinking` in the figure), and add a new node `Reflection` to hint model to generate a new answer.
+When we find a wrong answer, we can rollback to the latest node, add a new node to hint model to generate a new answer. 
+As shown in the figure, we rollback to latest node(`thinking` in the figure), and add a new node `Reflection` to hint model to generate a new answer.
 
 
 ### 2. Multi-model double check
 
 Inspired by pair programming, we use two models to generate data, and another model to generate some node, such as double check, to prevent thinking dependency.
 
-Specifically, we use Qwen-2.5-72B-Instruct and Llama-3.1-70B-Instruct, we add a `double-check` node between `thinking` and `answer` node. When generate `double-check`, 
+Specifically, we use `Qwen-2.5-72B-Instruct` and `Llama-3.1-70B-Instruct`, we add a `double-check` node between `thinking` and `answer` node. When generate `double-check`, 
 we use `Llama-3.1-70B-Instruct` to generate `double-check` node, we change the model generate server to another model to prevent thinking dependency.
 
 Also, for reflection, we also use `Llama-3.1-70B-Instruct` to generate `reflection` node.
@@ -32,8 +32,11 @@ You can configure it in `special_model` in config file by set `special_model` to
 
 ### 3. mcts action
 
-We define some node as mcts action. You need to implement it in `tree_search/mcts_nodes`, new node need to extend `BaseNode` 
+We define some node as mcts action, each node have different action. You need to implement it in `tree_search/mcts_nodes`, new node needs to extend Class `BaseNode` 
 and register it in `tree_search/mcts_nodes/__init__.py`.
+
+
+For more detail, you can check in the code.
 
 ## how to use
 
@@ -66,9 +69,10 @@ python ./tree_search/utils/start_vllm_server.py --path /mnt/workspace/checkpoint
 
 ### 3. add your config file in `tree_search/configs/`
 
+We show a demo config file in `tree_search/configs/demo_config.json`.It can be run directly.
 
 
-You can add your config file in `tree_search/configs/`.We show a demo config file in `tree_search/configs/demo_config.json`.Detail description are as follows:
+For you own config, you can add your config file in `tree_search/configs/`.Detail description are as follows:
 
 ```json
 {
