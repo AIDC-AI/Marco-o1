@@ -41,6 +41,11 @@ and register it in `tree_search/mcts_nodes/__init__.py`.
 
 For more detail, you can check in the code.
 
+### 4. data annotation tool
+
+We also release a data annotation tool to filter the data.You can check it in `tree_search/http_server.py`. 
+We use this tool to filter the data which have bad process but have the correct answer and it support latex.
+
 ## how to use
 
 1. create your python environment
