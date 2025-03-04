@@ -6,16 +6,19 @@ We use this framework to generate the Long CoT and train our model.
 ## description
 
 We are now open-sourcing our tree search framework.Its main features are as follows:
-1. When find wrong answer, we rollback to latest node, add a new node to hint model to generate a new answer. We call it reflection time.
-2. Multi-model double check. Inspired by pair programming, we use two models to generate data, and another model to generate some node, such as double check, to prevent thinking dependency.
-3. We define some node as mcts action.
+1. It can generate serval chain for a given question.
+2. When find wrong answer, we will rollback to latest node, add a new node to hint model to generate a new answer. We call it reflection time.
+3. Multi-model double check. Inspired by pair programming, we use two models to generate data, and another model to generate some node, such as double check, to prevent thinking dependency.
+4. We define some node as mcts action.
+5. We opensource a data annotation tool to filter the data.
 
 <img src="/assets/cot_in_code.jpg"/>
 
 
 ### 1. reflection time
 
-When we find a wrong answer, we can rollback to the latest node, add a new node to hint model to generate a new answer. 
+When we find a wrong answer, we will rollback to the latest node（if set `use_for_wrong_answer`), add a new node to hint model to generate a new answer.
+
 As shown in the figure, we rollback to latest node(`thinking` in the figure), and add a new node `Reflection` to hint model to generate a new answer.
 
 
@@ -57,7 +60,8 @@ you can create your python environment by
 
 ### 2. start your inference server
 
-Our framework supports VLLM、Huggingface、API call as a inference server. For sample, we only implemented vllm version, but reserved the interface for other two versions.
+Our framework supports VLLM、Huggingface、API call as a inference server. For simple, we only implemented and debug vllm version, 
+but reserved the interface for other two versions.
 
 For example, We use `Qwen-2.5-72B-Instruct` and `Llama-3.1-70B-Instruct` to generate the Long CoT.
 One for normal generation and one for double check.
