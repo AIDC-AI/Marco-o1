@@ -121,8 +121,8 @@ We implemented several optimizations, including:
 - **Length selection**: We performed length selection based on the various reasoning chain lengths within MCTS.
 
 <div align="center">
-  <img src="assets/v2_pic4.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 5: </strong>我们对公共token进行了mask.</p>
+  <img src="assets/v2_pic4.jpg" alt="Figure Description or Alt Text" width="40%">
+  <p><strong>Figure 5: </strong>We masked the public prefix token.</p>
 </div>
 
 We recognize that "short" and "long" are inherently relative and that CoT lengths vary significantly with problem complexity. 
