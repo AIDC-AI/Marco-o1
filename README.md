@@ -17,7 +17,7 @@
 
 
 <div align="center">
-<img src="https://img.shields.io/badge/Version-1.0.0-blue.svg" alt="Version"> 
+<img src="https://img.shields.io/badge/Version-2.0.0-blue.svg" alt="Version"> 
 <img src="https://img.shields.io/badge/License-Apache%202.0-green.svg" alt="License">
 <img src="https://img.shields.io/github/stars/AIDC-AI/Marco-o1?color=yellow" alt="Stars">
 <img src="https://img.shields.io/github/issues/AIDC-AI/Marco-o1?color=red" alt="Issues">
@@ -39,11 +39,13 @@
 
 #
 
-🎯 **Marco-o1** not only focuses on disciplines with standard answers, such as mathematics, physics, and coding—which are well-suited for reinforcement learning (RL)—but also places greater emphasis on **open-ended resolutions**. We aim to address the question: _"Can the o1 model effectively generalize to broader domains where clear standards are absent and rewards are challenging to quantify?"_
+🎯 **Marco-o1** not only focuses on subjects with standard answers, such as mathematics, physics, and coding that are highly suitable for the use of Reinforcement Learning, but we also emphasize some open-ended solutions. Our goal is to build a general model applicable to agentic, incorporating comprehensive planning capabilities and function call abilities.
 
-Currently, Marco-o1 Large Language Model (LLM) is powered by _Chain-of-Thought (CoT) fine-tuning_, _Monte Carlo Tree Search (MCTS)_, _reflection mechanisms_, and _innovative reasoning strategies_—optimized for complex real-world problem-solving tasks. 
-
-⚠️ **Limitations:** <ins>We would like to emphasize that this research work is inspired by OpenAI's o1 (from which the name is also derived). This work aims to explore potential approaches to shed light on the currently unclear technical roadmap for large reasoning models. Besides, our focus is on open-ended questions, and we have observed interesting phenomena in multilingual applications. However, we must acknowledge that the current model primarily exhibits o1-like reasoning characteristics and its performance still fall short of a fully realized "o1" model. This is not a one-time effort, and we remain committed to continuous optimization and ongoing improvement.</ins>
+⚠️ **Limitations:** <ins>We would like to emphasize that this research work is inspired by OpenAI's o1 (from which the name is also derived). 
+This work aims to explore potential approaches to shed light on the currently unclear technical roadmap for large reasoning models. 
+Besides, our focus is on open-ended questions, and we have observed interesting phenomena in multilingual applications. 
+However, we must acknowledge that the current model primarily exhibits o1-like reasoning characteristics and its performance still fall short of a fully realized "o1" model. 
+This is not a one-time effort, and we remain committed to continuous optimization and ongoing improvement.</ins>
 
 <div align="center">
 </div>
@@ -53,13 +55,6 @@ Currently, Marco-o1 Large Language Model (LLM) is powered by _Chain-of-Thought (
   <p><strong>Figure 1: </strong> A classic 'strawberry' question reasoned by our Marco-o1 model: "How many 'r' are in strawberry". Although the answer is correct, the final letter 'y' is overlooked during CoT. This is an interesting finding, which is discussed in issue https://github.com/AIDC-AI/Marco-o1/issues/3.</p>
 </div>
 
-## 🚀 Highlights
-
-Currently, our work is distinguished by the following highlights:
-- 🍀 **Fine-Tuning with CoT Data:** We develop <ins>Marco-o1-CoT</ins> by performing full-parameter fine-tuning on the base model using open-source CoT dataset combined with our self-developed synthetic data. 
-- 🍀 **Solution Space Expansion via MCTS:** We integrate LLMs with MCTS (<ins>Marco-o1-MCTS</ins>), using the model's output confidence to guide the search and expand the solution space. 
-- 🍀 **Reasoning Action Strategy:** We implement novel reasoning action strategies and a reflection mechanism (<ins>Marco-o1-MCTS mini-step</ins>), including exploring different action granularities within the MCTS framework and prompting the model to self-reflect, thereby significantly enhancing the model's ability to solve complex problems.
-- 🍀 **Application in Translation Tasks:** We are the first to apply Large Reasoning Models (LRM) to <ins>Machine Translation task</ins>, exploring inference time scaling laws in the multilingual and translation domain.
 
 ## 🔥 News
 
@@ -67,15 +62,25 @@ Currently, our work is distinguished by the following highlights:
 
 <!-- This is our initial version, and we will continue to update and enhance the model's reasoning capabilities. -->
 
-1. [Coming Soon] 🏃 **Reward Models:** We are working on training reward models, including Outcome Reward Modeling (ORM) and Process Reward Modeling (PRM), to provide a more accurate reward signal for MCTS. A more precise reward function will help reduce randomness in tree search results and improve overall performance.
+- [Coming Soon] 🏃 **Marco-o1 ???:** We are working on training a more powerful reinforcement learning-based model. The new model will provide better support for agents, with enhanced planning capabilities, task decomposition abilities, and function call capabilities.
 
-2. [Coming Soon] 🏃 **Reinforcement Learning:** We are conducting reinforcement learning training to develop better reasoning models. By utilizing RL techniques, we aim to refine the model's decision-making processes and further enhance its problem-solving abilities.
 
-- [2024/11/13] 🔥 We released **Marco-o1**. This initial release includes our reasoning model, optimized for complex problem-solving and versatile applications across various domains.
+- [Coming Soon] 🏃 **Marco-o1 ???:** We are working on training a more efficient reasoning model that can actively skip serveral steps in the reasoning process while maintaining performance, thereby improving reasoning efficiency.  Notably, this does not require significant changes to the original model,user ca control the model's reasoning granularity.
+
+
+- [2025/05/15] 🔥 Our paper **[《Marco-o1 v2: Towards Widening The Distillation Bottleneck for Reasoning Models》](https://arxiv.org/abs/2503.01461)** has been accepted to the main conference of ACL 2025.
+
+
+- [2025/02/14] 🔥 We released **[Marco-o1 v2]()**. This version entirely relies on self-built data and has undergone DPO. It has been optimized more comprehensively for mathematical problem-solving、planning and instruction-following capabilities. 🍬 This time, our model's ability in counting letters is quite impressive! 😁
+
+
+- [2024/11/13] 🔥 We released **[Marco-o1 v1]()**. This initial release includes our reasoning model, optimized for complex problem-solving and versatile applications across various domains.
 
 
 
 ## 🔔 Introduction
+
+### Marco-o1 v1
 
 OpenAI recently introduced the groundbreaking o1 model, renowned for its exceptional reasoning capabilities. This model has demonstrated outstanding performance on platforms such as AIME and CodeForces, surpassing other leading models. Inspired by this success, we aimed to push the boundaries of LLMs even further, enhancing their reasoning abilities to tackle complex, real-world challenges.
 
@@ -110,165 +115,51 @@ This is a classic example from our Marco-o1 model, "How many 'r's are in the wor
 </div> -->
 
 
+For more detail please refer to [this](./README_v1.md) or our [paper](https://arxiv.org/abs/2411.14405).
 
+### Marco-o1 v2
 
-## 📚 Marco Reasoning Datasets
-
-To enhance the reasoning capabilities of the Marco-o1 model, we employed a 
-SFT strategy using a variety of datasets. 
-
-- 📊 **Open-O1 CoT Dataset (Filtered):** We refined the Open-O1 project's CoT Dataset by applying heuristic and quality filtering processes. This enhancement allowed the model to adopt structured reasoning patterns effectively.
-
-- 📊 **Marco-o1 CoT Dataset (Synthetic):** We generated the Marco-o1 CoT Dataset using MCTS, which helped to formulate complex reasoning pathways, further bolstering the model's reasoning capabilities.
-
-- 📊 **Marco Instruction Dataset:** Recognizing the critical role of robust instruction-following capabilities in executing complex tasks, we incorporated a set of instruction-following data. This integration ensures the model remains competent across a wide range of tasks, maintaining its general effectiveness while significantly boosting its reasoning flair.
-
-| Dataset            | \#Samples |
-|--------------------|-----------------|
-| Open-O1 CoT Dataset (Filtered)        | 45,125           |
-| Marco-o1 CoT Dataset (Synthetic)         | 10,000           |
-| Marco Instruction Dataset| 5,141            |
-| **Total**              | **60,266**           |
-
-📥 [Marco Reasoning Dataset](https://github.com/AIDC-AI/Marco-o1/blob/main/data/CoT_demo.json) (Our Partial Dataset)
-
-## 🌟 Solution Space Expansion via MCTS
-
-We integrated LLMs with MCTS to enhance the reasoning capabilities of our Marco-o1  model:
-
-- 💎 **Nodes as Reasoning States:** In the MCTS framework, each node represents a reasoning state of the problem-solving process.
-- 💎 **Actions as LLM Outputs:** The possible actions from a node are the outputs generated by the LLM. These outputs represent potential steps or mini-steps in the reasoning chain.
-- 💎 **Rollout and Reward Calculation:** During the rollout phase, the LLM continues the reasoning process to a terminal state. 
-- 💎 **Guiding MCTS:** This reward score $R$ is used to evaluate and select promising paths within the MCTS, effectively guiding the search towards more confident and reliable reasoning chains.
-
-Furthermore, we obtain the value of each state by computing a confidence score using the following formulas:
-1. **Confidence Score ($c_i$):**
-
-   For each token $t_i$ generated during the rollout, we calculate its confidence score by applying the softmax function to its log probability and the log probabilities of the top 5 alternative tokens. This is given by:
-
-    $$c_i = \frac{\exp(p(t_i))}{\sum_{k=1}^{5} \exp(p(t_k))}$$
-    
-    **where:**
-
-    - $c_i$ is the confidence score for the $i^{th}$ token in the rollout.
-    - $p(t_i)$ is the log probability of the $i^{th}$ token generated by the LLM.
-    - $p(t_k)$ for $k = 1$ to $5$ are the log probabilities of the top 5 predicted tokens at the $i^{th}$ step.
-    - $n$ is the total number of tokens in the rollout sequence.
-
-   This equation ensures that the confidence score reflects the relative probability of the chosen token compared to the top alternatives, effectively normalizing the scores between 0 and 1.
-  
-2. **Reward Score ($v$):**
-
-   After obtaining the confidence scores for all tokens in the rollout sequence, we compute the average confidence score across all tokens to derive the overall reward score:
-
-   $$v = \frac{1}{n} \sum_{i=1}^{n} c_i$$
-
-   **where:** $v$ is the overall reward score for the rollout path.
-
-   This average serves as the reward signal that evaluates the quality of the reasoning path taken during the rollout. A higher $v$ indicates a more confident and likely accurate reasoning path.
-
-By employing this method, we effectively expand the solution space, allowing the model to explore a vast array of reasoning paths and select the most probable ones based on calculated confidence scores.
-
-
-## 🌟 Reasoning Action Strategy
-
-### ✨ Action Selection
-
-We observed that using actions as the granularity for MCTS search is relatively coarse, often causing the model to overlook nuanced reasoning paths crucial for solving complex problems. To address this, we explored different levels of granularity in the MCTS search. Initially, we used steps as the unit of search. To further expand the model's search space and enhance its problem-solving capabilities, we experimented with dividing these steps into smaller units of 64 or 32 tokens, referred to as "mini-step." This finer granularity allowed the model to explore reasoning paths in greater detail. While token-level search offers theoretical maximum flexibility and granularity, it is currently impractical due to the significant computational resources required and the challenges associated with designing an effective reward model at this level.
-
-In our experiments, we implemented the following strategies within the MCTS framework:
-
-- 💎 **step as Action:** We allowed the model to generate complete reasoning steps as actions. Each MCTS node represents an entire thought or action label. This method enables efficient exploration but may miss finer-grained reasoning paths essential for complex problem-solving.
-
-- 💎 **mini-step as Action:** We used mini-steps of 32 or 64 tokens as actions. This finer granularity expands the solution space and improves the model's ability to navigate complex reasoning tasks by considering more nuanced steps in the search process. By exploring the solution space at this level, the model is better equipped to find correct answers that might be overlooked with larger action units.
-
-### ✨ Reflection after Thinking
-
-We introduced a reflection mechanism by adding the phrase **"Wait! Maybe I made some mistakes! I need to rethink from scratch."** at the end of each thought process. This prompts the model to self-reflect and reevaluate its reasoning steps. Implementing this reflection has yielded significant improvements, especially on difficult problems that the original model initially solved incorrectly. With the addition of reflection, approximately half of these challenging problems were answered correctly.
-
-From the self-critic perspective, this approach allows the model to act as its own critic, identifying potential errors in its reasoning. By explicitly prompting the model to question its initial conclusions, we encourage it to re-express and refine its thought process. This self-critical mechanism leverages the model's capacity to detect inconsistencies or mistakes in its own output, leading to more accurate and reliable problem-solving. The reflection step serves as an internal feedback loop, enhancing the model's ability to self-correct without external intervention.
-
-## 🎯 Experimental Results
-
-Based on 💡 [Qwen2-7B-Instruct](https://huggingface.co/Qwen/Qwen2-7B-Instruct), we performed SFT using our training data to create 💡 **Marco-o1-CoT**. Besides, we employed Marco-o1-CoT within the framework of MCTS tree search, differentiating by actions:
-
-- 💡 **Marco-o1-MCTS (step)**: using each inference step as an action (step).
-- 💡 **Marco-o1-MCTS (mini-step of 64 tokens)**: using a 64-token mini-step as an action (64 tokens).
-- 💡 **Marco-o1-MCTS (mini-step of 64 tokens)**: using a 32-token mini-step as an action (32 tokens).
-
-During testing, each model utilized a CoT prompt to ensure consistency in reasoning processes. We then tested these configurations on the English (En) and Chinese (Zh) subsets of the [MGSM dataset](https://huggingface.co/datasets/juletxara/mgsm), obtaining the following results:
-
-| **Model**                | **MGSM-En (Acc.)** | **MGSM-Zh (Acc.)** |
-|--------------------------|--------------------|--------------------|
-| Qwen2-7B-Instruct        | 84.00%             | 76.80%             |
-| Marco-o1-CoT             | 85.60%             | 71.20%             |
-| Marco-o1-MCTS (step)     | 90.40%             | 80.00%             |
-| Marco-o1-MCTS (mini-step of 64 tokens) | 88.40%             | 80.40%             |
-| Marco-o1-MCTS (mini-step of 32 tokens) | 87.60%             | 82.40%             |
-
-📥 [Marco-o1-CoT](https://huggingface.co/AIDC-AI/Marco-o1) (Our Lastest Model)
-
-🔬 These results demonstrate that:
-
-1. **Performance of Marco-o1-CoT vs. Qwen2-7B-Instruct**:
-
-   - In the MGSM-en dataset, Marco-o1-CoT shows an advantage over Qwen2-7B-Instruct, as shown in Figure 4, which is expected due to the fine-tuning with English CoT data.
-   - In the MGSM-zh dataset, however, Marco-o1-CoT exhibits a decrease in performance compared to Qwen2-7B-Instruct. This decline is attributed to the fact that the CoT data used for fine-tuning was in English, which may not transfer effectively to the Chinese dataset.
-
-2. **Impact of MCTS Integration**:
-
-   - The three MCTS-enhanced models demonstrate improvements over Marco-o1-CoT, indicating that incorporating MCTS helps to expand the model's solution space and increase the probability of obtaining correct answers.
-   - However, since we use the Confidence Score as the reward, the tree search results exhibit significant randomness. In MGSM-en, the "step as Action" strategy performs the best, while in MGSM-zh, the "mini-step as Action (32)" strategy yields the highest accuracy.
-   - Currently, as shown in Figure 5-6, we cannot draw definitive conclusions about which action strategy is superior. We believe that as the reward becomes more accurate, the larger solution space provided by MCTS will demonstrate greater potential.
+For Marco-o1 v2, we have removed some data from Open-O1 and replaced it entirely with Marco-o1 CoT data. We have expanded both the categories and quantity of our CoT data, 
+Additionally, we improved our MCTS architecture to enable dynamic addition of reflections, as shown in Figure 5. 
+While also conducting DPO using naturally data pairs from MCTS.
 
 <div align="center">
-  <img src="assets/cot-step.jpg" alt="Figure Description or Alt Text" width="100%">
-  <p><strong>Figure 4: </strong>MCTS Expands the Solution Space for Correct Answers. Comparison between Marco-o1-CoT (left) and Marco-o1-MCTS (step) (right) on the MGSM dataset. While Marco-o1-CoT failed to provide the correct answer, integrating MCTS with step-level actions allowed the model to explore a broader solution space, increasing the likelihood of arriving at the correct solution.</p>
+  <img src="assets/v2_pic1.jpg" alt="Figure Description or Alt Text" width="80%">
+  <p><strong>Figure 5: </strong>In Marco-o1 v2, we restructured the MCTS architecture.</p>
 </div>
+
+As mentioned in our [paper](https://arxiv.org/abs/2503.01461), we found that models like R1 and QwQ often engage in reflection for the sake of reflection itself, which we called **formalistic long-time thinking**. This has a certain impact on the distillation learning of smaller models, leading to behaviors such as repetitive generate and redundant thinking.
 
 <div align="center">
-  <img src="assets/step-ministep32.jpg" alt="Figure Description or Alt Text" width="100%">
-  <p><strong>Figure 5: </strong>Finer Granularity with mini-steps Enhances Problem-Solving. Comparison between Marco-o1-MCTS (step) (left) and Marco-o1-MCTS (mini-step of 32 tokens) (right) on the MGSM dataset. The step-level action strategy did not yield the correct answer, but by using a finer-grained mini-step of 32 tokens, the model successfully navigated the solution space to find the correct answer, demonstrating the effectiveness of increased action granularity.</p>
+  <img src="assets/v2_table1.jpg" alt="Figure Description or Alt Text" width="80%">
+  <p><strong>Figure 6: </strong>Example for formalistic long-time thinking</p>
 </div>
 
-<div align="center">
-  <img src="assets/ministep64-step.jpg" alt="Figure Description or Alt Text" width="100%">
-  <p><strong>Figure 6: </strong>Optimal Action Granularity Depends on Problem Complexity. Comparison between Marco-o1-MCTS (mini-step of 64 tokens) (left) and Marco-o1-MCTS (step) (right) on the MGSM dataset. The model with a mini-step of 64 tokens failed to find the correct answer, whereas using step-level actions enabled the model to correctly solve the problem. This highlights that we cannot draw definitive conclusions about which action strategy is superior. We believe that as the reward becomes more accurate, the larger solution space provided by MCTS will demonstrate greater potential. </p>
-</div>
+Data constructed using MCTS is more suitable for smaller models, as it does not involve redundant thinking and reflection. Instead, we start with planning at the very beginning of the CoT process and then gradually work through the problem. We only guide the model to reflect at appropriate moments. This aligns better with the capabilities and thinking patterns of lower-capacity smaller models.
 
-Furthermore, we use Test@N to denote the percentage of problems solved correctly at least once when allowing the model to make N separate guesses for each problem. We evaluated solve rates at Test@1, Test@8, and Test@32. The results demonstrate that MCTS shows an advantage with a lower number of separate guesses (Test@1). This reveals the potential of MCTS. In future work, we plan to train the reward model (RM) in conjunction with MCTS to continue optimizing our approach.
+Additionally, we have conducted DPO using naturally formed positive and negative pairs from MCTS and have made some preliminary findings.
 
-<div align="center">
-  <img src="assets/test@k.jpg" alt="Figure Description or Alt Text" width="80%">
-</div>
+We have open-sourced our MCTS search code.
+For more detail please refer to [this](./README_v2.md) or our [paper](https://arxiv.org/abs/2503.01461
+).
 
-These results demonstrate the effectiveness of our approach in enhancing the reasoning capabilities of the model across different languages and configurations.
+### Marco-o1 ???
 
-## Case Study of Translation Task
+We are now working on expanding the Marco-o1 family. These expansions include a more robust model based on RL, tailored for agent scenarios. This model places greater emphasis on the accuracy of function call and planning abilities, which are crucial for current agent applications.
 
-We have also conducted some open-ended tests on our models, such as translation issues and achieved some positive results. In the future, we will continue to explore other areas and improve the model's related performance.
+Additionally, as mentioned earlier, the outputs of current reasoning models tend to be quite redundancy. Unlike other works that focus on compression to enable models to distinguish problem difficulty and provide outputs of varying lengths, our goal is for the model to dynamically select skipping unnecessary reasoning steps based on a hyperparameter provided by the user.
 
-<div align="center">
-  <img src="assets/trans-case-1.jpg" alt="Figure Description or Alt Text" width="60%">
-  <p><strong>Figure 7: </strong>Translation comparison of a colloquial expression “It’s so beautiful that it’s captivating,
-the upper part has a distinctly Korean style, the soft and fluffy material is perfectly thick, and it’s
-complemented by a base layer, creating a unique and everyday-wear outfit”.</p>
-</div>
+🔥🔥 For more details, we will open source and update our latest work later.
 
-<div align="center">
-  <img src="assets/trans-case-2.jpg" alt="Figure Description or Alt Text" width="60%">
-  <p><strong>Figure 8: </strong> Translation comparison of a colloquial expression “It’s so beautiful! And it’s so cheap, super
-straight and doesn’t curl. Buy it, buy it!”.</p>
-</div>
 
 
 # ⚡️ Released Resources
 
 ## Models and Datasets
 
-📥 [Marco-o1-CoT](https://huggingface.co/AIDC-AI/Marco-o1) (Our Lastest Model)
+📥 [Marco-o1 v1](https://huggingface.co/AIDC-AI/Marco-o1)
 
-📥 [Marco Reasoning Dataset](https://github.com/AIDC-AI/Marco-o1/blob/main/data/CoT_demo.json) (Our Partial Dataset)
+📥 [Marco-o1 v2](https://huggingface.co/AIDC-AI/Marco-o1)
 
 ## Installation
 
@@ -301,10 +192,10 @@ pip install -r requirements.txt
 
     Execute the inference script (you can give any customized inputs inside):
     ```
-    ./src/talk_with_model.py
+    ./src/output/talk_with_model.py
 
     # Use vLLM
-    ./src/talk_with_model_vllm.py
+    ./src/output/talk_with_model_vllm.py
     ```
 3. **Deploy using FastAPI:**
 
@@ -315,10 +206,10 @@ pip install -r requirements.txt
 
 ## Main Contributors
 From MarcoPolo Team, AI Business, Alibaba International Digital Commerce:
-- Yu Zhao
+- [Yu Zhao](https://github.com/Sniper970119)
 - [Huifeng Yin](https://github.com/HuifengYin)
-- Hao Wang
 - [Longyue Wang](http://www.longyuewang.com)
+
 
 ## Citation
 
@@ -333,6 +224,16 @@ If you find Marco-o1 useful for your research and applications, please cite:
       archivePrefix={arXiv},
       primaryClass={cs.CL},
       url={https://arxiv.org/abs/2411.14405}, 
+}
+
+@misc{yin2025wideningdistillationbottleneckreasoning,
+      title={Marco o1 v2:Towards Widening The Distillation Bottleneck for Reasoning Models}, 
+      author={Huifeng Yin and Yu Zhao and Minghao Wu and Xuanfan Ni and Bo Zeng and Hao Wang and Tianqi Shi and Liangying Shao and Chenyang Lyu and Longyue Wang and Weihua Luo and Kaifu Zhang},
+      year={2025},
+      eprint={2503.01461},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2503.01461}, 
 }
 ```
 
