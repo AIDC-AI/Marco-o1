@@ -12,8 +12,10 @@ We are now open-sourcing our tree search framework.Its main features are as foll
 4. We define some node as MCTS action.
 5. We opensource a data annotation tool to filter the data.
 
-<img src="/assets/cot_in_code.jpg"/>
-
+<div align="center">
+  <img src="/assets/cot_in_code.jpg" alt="Figure Description or Alt Text" width="80%">
+  <p><strong>Figure 1: </strong>restructured MCTS architecture.</p>
+</div>
 
 ### 1. reflection time
 
