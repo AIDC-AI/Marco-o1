@@ -71,10 +71,10 @@ This is not a one-time effort, and we remain committed to continuous optimizatio
 - [2025/05/15] 🔥 Our paper **[《Marco-o1 v2: Towards Widening The Distillation Bottleneck for Reasoning Models》](https://arxiv.org/abs/2503.01461)** has been accepted to the main conference of ACL 2025.
 
 
-- [2025/02/14] 🔥 We released **[Marco-o1 v2]()**. This version entirely relies on self-built data and has undergone DPO. It has been optimized more comprehensively for mathematical problem-solving、planning and instruction-following capabilities. 🍬 This time, our model's ability in counting letters is quite impressive! 😁
+- [2025/02/14] 🔥 We released **[Marco-o1 v2](./README_v2.md)**. This version entirely relies on self-built data and has undergone DPO. It has been optimized more comprehensively for mathematical problem-solving、planning and instruction-following capabilities. 🍬 This time, our model's ability in counting letters is quite impressive! 😁
 
 
-- [2024/11/13] 🔥 We released **[Marco-o1 v1]()**. This initial release includes our reasoning model, optimized for complex problem-solving and versatile applications across various domains.
+- [2024/11/13] 🔥 We released **[Marco-o1 v1](./README_v1.md)**. This initial release includes our reasoning model, optimized for complex problem-solving and versatile applications across various domains.
 
 
 
