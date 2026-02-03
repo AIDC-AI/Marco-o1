@@ -1,8 +1,8 @@
 <p align="center">
-    <img src="assets/logo_2.png" width="250" style="margin-bottom: 0.2;"/>
+    <img src="assets/logo_1.png" width="250" style="margin-bottom: 0.2;"/>
 <p>
 
-# 🍓 Marco-o1: Towards Open Reasoning Models for Open-Ended Solutions
+# 🍓 Marco-o1: Towards Efficient Reasoning Models
 
 <!-- Broader Real-World Applications -->
 
@@ -74,7 +74,7 @@ This is not a one-time effort, and we remain committed to continuous optimizatio
 - [2025/02/14] 🔥 We released **[Marco-o1 v2](./README_v2.md)**. This version entirely relies on self-built data and has undergone DPO. It has been optimized more comprehensively for mathematical problem-solving、planning and instruction-following capabilities. 🍬 This time, our model's ability in counting letters is quite impressive! 😁
 
 
-- [2024/11/13] 🔥 We released **[Marco-o1 v1](./README_v1.md)**. This initial release includes our reasoning model, optimized for complex problem-solving and versatile applications across various domains.
+- [2024/11/13] 🔥 We released **[Marco-o1 v1](./README_v1.md)**: Towards Open Reasoning Models for Open-Ended Solutions. This initial release includes our reasoning model, optimized for complex problem-solving and versatile applications across various domains.
 
 
 
