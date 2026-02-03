@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="assets/logo_1.png" width="250" style="margin-bottom: 0.2;"/>
+    <img src="assets/logo_2.png" width="250" style="margin-bottom: 0.2;"/>
 <p>
 
 # 🍓 Marco-o1: Towards Open Reasoning Models for Open-Ended Solutions
@@ -29,9 +29,9 @@
 
 <!-- **Affiliations:** -->
 
-⭐ _**MarcoPolo Team**_ ⭐
+<!-- ⭐ _**MarcoPolo Team**_ ⭐ -->
 
-[_**Alibaba International Digital Commerce**_](https://aidc-ai.com)
+⭐[_**Alibaba International Digital Commerce**_](https://aidc-ai.com)⭐
 
 :octocat: [**Github**](https://github.com/AIDC-AI/Marco-o1)  🤗  [**Hugging Face**](https://huggingface.co/AIDC-AI/Marco-o1) 📝  [**Paper**](https://arxiv.org/abs/2411.14405) 🧑‍💻 [**Model**](https://huggingface.co/AIDC-AI/Marco-o1) 🗂️  [**Data**](https://github.com/AIDC-AI/Marco-o1/tree/main/data) 📽️  [**Demo**](https://huggingface.co/AIDC-AI/Marco-o1)
 
