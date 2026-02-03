@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="assets/logo.png" width="150" style="margin-bottom: 0.2;"/>
+    <img src="assets/logo_1.png" width="150" style="margin-bottom: 0.2;"/>
 <p>
 
 # 🍓 Marco-o1: Towards Open Reasoning Models for Open-Ended Solutions
