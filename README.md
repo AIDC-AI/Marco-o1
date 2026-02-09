@@ -51,6 +51,11 @@ This is not a one-time effort, and we remain committed to continuous optimizatio
 </div>
 
 <div align="center">
+  <img src="assets/timeline.jpg" alt="Figure Description or Alt Text" width="80%">
+  <p><strong>Figure 1: </strong> A classic 'strawberry' question reasoned by our Marco-o1 model: "How many 'r' are in strawberry". Although the answer is correct, the final letter 'y' is overlooked during CoT. This is an interesting finding, which is discussed in issue https://github.com/AIDC-AI/Marco-o1/issues/3.</p>
+</div>
+
+<div align="center">
   <img src="assets/strawberry_2.jpg" alt="Figure Description or Alt Text" width="80%">
   <p><strong>Figure 1: </strong> A classic 'strawberry' question reasoned by our Marco-o1 model: "How many 'r' are in strawberry". Although the answer is correct, the final letter 'y' is overlooked during CoT. This is an interesting finding, which is discussed in issue https://github.com/AIDC-AI/Marco-o1/issues/3.</p>
 </div>
