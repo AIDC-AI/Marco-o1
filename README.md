@@ -1,8 +1,8 @@
 <p align="center">
-    <img src="assets/logo.png" width="150" style="margin-bottom: 0.2;"/>
+    <img src="assets/logo_1.png" width="250" style="margin-bottom: 0.2;"/>
 <p>
 
-# 🍓 Marco-o1: Towards Open Reasoning Models for Open-Ended Solutions
+# 🍓 Marco-o1: Towards Efficient Reasoning Models
 
 <!-- Broader Real-World Applications -->
 
@@ -29,9 +29,9 @@
 
 <!-- **Affiliations:** -->
 
-⭐ _**MarcoPolo Team**_ ⭐
+<!-- ⭐ _**MarcoPolo Team**_ ⭐ -->
 
-[_**Alibaba International Digital Commerce**_](https://aidc-ai.com)
+⭐[_**Alibaba International Digital Commerce**_](https://aidc-ai.com)⭐
 
 :octocat: [**Github**](https://github.com/AIDC-AI/Marco-o1)  🤗  [**Hugging Face**](https://huggingface.co/AIDC-AI/Marco-o1) 📝  [**Paper**](https://arxiv.org/abs/2411.14405) 🧑‍💻 [**Model**](https://huggingface.co/AIDC-AI/Marco-o1) 🗂️  [**Data**](https://github.com/AIDC-AI/Marco-o1/tree/main/data) 📽️  [**Demo**](https://huggingface.co/AIDC-AI/Marco-o1)
 
@@ -48,6 +48,11 @@ However, we must acknowledge that the current model primarily exhibits o1-like r
 This is not a one-time effort, and we remain committed to continuous optimization and ongoing improvement.</ins>
 
 <div align="center">
+</div>
+
+<div align="center">
+  <img src="assets/timeline.jpg" alt="Figure Description or Alt Text" width="80%">
+  <p><strong>Figure 1: </strong> A classic 'strawberry' question reasoned by our Marco-o1 model: "How many 'r' are in strawberry". Although the answer is correct, the final letter 'y' is overlooked during CoT. This is an interesting finding, which is discussed in issue https://github.com/AIDC-AI/Marco-o1/issues/3.</p>
 </div>
 
 <div align="center">
@@ -74,7 +79,7 @@ This is not a one-time effort, and we remain committed to continuous optimizatio
 - [2025/02/14] 🔥 We released **[Marco-o1 v2](./README_v2.md)**. This version entirely relies on self-built data and has undergone DPO. It has been optimized more comprehensively for mathematical problem-solving、planning and instruction-following capabilities. 🍬 This time, our model's ability in counting letters is quite impressive! 😁
 
 
-- [2024/11/13] 🔥 We released **[Marco-o1 v1](./README_v1.md)**. This initial release includes our reasoning model, optimized for complex problem-solving and versatile applications across various domains.
+- [2024/11/13] 🔥 We released **[Marco-o1 v1](./README_v1.md)**: Towards Open Reasoning Models for Open-Ended Solutions. This initial release includes our reasoning model, optimized for complex problem-solving and versatile applications across various domains.
 
 
 
