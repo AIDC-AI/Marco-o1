@@ -67,11 +67,13 @@ This is not a one-time effort, and we remain committed to continuous optimizatio
 
 <!-- This is our initial version, and we will continue to update and enhance the model's reasoning capabilities. -->
 
-- [Coming Soon] 🏃 **Marco-o1 ???:** We are working on training a more powerful reinforcement learning-based model. The new model will provide better support for agents, with enhanced planning capabilities, task decomposition abilities, and function call capabilities.
+- [Coming Soon] 🏃 **Marco-o1 Agentic:** A more powerful agentic model is coming soon...
 
+- [2025/02/09] 🔥 **[EDPO(Difficulty-Estimated Policy Optimization)](https://arxiv.org/abs/2602.06375):** We proposed an optimization algorithm based on an online data difficulty selector. To our knowledge, this is the first work on online data selection. Experiments show that compared with GRPO, we can better resist the noise interference caused by Zero Advantage, achieving an average performance improvement of 2.4%. At the same time, this online selector can also provide multi-scale routing based on prompt difficulty in large-scale online services.
 
-- [Coming Soon] 🏃 **Marco-o1 ???:** We are working on training a more efficient reasoning model that can actively skip serveral steps in the reasoning process while maintaining performance, thereby improving reasoning efficiency.  Notably, this does not require significant changes to the original model,user ca control the model's reasoning granularity.
+- [2025/02/09] 🔥 Our paper **[A State-Transition Framework for Efficient LLM Reasoning](https://arxiv.org/abs/2602.01198)** has been accepted to the main conference of ICLR 2026.
 
+- [2025/02/09] 🔥 **Marco-o1 Efficiency:** We released **[Marco-o1 Efficiency](./README_v3.md)**. By training a pluggable Linear component MAM (Mixed Attention Module) on the existing Dense model, we were able to dynamically compress the model to save context tokens. At the same time, we introduced TTT (Test-Time Training), and ultimately we achieved a 20% reduction in inference cost while obtaining an average performance improvement of 4.7%.
 
 - [2025/05/15] 🔥 Our paper **[《Marco-o1 v2: Towards Widening The Distillation Bottleneck for Reasoning Models》](https://arxiv.org/abs/2503.01461)** has been accepted to the main conference of ACL 2025.
 
