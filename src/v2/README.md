@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="assets/logo.png" width="150" style="margin-bottom: 0.2;"/>
+    <img src="../../assets/logo_1.png" width="250" style="margin-bottom: 0.2;"/>
 <p>
 
 # 🍓 Marco-o1 v2: Towards Widening The Distillation Bottleneck for Reasoning Models
@@ -51,7 +51,7 @@ Our paper has been published in the main track of ACL 2025, and we have open-sou
 this may be the most powerful SLRM(Small Long Reasoning Model) for counting letters. 🍬
 
 <div align="center">
-  <img src="assets/v2_pic1.jpg" alt="Figure Description or Alt Text" width="80%">
+  <img src="../../assets/v2_pic1.jpg" alt="Figure Description or Alt Text" width="80%">
   <p><strong>Figure 1: </strong>In Marco-o1 v2, we restructured the MCTS architecture.</p>
 </div>
 
@@ -62,7 +62,7 @@ Consequently, distilling this portion of data onto small models can lead to unex
 
 
 <div align="center">
-  <img src="assets/v2_table1.jpg" alt="Figure Description or Alt Text" width="80%">
+  <img src="../../assets/v2_table1.jpg" alt="Figure Description or Alt Text" width="80%">
   <p><strong>Figure 2: </strong>Example for formalistic long-time thinking</p>
 </div>
 
@@ -76,7 +76,7 @@ So we implemented a multi-model role-switching mechanism. For example, when usin
 we switch to Llama during `double-check` and `reflection` to prevent the model from being overly confident in its own outputs.
 
 <div align="center">
-  <img src="assets/v2_pic2.jpg" alt="Figure Description or Alt Text" width="80%">
+  <img src="../../assets/v2_pic2.jpg" alt="Figure Description or Alt Text" width="80%">
   <p><strong>Figure 3: </strong>We designed different thinking approaches for various tasks.</p>
 </div>
 
@@ -102,7 +102,7 @@ and the findings indicate that our data is more friendly to smaller models. Part
 
 
 <div align="center">
-  <img src="assets/v2_table4.jpg" alt="Figure Description or Alt Text" width="60%">
+  <img src="../../assets/v2_table4.jpg" alt="Figure Description or Alt Text" width="60%">
   <p><strong>Figure 4: </strong>The results of our data on models of various sizes.</p>
 </div>
 
@@ -121,7 +121,7 @@ We implemented several optimizations, including:
 - **Length selection**: We performed length selection based on the various reasoning chain lengths within MCTS.
 
 <div align="center">
-  <img src="assets/v2_pic4.jpg" alt="Figure Description or Alt Text" width="40%">
+  <img src="../../assets/v2_pic4.jpg" alt="Figure Description or Alt Text" width="40%">
   <p><strong>Figure 5: </strong>We masked the public prefix token.</p>
 </div>
 
@@ -136,7 +136,7 @@ and select representative paths by their relative lengths, rather than imposing 
 
 
 <div align="center">
-  <img src="assets/v2_pic3.jpg" alt="Figure Description or Alt Text" width="80%">
+  <img src="../../assets/v2_pic3.jpg" alt="Figure Description or Alt Text" width="80%">
   <p><strong>Figure 6: </strong>Comparison of length sampling across different tasks.</p>
 </div>
 
@@ -145,7 +145,7 @@ In Figure 6, we can clearly observe the significant impact of DPO on the model's
 the percentage of outputs without answers decreases significantly.
 
 <div align="center">
-  <img src="assets/v2_table6.jpg" alt="Figure Description or Alt Text" width="60%">
+  <img src="../../assets/v2_table6.jpg" alt="Figure Description or Alt Text" width="60%">
   <p><strong>Figure 7: </strong>Integration of SFT loss, where the values in parentheses represent the percentage of test cases that failed to produce valid outputs.</p>
 </div>
 
@@ -155,7 +155,7 @@ also expands the model's solution space. In comparisons to the baseline, there a
 establishing a solid foundation for subsequent reinforcement learning (RL) efforts.
 
 <div align="center">
-  <img src="assets/v2_table7.jpg" alt="Figure Description or Alt Text" width="60%">
+  <img src="../../assets/v2_table7.jpg" alt="Figure Description or Alt Text" width="60%">
   <p><strong>Figure 8: </strong>Our model continues to outperform under different pass@k conditions.</p>
 </div>
 

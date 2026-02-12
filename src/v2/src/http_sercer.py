@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-load_file_path = '/Users/sniper/codes/mainTest/cache/aime_data.json'
+load_file_path = '/Users/sniper/codes/mainTest/cache/aime_res_23.json'
 target_save_path = './output_data/aime_01_save1.json'
 current_index = 0
 

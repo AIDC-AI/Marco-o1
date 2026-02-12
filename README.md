@@ -73,7 +73,7 @@ This is not a one-time effort, and we remain committed to continuous optimizatio
 
 - [2025/02/09] 🔥 Our paper **[A State-Transition Framework for Efficient LLM Reasoning](https://arxiv.org/abs/2602.01198)** has been accepted to the main conference of ICLR 2026.
 
-- [2025/02/09] 🔥 **Marco-o1 Efficiency:** We released **[Marco-o1 Efficiency](./README_v3.md)**. By training a pluggable Linear component MAM (Mixed Attention Module) on the existing Dense model, we were able to dynamically compress the model to save context tokens. At the same time, we introduced TTT (Test-Time Training), and ultimately we achieved a 20% reduction in inference cost while obtaining an average performance improvement of 4.7%.
+- [2025/02/09] 🔥 **Marco-o1 v3:** We released **[Marco-o1 v3](./README_v3.md)**. By training a pluggable Linear component MAM (Mixed Attention Module) on the existing Dense model, we were able to dynamically compress the model to save context tokens. At the same time, we introduced TTT (Test-Time Training), and ultimately we achieved a 20% reduction in inference cost while obtaining an average performance improvement of 4.7%.
 
 - [2025/05/15] 🔥 Our paper **[《Marco-o1 v2: Towards Widening The Distillation Bottleneck for Reasoning Models》](https://arxiv.org/abs/2503.01461)** has been accepted to the main conference of ACL 2025.
 
@@ -117,7 +117,7 @@ OpenAI recently introduced the groundbreaking o1 model, renowned for its excepti
 This is a classic example from our Marco-o1 model, "How many 'r's are in the word 'strawberry'?" Through multiple search steps, the correct answer was obtained, as shown in Figure 2. Although we tested general reasoning capabilities, our primary focus is on tackling challenging translation problems. An example of this focus is shown in Figure 3, illustrating the translation of the sentence "This shoe has a comfortable sole and is highly recommended for purchase."
  -->
 <!-- <div align="center">
-  <img src="assets/strawberry_2.jpg" alt="Figure Description or Alt Text" width="80%">
+  <img tools="assets/strawberry_2.jpg" alt="Figure Description or Alt Text" width="80%">
   <p><strong>Figure 2: </strong>Reasoning example of "How many 'r' are in strawberry"</p>
 </div> -->
 

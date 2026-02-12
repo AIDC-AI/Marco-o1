@@ -123,7 +123,7 @@ if __name__ == '__main__':
     import os
 
     sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-    from src.tree_search.mcts_nodes import *
+    from tools.tree_search.mcts_nodes import *
 
     answer = AnswerNode(None)
     answer.node_value = "the social network, directed by david fincher and written by aaron sorkin, is a masterful exploration of ambition, betrayal, and the birth of a global phenomenon. released in 2010, the film chronicles the creation of facebook, focusing on its co-founder mark zuckerberg, played with enigmatic intensity by jesse eisenberg."

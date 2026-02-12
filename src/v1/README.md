@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="assets/logo.png" width="150" style="margin-bottom: 0.2;"/>
+    <img src="../../assets/logo_1.png" width="250" style="margin-bottom: 0.2;"/>
 <p>
 
 # 🍓 Marco-o1 v1: Towards Open Reasoning Models for Open-Ended Solutions
@@ -45,7 +45,7 @@ OpenAI recently introduced the groundbreaking o1 model, renowned for its excepti
 🌍 Marco-o1 leverages advanced techniques like CoT fine-tuning, MCTS, and Reasoning Action Strategies to enhance its reasoning power. As shown in Figure 2, by fine-tuning Qwen2-7B-Instruct with a combination of the filtered Open-O1 CoT dataset, Marco-o1 CoT dataset, and Marco-o1 Instruction dataset, Marco-o1 improved its handling of complex tasks. MCTS allows exploration of multiple reasoning paths using confidence scores derived from softmax-applied log probabilities of the top-k alternative tokens, guiding the model to optimal solutions. Moreover, our reasoning action strategy involves varying the granularity of actions within steps and mini-steps to optimize search efficiency and accuracy.
 
 <div align="center">
-  <img src="assets/intro_2.jpg" alt="Figure Description or Alt Text" width="80%">
+  <img src="../../assets/intro_2.jpg" alt="Figure Description or Alt Text" width="80%">
   <p><strong>Figure 2: </strong>The overview of Marco-o1.</p>
 </div>
 
@@ -59,7 +59,7 @@ OpenAI recently introduced the groundbreaking o1 model, renowned for its excepti
 🌎 Additionally, in translation tasks, we demonstrate that Marco-o1 excels in translating slang expressions, such as translating "这个鞋拥有踩屎感" (literal translation: "This shoe offers a stepping-on-poop sensation.") to "This shoe has a comfortable sole," demonstrating its superior grasp of colloquial nuances.
 
 <div align="center">
-  <img src="assets/translation.jpg" alt="Figure Description or Alt Text" width="80%">
+  <img src="../../assets/translation.jpg" alt="Figure Description or Alt Text" width="80%">
   <p><strong>Figure 4: </strong>The demonstration of translation task using Marco-o1.</p>
 </div>
 
@@ -68,7 +68,7 @@ OpenAI recently introduced the groundbreaking o1 model, renowned for its excepti
 This is a classic example from our Marco-o1 model, "How many 'r's are in the word 'strawberry'?" Through multiple search steps, the correct answer was obtained, as shown in Figure 2. Although we tested general reasoning capabilities, our primary focus is on tackling challenging translation problems. An example of this focus is shown in Figure 3, illustrating the translation of the sentence "This shoe has a comfortable sole and is highly recommended for purchase."
  -->
 <!-- <div align="center">
-  <img src="assets/strawberry_2.jpg" alt="Figure Description or Alt Text" width="80%">
+  <img tools="../../assets/strawberry_2.jpg" alt="Figure Description or Alt Text" width="80%">
   <p><strong>Figure 2: </strong>Reasoning example of "How many 'r' are in strawberry"</p>
 </div> -->
 
@@ -185,24 +185,24 @@ During testing, each model utilized a CoT prompt to ensure consistency in reason
    - Currently, as shown in Figure 5-6, we cannot draw definitive conclusions about which action strategy is superior. We believe that as the reward becomes more accurate, the larger solution space provided by MCTS will demonstrate greater potential.
 
 <div align="center">
-  <img src="assets/cot-step.jpg" alt="Figure Description or Alt Text" width="100%">
+  <img src="../../assets/cot-step.jpg" alt="Figure Description or Alt Text" width="100%">
   <p><strong>Figure 4: </strong>MCTS Expands the Solution Space for Correct Answers. Comparison between Marco-o1-CoT (left) and Marco-o1-MCTS (step) (right) on the MGSM dataset. While Marco-o1-CoT failed to provide the correct answer, integrating MCTS with step-level actions allowed the model to explore a broader solution space, increasing the likelihood of arriving at the correct solution.</p>
 </div>
 
 <div align="center">
-  <img src="assets/step-ministep32.jpg" alt="Figure Description or Alt Text" width="100%">
+  <img src="../../assets/step-ministep32.jpg" alt="Figure Description or Alt Text" width="100%">
   <p><strong>Figure 5: </strong>Finer Granularity with mini-steps Enhances Problem-Solving. Comparison between Marco-o1-MCTS (step) (left) and Marco-o1-MCTS (mini-step of 32 tokens) (right) on the MGSM dataset. The step-level action strategy did not yield the correct answer, but by using a finer-grained mini-step of 32 tokens, the model successfully navigated the solution space to find the correct answer, demonstrating the effectiveness of increased action granularity.</p>
 </div>
 
 <div align="center">
-  <img src="assets/ministep64-step.jpg" alt="Figure Description or Alt Text" width="100%">
+  <img src="../../assets/ministep64-step.jpg" alt="Figure Description or Alt Text" width="100%">
   <p><strong>Figure 6: </strong>Optimal Action Granularity Depends on Problem Complexity. Comparison between Marco-o1-MCTS (mini-step of 64 tokens) (left) and Marco-o1-MCTS (step) (right) on the MGSM dataset. The model with a mini-step of 64 tokens failed to find the correct answer, whereas using step-level actions enabled the model to correctly solve the problem. This highlights that we cannot draw definitive conclusions about which action strategy is superior. We believe that as the reward becomes more accurate, the larger solution space provided by MCTS will demonstrate greater potential. </p>
 </div>
 
 Furthermore, we use Test@N to denote the percentage of problems solved correctly at least once when allowing the model to make N separate guesses for each problem. We evaluated solve rates at Test@1, Test@8, and Test@32. The results demonstrate that MCTS shows an advantage with a lower number of separate guesses (Test@1). This reveals the potential of MCTS. In future work, we plan to train the reward model (RM) in conjunction with MCTS to continue optimizing our approach.
 
 <div align="center">
-  <img src="assets/test@k.jpg" alt="Figure Description or Alt Text" width="80%">
+  <img src="../../assets/test@k.jpg" alt="Figure Description or Alt Text" width="80%">
 </div>
 
 These results demonstrate the effectiveness of our approach in enhancing the reasoning capabilities of the model across different languages and configurations.
@@ -212,14 +212,14 @@ These results demonstrate the effectiveness of our approach in enhancing the rea
 We have also conducted some open-ended tests on our models, such as translation issues and achieved some positive results. In the future, we will continue to explore other areas and improve the model's related performance.
 
 <div align="center">
-  <img src="assets/trans-case-1.jpg" alt="Figure Description or Alt Text" width="60%">
+  <img src="../../assets/trans-case-1.jpg" alt="Figure Description or Alt Text" width="60%">
   <p><strong>Figure 7: </strong>Translation comparison of a colloquial expression “It’s so beautiful that it’s captivating,
 the upper part has a distinctly Korean style, the soft and fluffy material is perfectly thick, and it’s
 complemented by a base layer, creating a unique and everyday-wear outfit”.</p>
 </div>
 
 <div align="center">
-  <img src="assets/trans-case-2.jpg" alt="Figure Description or Alt Text" width="60%">
+  <img src="../../assets/trans-case-2.jpg" alt="Figure Description or Alt Text" width="60%">
   <p><strong>Figure 8: </strong> Translation comparison of a colloquial expression “It’s so beautiful! And it’s so cheap, super
 straight and doesn’t curl. Buy it, buy it!”.</p>
 </div>
