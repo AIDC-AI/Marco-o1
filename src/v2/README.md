@@ -210,3 +210,18 @@ From MarcoPolo Team, AI Business, Alibaba International Digital Commerce:
 - [Huifeng Yin](https://github.com/HuifengYin)
 - [Longyue Wang](http://www.longyuewang.com)
 
+## Citation
+
+If you find Marco-o1 useful for your research and applications, please cite:
+
+```
+@misc{yin2025wideningdistillationbottleneckreasoning,
+      title={Marco o1 v2:Towards Widening The Distillation Bottleneck for Reasoning Models}, 
+      author={Huifeng Yin and Yu Zhao and Minghao Wu and Xuanfan Ni and Bo Zeng and Hao Wang and Tianqi Shi and Liangying Shao and Chenyang Lyu and Longyue Wang and Weihua Luo and Kaifu Zhang},
+      year={2025},
+      eprint={2503.01461},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2503.01461}, 
+}
+```

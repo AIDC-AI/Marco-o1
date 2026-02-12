@@ -277,3 +277,20 @@ From MarcoPolo Team, AI Business, Alibaba International Digital Commerce:
 - Hao Wang
 - [Longyue Wang](http://www.longyuewang.com)
 
+
+## Citation
+
+If you find Marco-o1 useful for your research and applications, please cite:
+
+```
+@misc{zhao2024marcoo1openreasoningmodels,
+      title={Marco-o1: Towards Open Reasoning Models for Open-Ended Solutions}, 
+      author={Yu Zhao and Huifeng Yin and Bo Zeng and Hao Wang and Tianqi Shi and Chenyang Lyu and Longyue Wang and Weihua Luo and Kaifu Zhang},
+      year={2024},
+      eprint={2411.14405},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2411.14405}, 
+}
+
+```

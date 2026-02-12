@@ -59,21 +59,14 @@ training high-performance reasoning models, offering a more sustainable path for
 
 To our knowledge, this is the first work on online data selection and it brings significant benefits to large-scale online services.
 
-
-## 💡 Training Data Construction
 <div align="center">
   <img src="../../assets/depo_fig1.jpg" alt="Figure Description or Alt Text" width="60%">
 </div>
 
-A long CoT sample (**Q**, **T**, **A**) usually comprises three parts: a query prompt **Q**, a thinking sequence **T**, and a final answer **A**.
-Given the query prompt **Q**, LLMs first perform complex reasoning (**T**), and then generates the final answer **A**.
-During reasoning, LLMs engage in various thinking patterns (*e.g.*, *reflection* and *result verification*) and switch between them using common transitional tokens (*e.g.*, “*Wait*”, “*Hmm*”).
-Here, we refer to the completion of a thinking pattern by LLMs as a *reasoning step*.
+## 💡 Training Data Construction
 
-We first extract high‑entropy transition tokens from the long CoT training set, which occur at the start of a sentence. Next, we use these tokens to segment the thinking sequence **T** in each training sample into a sequence of reasoning steps. Meanwhile, we cluster all reasoning steps in the entire training set, with each cluster corresponding to a thinking pattern (*i.e.*, type). Finally, for each thinking pattern, we introduce two special tokens to enclose its corresponding reasoning steps, as shown in Figure 1.
 
-With the reconstructed training set, the trained LLMs can generate more structured thinking sequences.
-Meanwhile, these special tokens allow us to track and control the reasoning processes of LLMs more accurately.
+
 
 ## 🚀 Overall Framework
 <div align="center">
@@ -109,14 +102,14 @@ The experimental results on mathematical benchmarks are presented in Table 1.
 As shown in the *AVG.* column, our framework outperforms all baselines in reasoning efficiency and attains the best overall performance.
 
 <div align="center">
-  <img src="assets/iclr_figure-4.jpg" alt="Figure Description or Alt Text" width="90%">
+  <img src="../../assets/depo_table1.jpg" alt="Figure Description or Alt Text" width="70%">
 </div>
 
 
 We further conduct extensive ablation studies by removing different components from our framework to investigate their different impacts. 
 
 <div align="center">
-  <img src="assets/iclr_figure-5.jpg" alt="Figure Description or Alt Text" width="90%">
+  <img src="../../assets/depo_table2.jpg" alt="Figure Description or Alt Text" width="50%">
 </div>
 
 
@@ -129,71 +122,25 @@ For more detail please refer to our [paper](https://arxiv.org/pdf/2602.06375).
 We use [Verl](https://github.com/volcengine/verl) to train our model. Code will be release in the near future.
 
 
-[//]: # (### Installation)
-
-[//]: # ()
-[//]: # (To install Marco-o1, follow these steps:)
-
-[//]: # ()
-[//]: # (```bash)
-
-[//]: # (git clone https://github.com/AIDC-AI/Marco-o1)
-
-[//]: # (cd Marco-o1)
-
-[//]: # (pip install -r requirements.txt)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (### Usage)
-
-[//]: # ()
-[//]: # (1. **Load Marco-o1-CoT model:** )
-
-[//]: # (    ```)
-
-[//]: # (    # Load model directly)
-
-[//]: # (    from transformers import AutoTokenizer, AutoModelForCausalLM)
-
-[//]: # ()
-[//]: # (    tokenizer = AutoTokenizer.from_pretrained&#40;"AIDC-AI/Marco-o1"&#41;)
-
-[//]: # (    model = AutoModelForCausalLM.from_pretrained&#40;"AIDC-AI/Marco-o1"&#41;)
-
-[//]: # (    ```)
-
-[//]: # ()
-[//]: # (2. **Inference:** )
-
-[//]: # ()
-[//]: # (    Execute the inference script &#40;you can give any customized inputs inside&#41;:)
-
-[//]: # (    ```)
-
-[//]: # (    ./src/output/talk_with_model.py)
-
-[//]: # ()
-[//]: # (    # Use vLLM)
-
-[//]: # (    ./src/output/talk_with_model_vllm.py)
-
-[//]: # (    ```)
-
-[//]: # (3. **Deploy using FastAPI:**)
-
-[//]: # ()
-[//]: # (    Check the README.md file in examples folder.)
-
 
 ## 👨🏻‍💻 Acknowledgement
 
 ## Main Contributors
-From Xiamen University:
-- [Liang Zhang](https://scholar.google.com/citations?user=MSCCJiMAAAAJ&hl=zh-CN)
-
 From MarcoPolo Team, AI Business, Alibaba International Digital Commerce:
 - [Yu Zhao](https://github.com/Sniper970119)
+- Fan Jiang
 - [Longyue Wang](http://www.longyuewang.com)
 
+If you find DEPO useful for your research and applications, please cite:
+
+```
+@misc{zhao2026difficultyestimatedpolicyoptimization,
+      title={Difficulty-Estimated Policy Optimization}, 
+      author={Yu Zhao and Fan Jiang and Tianle Liu and Bo Zeng and Yu Liu and Longyue Wang and Weihua Luo},
+      year={2026},
+      eprint={2602.06375},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2602.06375}, 
+}
+```

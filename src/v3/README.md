@@ -129,3 +129,18 @@ From MarcoPolo Team, AI Business, Alibaba International Digital Commerce:
 - [Yu Zhao](https://github.com/Sniper970119)
 - [Longyue Wang](http://www.longyuewang.com)
 
+## Citation
+
+If you find Marco-o1 useful for your research and applications, please cite:
+
+```
+@misc{zhang2026statetransitionframeworkefficientllm,
+      title={A State-Transition Framework for Efficient LLM Reasoning}, 
+      author={Liang Zhang and Yu Zhao and Longyue Wang and Tianqi Shi and Weihua Luo and Kaifu Zhang and Jinsong Su},
+      year={2026},
+      eprint={2602.01198},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2602.01198}, 
+}
+```

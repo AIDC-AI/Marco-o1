@@ -39,6 +39,11 @@
 
 #
 
+<div align="center">
+  <img src="assets/timeline.png" alt="Figure Description or Alt Text" width="80%">
+  <p><strong>Figure 1: </strong> Marco-o1 timeline.</p>
+</div>
+
 🎯 **Marco-o1** not only focuses on subjects with standard answers, such as mathematics, physics, and coding that are highly suitable for the use of Reinforcement Learning, but we also emphasize some open-ended solutions. Our goal is to build a general model applicable to agentic, incorporating comprehensive planning capabilities and function call abilities.
 
 ⚠️ **Limitations:** <ins>We would like to emphasize that this research work is inspired by OpenAI's o1 (from which the name is also derived). 
@@ -47,18 +52,8 @@ Besides, our focus is on open-ended questions, and we have observed interesting 
 However, we must acknowledge that the current model primarily exhibits o1-like reasoning characteristics and its performance still fall short of a fully realized "o1" model. 
 This is not a one-time effort, and we remain committed to continuous optimization and ongoing improvement.</ins>
 
-<div align="center">
-</div>
 
-<div align="center">
-  <img src="assets/timeline.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 1: </strong> A classic 'strawberry' question reasoned by our Marco-o1 model: "How many 'r' are in strawberry". Although the answer is correct, the final letter 'y' is overlooked during CoT. This is an interesting finding, which is discussed in issue https://github.com/AIDC-AI/Marco-o1/issues/3.</p>
-</div>
 
-<div align="center">
-  <img src="assets/strawberry_2.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 1: </strong> A classic 'strawberry' question reasoned by our Marco-o1 model: "How many 'r' are in strawberry". Although the answer is correct, the final letter 'y' is overlooked during CoT. This is an interesting finding, which is discussed in issue https://github.com/AIDC-AI/Marco-o1/issues/3.</p>
-</div>
 
 
 ## 🔥 News
@@ -85,88 +80,17 @@ This is not a one-time effort, and we remain committed to continuous optimizatio
 
 
 
-## 🔔 Introduction
-
-### Marco-o1 v1
-
-OpenAI recently introduced the groundbreaking o1 model, renowned for its exceptional reasoning capabilities. This model has demonstrated outstanding performance on platforms such as AIME and CodeForces, surpassing other leading models. Inspired by this success, we aimed to push the boundaries of LLMs even further, enhancing their reasoning abilities to tackle complex, real-world challenges.
-
-🌍 Marco-o1 leverages advanced techniques like CoT fine-tuning, MCTS, and Reasoning Action Strategies to enhance its reasoning power. As shown in Figure 2, by fine-tuning Qwen2-7B-Instruct with a combination of the filtered Open-O1 CoT dataset, Marco-o1 CoT dataset, and Marco-o1 Instruction dataset, Marco-o1 improved its handling of complex tasks. MCTS allows exploration of multiple reasoning paths using confidence scores derived from softmax-applied log probabilities of the top-k alternative tokens, guiding the model to optimal solutions. Moreover, our reasoning action strategy involves varying the granularity of actions within steps and mini-steps to optimize search efficiency and accuracy.
-
-<div align="center">
-  <img src="assets/intro_2.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 2: </strong>The overview of Marco-o1.</p>
-</div>
-
-🌏 As shown in Figure 3, Marco-o1 achieved accuracy improvements of +6.17% on the MGSM (English) dataset and +5.60% on the MGSM (Chinese) dataset, showcasing enhanced reasoning capabilities. 
-
-<div align="center">
-  <img src="assets/results.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 3: </strong>The main results of Marco-o1.</p>
-</div>
-
-🌎 Additionally, in translation tasks, we demonstrate that Marco-o1 excels in translating slang expressions, such as translating "这个鞋拥有踩屎感" (literal translation: "This shoe offers a stepping-on-poop sensation.") to "This shoe has a comfortable sole," demonstrating its superior grasp of colloquial nuances.
-
-<div align="center">
-  <img src="assets/translation.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 4: </strong>The demonstration of translation task using Marco-o1.</p>
-</div>
-
-<!-- ## 🎨 Case Show
-
-This is a classic example from our Marco-o1 model, "How many 'r's are in the word 'strawberry'?" Through multiple search steps, the correct answer was obtained, as shown in Figure 2. Although we tested general reasoning capabilities, our primary focus is on tackling challenging translation problems. An example of this focus is shown in Figure 3, illustrating the translation of the sentence "This shoe has a comfortable sole and is highly recommended for purchase."
- -->
-<!-- <div align="center">
-  <img tools="assets/strawberry_2.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 2: </strong>Reasoning example of "How many 'r' are in strawberry"</p>
-</div> -->
-
-
-For more detail please refer to [this](./README_v1.md) or our [paper](https://arxiv.org/abs/2411.14405).
-
-### Marco-o1 v2
-
-For Marco-o1 v2, we have removed some data from Open-O1 and replaced it entirely with Marco-o1 CoT data. We have expanded both the categories and quantity of our CoT data, 
-Additionally, we improved our MCTS architecture to enable dynamic addition of reflections, as shown in Figure 5. 
-While also conducting DPO using naturally data pairs from MCTS.
-
-<div align="center">
-  <img src="assets/v2_pic1.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 5: </strong>In Marco-o1 v2, we restructured the MCTS architecture.</p>
-</div>
-
-As mentioned in our [paper](https://arxiv.org/abs/2503.01461), we found that models like R1 and QwQ often engage in reflection for the sake of reflection itself, which we called **formalistic long-time thinking**. This has a certain impact on the distillation learning of smaller models, leading to behaviors such as repetitive generate and redundant thinking.
-
-<div align="center">
-  <img src="assets/v2_table1.jpg" alt="Figure Description or Alt Text" width="80%">
-  <p><strong>Figure 6: </strong>Example for formalistic long-time thinking</p>
-</div>
-
-Data constructed using MCTS is more suitable for smaller models, as it does not involve redundant thinking and reflection. Instead, we start with planning at the very beginning of the CoT process and then gradually work through the problem. We only guide the model to reflect at appropriate moments. This aligns better with the capabilities and thinking patterns of lower-capacity smaller models.
-
-Additionally, we have conducted DPO using naturally formed positive and negative pairs from MCTS and have made some preliminary findings.
-
-We have open-sourced our MCTS search code.
-For more detail please refer to [this](./README_v2.md) or our [paper](https://arxiv.org/abs/2503.01461
-).
-
-### Marco-o1 ???
-
-We are now working on expanding the Marco-o1 family. These expansions include a more robust model based on RL, tailored for agent scenarios. This model places greater emphasis on the accuracy of function call and planning abilities, which are crucial for current agent applications.
-
-Additionally, as mentioned earlier, the outputs of current reasoning models tend to be quite redundancy. Unlike other works that focus on compression to enable models to distinguish problem difficulty and provide outputs of varying lengths, our goal is for the model to dynamically select skipping unnecessary reasoning steps based on a hyperparameter provided by the user.
-
-🔥🔥 For more details, we will open source and update our latest work later.
-
-
-
 # ⚡️ Released Resources
 
-## Models and Datasets
+## Codes and Models
 
 📥 [Marco-o1 v1](https://huggingface.co/AIDC-AI/Marco-o1)
 
 📥 [Marco-o1 v2](https://huggingface.co/AIDC-AI/Marco-o1)
+
+💻 [Marco-o1 v3](./v3/src)
+
+💻 [Marco-o1 DEPO](./DEPO/src)
 
 ## Installation
 
@@ -241,6 +165,26 @@ If you find Marco-o1 useful for your research and applications, please cite:
       archivePrefix={arXiv},
       primaryClass={cs.LG},
       url={https://arxiv.org/abs/2503.01461}, 
+}
+
+@misc{zhang2026statetransitionframeworkefficientllm,
+      title={A State-Transition Framework for Efficient LLM Reasoning}, 
+      author={Liang Zhang and Yu Zhao and Longyue Wang and Tianqi Shi and Weihua Luo and Kaifu Zhang and Jinsong Su},
+      year={2026},
+      eprint={2602.01198},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2602.01198}, 
+}
+
+@misc{zhao2026difficultyestimatedpolicyoptimization,
+      title={Difficulty-Estimated Policy Optimization}, 
+      author={Yu Zhao and Fan Jiang and Tianle Liu and Bo Zeng and Yu Liu and Longyue Wang and Weihua Luo},
+      year={2026},
+      eprint={2602.06375},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2602.06375}, 
 }
 ```
 
