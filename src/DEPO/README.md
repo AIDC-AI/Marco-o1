@@ -21,7 +21,7 @@
 <img src="https://img.shields.io/badge/License-Apache%202.0-green.svg" alt="License">
 <img src="https://img.shields.io/github/stars/AIDC-AI/Marco-o1?color=yellow" alt="Stars">
 <img src="https://img.shields.io/github/issues/AIDC-AI/Marco-o1?color=red" alt="Issues">
-<img src="https://img.shields.io/badge/python-3.8-purple.svg" alt="Python">
+<img src="https://img.shields.io/badge/python-3.11-purple.svg" alt="Python">
 
 </h4>
 
@@ -63,56 +63,72 @@ To our knowledge, this is the first work on online data selection and it brings 
   <img src="../../assets/depo_fig1.jpg" alt="Figure Description or Alt Text" width="60%">
 </div>
 
-## 💡 Training Data Construction
+## 💡  Overall Framework 
+The main problem of GRPOs reinforcement learning is that the zero Advantage samples not only waste compute resources(rollout) 
+but also cause negative interference to the gradient. This work introduces a bert to predict the difficulty of the samples, 
+and performs a low-cost filtering in advance.
 
+The filtered samples are returned to the standard training process of GRPO and the average reward result calculated by rollout in the standard training process is used to update the prediction of the bert. 
+The filtered samples will not theoretically generate zero Advantage, thus having a more stable gradient direction and lower computational cost. It is worth noting that this work is an orthogonal framework to other algorithm optimizations (such as DAPO).
 
+The experiment shows that our difficulty estimation model can well fit the actual difficulty distribution. It has effectively filtered out the zero Advantage data.
 
-
-## 🚀 Overall Framework
 <div align="center">
-  <img src="assets/iclr_figure-2.jpg" alt="Figure Description or Alt Text" width="90%">
+  <img src="../../assets/depo_fig4.jpg" alt="Figure Description or Alt Text" width="50%">
 </div>
-
-In our framework, we design a Mixed Attention Module (**MAM**) to replace the softmax attention module in LLMs, which consists of a Softmax Attention (**SA**) submodule and a Linear Attention (**LA**) submodule. 
-To avoid the performance loss caused by this replacement, we use the original softmax attention module of LLMs as our **SA** submodule. However, in the **SA** submodule, each token can only attend to the tokens in the query prompt **Q** and the previously generated tokens in its reasoning step. 
-By doing so, we reduce the computational complexity of attention from quadratic **O(C^2)** to linear **O(C)** and the memory usage of the KV‑cache from linear **O(C)** to constant **O(1)**, where **C** denotes the context length.
-Moreover, the **LA** submodule applies a linear attention mechanism to obtain the LLM’s reasoning state matrix, which records the reasoning information from previously completed reasoning steps. 
-Therefore, each token in the current reasoning step can access relevant historical information from the state matrix without attending directly to tokens in previous reasoning steps.
-
-
-
-## 🍬 Reasoning Strategy \& Training Strategy
-<div align="center">
-  <img src="assets/iclr_figure-3.jpg" alt="Figure Description or Alt Text" width="90%">
-</div>
-
-During reasoning, LLMs often produce noisy reasoning steps that may mislead subsequent ones, thus resulting in overthinking problems.
-In our framework, such noisy reasoning step can deviate the model’s state transitions from the correct reasoning trajectory, resulting in erroneous results (see Figure 3(a)).
-To mitigate this issue, we propose a state‑based reasoning strategy, which guides model reasoning with a global reasoning direction.
-
-
-To improve training efficiency while preserving the original reasoning ability of LLMs, we fine‑tune only the parameters of the newly added LA submodule.
-As shown in Figure 3(b), we jointly optimize our model with two loss terms: (1) the autoregressive loss **L_AR** of our model on the training samples, and (2) the knowledge distillation loss **L_KD** between the base model and our proposed model.
 
 
 
 ## 🎯 Experimental Results
 
 The experimental results on mathematical benchmarks are presented in Table 1. 
-As shown in the *AVG.* column, our framework outperforms all baselines in reasoning efficiency and attains the best overall performance.
+
+Compared to the standard GRPO, we achieved an average improvement of 1.5% under similar computing resources, 
+which is close to the performance of DAPO, but the computing cost of DAPO exceeds ours by 70%. 
+Compared to the offline filtering Polaris solution, we still gained certain performance and computing cost advantages. 
+
+Since we mentioned in the previous question that our algorithm and other improvements (such as DAPO) are orthogonal, 
+we also verified DEPO + DAPO (without Dynamic Sampling), and achieved the highest performance improvement of 2.4%.
 
 <div align="center">
   <img src="../../assets/depo_table1.jpg" alt="Figure Description or Alt Text" width="70%">
 </div>
 
+We also conducted further experiments, including the impact of different data difficulty/models size on the algorithm. 
+When the training data was of "moderate difficulty" for the model, most of the data was not filtered out (for example, 7B vs DAPO-MATH-17K), 
+and the performance improvement was very slight.
+However, when using simpler (OR1) and more difficult (NT) datasets, our algorithm began to take effect and achieved 
+significant performance improvement. This is also in line with our intuitive understanding with the framework.
 
-We further conduct extensive ablation studies by removing different components from our framework to investigate their different impacts. 
+
+Meanwhile, we also compared the computing time for each step. It can be observed that the three algorithms spent almost 
+the same amount of time on a single sample sampling. However, when looking at the overall rollout time and total time, 
+DEPO has a significant advantage over DAPO.
 
 <div align="center">
   <img src="../../assets/depo_table2.jpg" alt="Figure Description or Alt Text" width="50%">
 </div>
 
 
+
+
+## 🚀 Online data selection
+
+Since our difficulty estimator is trained in real-time in conjunction with the actor model, we also made an interesting experiment.
+
+In the online service, 80% of the data only covers 20% of the scenarios, and a large number of problems are homogeneous and simple. 
+This pre-estimator can be used for online request routing. We designed an experimental method, using the difficulty pre-estimator 
+of the 1.5B model to predict the data difficulty. If it is below a certain threshold, we consider that the 1.5B model is not 
+confident in solving this problem, and route it to the 7B model for resolution. The experimental results are as follows:
+
+
+<div align="center">
+  <img src="../../assets/depo_table3.jpg" alt="Figure Description or Alt Text" width="90%">
+</div>
+
+When the threshold was set at 0.75, 26.7% of the requests were routed to the 1.5B model for processing, 
+and the final result was not significantly lower compared to the 7B model. This demonstrates the potential of our framework 
+in large-scale online services.
 
 
 For more detail please refer to our [paper](https://arxiv.org/pdf/2602.06375).

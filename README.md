@@ -40,7 +40,7 @@
 #
 
 <div align="center">
-  <img src="assets/timeline.png" alt="Figure Description or Alt Text" width="80%">
+  <img src="assets/timeline.png" alt="Figure Description or Alt Text" width="100%">
   <p><strong>Figure 1: </strong> Marco-o1 timeline.</p>
 </div>
 
@@ -139,6 +139,7 @@ pip install -r requirements.txt
 From MarcoPolo Team, AI Business, Alibaba International Digital Commerce:
 - [Yu Zhao](https://github.com/Sniper970119)
 - [Huifeng Yin](https://github.com/HuifengYin)
+- [Liang Zhang](https://scholar.google.com/citations?user=MSCCJiMAAAAJ&hl=zh-CN)
 - [Longyue Wang](http://www.longyuewang.com)
 
 
