@@ -64,11 +64,11 @@ This is not a one-time effort, and we remain committed to continuous optimizatio
 
 - [Coming Soon] 🏃 **Marco-o1 Agentic:** A more powerful agentic model is coming soon...
 
-- [2025/02/09] 🔥 **[EDPO(Difficulty-Estimated Policy Optimization)](https://arxiv.org/abs/2602.06375):** We proposed an optimization algorithm based on an online data difficulty selector. To our knowledge, this is the first work on online data selection. Experiments show that compared with GRPO, we can better resist the noise interference caused by Zero Advantage, achieving an average performance improvement of 2.4%. At the same time, this online selector can also provide multi-scale routing based on prompt difficulty in large-scale online services.
+- [2025/02/09] 🔥 **[EDPO(Difficulty-Estimated Policy Optimization)](./src/DEPO/src):** We proposed an optimization algorithm based on an online data difficulty selector. To our knowledge, this is the first work on online data selection. Experiments show that compared with GRPO, we can better resist the noise interference caused by Zero Advantage, achieving an average performance improvement of 2.4%. At the same time, this online selector can also provide multi-scale routing based on prompt difficulty in large-scale online services.
 
 - [2025/02/09] 🔥 Our paper **[A State-Transition Framework for Efficient LLM Reasoning](https://arxiv.org/abs/2602.01198)** has been accepted to the main conference of ICLR 2026.
 
-- [2025/02/09] 🔥 **Marco-o1 v3:** We released **[Marco-o1 v3](./README_v3.md)**. By training a pluggable Linear component MAM (Mixed Attention Module) on the existing Dense model, we were able to dynamically compress the model to save context tokens. At the same time, we introduced TTT (Test-Time Training), and ultimately we achieved a 20% reduction in inference cost while obtaining an average performance improvement of 4.7%.
+- [2025/02/09] 🔥 **Marco-o1 v3:** We released **[Marco-o1 v3](./src/v3/src)**. By training a pluggable Linear component MAM (Mixed Attention Module) on the existing Dense model, we were able to dynamically compress the model to save context tokens. At the same time, we introduced TTT (Test-Time Training), and ultimately we achieved a 20% reduction in inference cost while obtaining an average performance improvement of 4.7%.
 
 - [2025/05/15] 🔥 Our paper **[《Marco-o1 v2: Towards Widening The Distillation Bottleneck for Reasoning Models》](https://arxiv.org/abs/2503.01461)** has been accepted to the main conference of ACL 2025.
 
@@ -88,9 +88,9 @@ This is not a one-time effort, and we remain committed to continuous optimizatio
 
 📥 [Marco-o1 v2](https://huggingface.co/AIDC-AI/Marco-o1)
 
-💻 [Marco-o1 v3](./v3/src)
+💻 [Marco-o1 v3](./src/v3/src)
 
-💻 [Marco-o1 DEPO](./DEPO/src)
+💻 [Marco-o1 DEPO](./src/DEPO/src)
 
 ## Installation
 
