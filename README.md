@@ -41,16 +41,16 @@
 
 <div align="center">
   <img src="assets/timeline.png" alt="Figure Description or Alt Text" width="100%">
-  <p><strong>Figure 1: </strong> Marco-o1 timeline.</p>
+  <p>The Timeline of Marco-o1.</p>
 </div>
 
 🎯 **Marco-o1** not only focuses on subjects with standard answers, such as mathematics, physics, and coding that are highly suitable for the use of Reinforcement Learning, but we also emphasize some open-ended solutions. Our goal is to build a general model applicable to agentic, incorporating comprehensive planning capabilities and function call abilities.
 
-⚠️ **Limitations:** <ins>We would like to emphasize that this research work is inspired by OpenAI's o1 (from which the name is also derived). 
+<!-- ⚠️ **Limitations:** <ins>We would like to emphasize that this research work is inspired by OpenAI's o1 (from which the name is also derived). 
 This work aims to explore potential approaches to shed light on the currently unclear technical roadmap for large reasoning models. 
 Besides, our focus is on open-ended questions, and we have observed interesting phenomena in multilingual applications. 
 However, we must acknowledge that the current model primarily exhibits o1-like reasoning characteristics and its performance still fall short of a fully realized "o1" model. 
-This is not a one-time effort, and we remain committed to continuous optimization and ongoing improvement.</ins>
+This is not a one-time effort, and we remain committed to continuous optimization and ongoing improvement.</ins> -->
 
 
 
@@ -62,15 +62,15 @@ This is not a one-time effort, and we remain committed to continuous optimizatio
 
 <!-- This is our initial version, and we will continue to update and enhance the model's reasoning capabilities. -->
 
-- [Coming Soon] 🏃 **Marco-o1 Agentic:** A more powerful agentic model is coming soon...
+- [Coming Soon] 🏃 **Marco-o1 Agentic:** A more powerful agentic model is coming soon ... ...
 
-- [2025/02/09] 🔥 **[EDPO(Difficulty-Estimated Policy Optimization)](./src/DEPO):** We proposed an optimization algorithm based on an online data difficulty selector. To our knowledge, this is the first work on online data selection. Experiments show that compared with GRPO, we can better resist the noise interference caused by Zero Advantage, achieving an average performance improvement of 2.4%. At the same time, this online selector can also provide multi-scale routing based on prompt difficulty in large-scale online services.
+- [2025/02/09] 🔥 **[EDPO (Difficulty-Estimated Policy Optimization)](./src/DEPO):** We proposed an optimization algorithm based on an online data difficulty selector. To our knowledge, this is the first work on online data selection. Experiments show that compared with GRPO, we can better resist the noise interference caused by Zero Advantage, achieving an average performance improvement of 2.4%. At the same time, this online selector can also provide multi-scale routing based on prompt difficulty in large-scale online services.
 
-- [2025/02/09] 🔥 Our paper **[A State-Transition Framework for Efficient LLM Reasoning](https://arxiv.org/abs/2602.01198)** has been accepted to the main conference of ICLR 2026.
+- [2025/02/09] 🔥 The paper **[A State-Transition Framework for Efficient LLM Reasoning](https://arxiv.org/abs/2602.01198)** has been accepted by **ICLR 2026**.
 
 - [2025/02/09] 🔥 **Marco-o1 v3:** We released **[Marco-o1 v3](./src/v3)**. By training a pluggable Linear component MAM (Mixed Attention Module) on the existing Dense model, we were able to dynamically compress the model to save context tokens. At the same time, we introduced TTT (Test-Time Training), and ultimately we achieved a 20% reduction in inference cost while obtaining an average performance improvement of 4.7%.
 
-- [2025/05/15] 🔥 Our paper **[《Marco-o1 v2: Towards Widening The Distillation Bottleneck for Reasoning Models》](https://arxiv.org/abs/2503.01461)** has been accepted to the main conference of ACL 2025.
+- [2025/05/15] 🔥 The paper **[Marco-o1 v2: Towards Widening The Distillation Bottleneck for Reasoning Models](https://arxiv.org/abs/2503.01461)** has been accepted by **ACL 2025**.
 
 
 - [2025/02/14] 🔥 We released **[Marco-o1 v2](./README_v2.md)**. This version entirely relies on self-built data and has undergone DPO. It has been optimized more comprehensively for mathematical problem-solving、planning and instruction-following capabilities. 🍬 This time, our model's ability in counting letters is quite impressive! 😁
