@@ -41,7 +41,7 @@
 
 <div align="center">
   <img src="assets/timeline.png" alt="Figure Description or Alt Text" width="100%">
-  <p>The Timeline of Marco-o1.</p>
+  <p><strong>The Timeline of Marco-o1</strong></p>
 </div>
 
 🎯 **Marco-o1** not only focuses on subjects with standard answers, such as mathematics, physics, and coding that are highly suitable for the use of Reinforcement Learning, but we also emphasize some open-ended solutions. Our goal is to build a general model applicable to agentic, incorporating comprehensive planning capabilities and function call abilities.
@@ -68,15 +68,15 @@ This is not a one-time effort, and we remain committed to continuous optimizatio
 
 - [2025/02/09] 🔥 The paper **[A State-Transition Framework for Efficient LLM Reasoning](https://arxiv.org/abs/2602.01198)** has been accepted by **ICLR 2026**.
 
-- [2025/02/09] 🔥 **Marco-o1 v3:** We released **[Marco-o1 v3](./src/v3)**. By training a pluggable Linear component MAM (Mixed Attention Module) on the existing Dense model, we were able to dynamically compress the model to save context tokens. At the same time, we introduced TTT (Test-Time Training), and ultimately we achieved a 20% reduction in inference cost while obtaining an average performance improvement of 4.7%.
+- [2025/02/09] 🔥 We released **[Marco-o1 v3](./src/v3)**. By training a pluggable Linear component MAM (Mixed Attention Module) on the existing dense model, we were able to dynamically compress the model to save context tokens. At the same time, we introduced TTT (Test-Time Training), and ultimately we achieved a 20% reduction in inference cost while obtaining an average performance improvement of 4.7%.
 
 - [2025/05/15] 🔥 The paper **[Marco-o1 v2: Towards Widening The Distillation Bottleneck for Reasoning Models](https://arxiv.org/abs/2503.01461)** has been accepted by **ACL 2025**.
 
 
-- [2025/02/14] 🔥 We released **[Marco-o1 v2](./README_v2.md)**. This version entirely relies on self-built data and has undergone DPO. It has been optimized more comprehensively for mathematical problem-solving、planning and instruction-following capabilities. 🍬 This time, our model's ability in counting letters is quite impressive! 😁
+- [2025/02/14] 🔥 We released **[Marco-o1 v2](./README_v2.md)**, entirely relies on self-built data and has undergone DPO. It has been optimized more comprehensively for mathematical problem-solving、planning and instruction-following capabilities. 🍬 This time, our model's ability in counting letters is quite impressive! 😁
 
 
-- [2024/11/13] 🔥 We released **[Marco-o1 v1](./README_v1.md)**: Towards Open Reasoning Models for Open-Ended Solutions. This initial release includes our reasoning model, optimized for complex problem-solving and versatile applications across various domains.
+- [2024/11/13] 🔥 We released **[Marco-o1 v1](./README_v1.md)**, towards open reasoning models for open-ended solutions. This includes our reasoning model, optimized for complex problem-solving and versatile applications across various domains.
 
 
 
