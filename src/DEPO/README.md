@@ -135,7 +135,7 @@ For more detail please refer to our [paper](https://arxiv.org/pdf/2602.06375).
 
 ## ⚡️ Released Resources
 
-We use [Verl](https://github.com/volcengine/verl) to train our model. Code can be found in [here](https://github.com/Sniper970119/DEPO),see `/recipe/depo`.
+We use [Verl](https://github.com/volcengine/verl) to train our model. Code can be found in [here](https://github.com/Sniper970119/DEPO), see `/recipe/depo` (The current code was reorganized using AI from a manually written codebase. If you encounter any issues while running it, please let me know.).
 
 
 
